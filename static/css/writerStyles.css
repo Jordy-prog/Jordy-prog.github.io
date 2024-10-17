@@ -93,4 +93,10 @@ input, button {
     padding: 10px;
     font-size: 1rem;
     border-radius: 7px;
+    background-color: black;;
+
+    background-image: url("/static/images/nameBox.png");
+    background-size: cover; /* Cover the entire input field */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
 }
