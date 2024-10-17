@@ -38,6 +38,10 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+#formNav img.active {
+    box-shadow: 0px 0px 20px 3px yellow;
+}
+
 @media (min-width: 768px) {
     #formNav {
         justify-content: center;
