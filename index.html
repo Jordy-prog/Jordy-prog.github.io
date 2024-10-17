@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Save The Spire!</title>
         <link rel="stylesheet" href="/static/css/writerStyles.css">
         <link rel="shortcut icon" type="image/png" href="/static/images/enchiridion.ico"/>
@@ -15,12 +17,14 @@
         </nav>
         <img id="merchantHand" src="/static/images/merchantHand.png">
 
-        <div id="general" class="formContainer">
-            <form id="saveState"></form>
-            <input for="saveState" name="campaignName" type="text">
-            <input for="saveState" name="date" type="date" placeholder="Date">
-            <input for="saveState" name="act" type="number" placeholder="Act" min="1" max="3">
-            <input for="saveState" name="ascension" type="number" placeholder="Ascension" min="1" max="20">
+        <div class="container">
+            <div id="general" class="formContainer">
+                <form id="saveState"></form>
+                <input for="saveState" name="campaignName" type="text">
+                <input for="saveState" name="date" type="date" placeholder="Date">
+                <input for="saveState" name="act" type="number" placeholder="Act" min="1" max="3">
+                <input for="saveState" name="ascension" type="number" placeholder="Ascension" min="1" max="20">
+            </div>
         </div>
 
         <script src="/static/scripts/writer.js" type="text/javascript" charset="utf-8"></script>
