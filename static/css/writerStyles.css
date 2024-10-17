@@ -8,12 +8,17 @@
     --background-img: url(/static/images/general_background.jpg);
 }
 
+@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
+@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
+
 body {
     background-image: var(--background-img);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+
+    font-family: Kreon, sans-serif;
 }
 
 #formNav {
@@ -36,6 +41,10 @@ body {
 #formNav img:active {
     transform: scale(0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#formNav img.active {
+    box-shadow: 0px 0px 20px 3px yellow;
 }
 
 @media (min-width: 768px) {

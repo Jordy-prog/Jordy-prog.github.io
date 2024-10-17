@@ -2,16 +2,18 @@
 <html lang="en">
     <head>
         <title>Save The Spire!</title>
-        <link rel="stylesheet" href="/static/css/styles.css">
+        <link rel="stylesheet" href="/static/css/writerStyles.css">
         <link rel="shortcut icon" type="image/png" href="/static/images/enchiridion.ico"/>
     </head>
     <body>
         <nav id="formNav">
-            <a href=""><img src="/static/images/testButton.png"></a>
-            <a href=""><img src="/static/images/ironcladButton.png"></a>
-            <a href=""><img src="/static/images/silentButton.png"></a>
-            <a href=""><img src="/static/images/defectButton.png"></a>
-            <a href=""><img src="/static/images/watcherButton.png"></a>
+            <img class="active" onclick="toggleActive(this)" src="/static/images/testButton.png">
+            <img onclick="toggleActive(this)" src="/static/images/ironcladButton.png">
+            <img onclick="toggleActive(this)" src="/static/images/silentButton.png">
+            <img onclick="toggleActive(this)" src="/static/images/defectButton.png">
+            <img onclick="toggleActive(this)" src="/static/images/watcherButton.png">
         </nav>
+
+        <script src="/static/scripts/writer.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
