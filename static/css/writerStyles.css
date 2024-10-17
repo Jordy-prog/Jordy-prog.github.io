@@ -21,6 +21,8 @@ body {
     font-family: Kreon, sans-serif;
 }
 
+/* Nav Styles */
+
 #formNav {
     display: flex;
     justify-content: space-around;
@@ -52,4 +54,11 @@ body {
         justify-content: center;
         gap: 40px;
     }
+}
+
+/* Form Styles */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    
 }
