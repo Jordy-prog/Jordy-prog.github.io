@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/static/css/writerStyles.css">
         <link rel="shortcut icon" type="image/png" href="/static/images/enchiridion.ico"/>
     </head>
-    <body>
+    <body id="merchantTest">
         <nav id="formNav">
             <img class="active" onclick="toggleActive(this)" src="/static/images/testButton.png">
             <img onclick="toggleActive(this)" src="/static/images/ironcladButton.png">
@@ -13,6 +13,7 @@
             <img onclick="toggleActive(this)" src="/static/images/defectButton.png">
             <img onclick="toggleActive(this)" src="/static/images/watcherButton.png">
         </nav>
+        <img id="merchantHand" src="/static/images/merchantHand.png">
 
         <div id="general" class="formContainer">
             <form id="saveState"></form>
@@ -23,5 +24,6 @@
         </div>
 
         <script src="/static/scripts/writer.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
