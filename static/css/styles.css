@@ -1,0 +1,22 @@
+:root {
+    --base-color: #212529;
+    --base-color-rgb: 33, 37, 41;
+    --accent-color: #6C757D;
+    --accent-color-rgb: 108, 117, 125;
+    --highlight-color: #F8F9FA;
+    --highlight-color-rgb: 248, 249, 250;
+    --background-img: url(/static/images/general_background.jpg);
+}
+
+body {
+    background-image: var(--background-img);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+#formNav {
+    flex-direction: row;
+    flex
+}

@@ -1,0 +1,62 @@
+{
+    "General": {
+        "CampaignName": "The most awesome game",
+        "Date": "01-01-0001",
+        "Act": 1,
+        "Ascension": 1,
+        "Keys": [],
+        "SkippedRelics": ["Mutagen", "Nilry's Codex"],
+        "SkippedBossRelics": ["Busted Crown", "Frozen Core"],
+        "SkippedPotions": ["Blood Potion", "Distilled Chaos"],
+        "SkippedCurses": ["Pain", "Normality"],
+        "SkippedColorless": ["Flash of Steel", "Dark Shackles"]
+    },
+    "Ironclad": {
+        "Players": [],
+        "Health": 1,
+        "Gold": 1,
+        "Potions": [],
+        "Relics": [],
+        "BossRelics": [],
+        "SkippedRares": [],
+        "RemovedCards": [],
+        "Deck": [],
+        "RareDeck": []
+    },
+    "Silent": {
+        "Players": [],
+        "Health": 1,
+        "Gold": 1,
+        "Potions": [],
+        "Relics": [],
+        "BossRelics": [],
+        "SkippedRares": [],
+        "RemovedCards": [],
+        "Deck": [],
+        "RareDeck": []
+    },
+    "Defect": {
+        "Players": [],
+        "Health": 1,
+        "Gold": 1,
+        "Potions": [],
+        "Relics": [],
+        "BossRelics": [],
+        "SkippedRares": [],
+        "RemovedCards": [],
+        "Deck": [],
+        "RareDeck": []
+    },
+    "Watcher": {
+        "Players": [],
+        "Health": 1,
+        "Gold": 1,
+        "Potions": [],
+        "Relics": [],
+        "BossRelics": [],
+        "SkippedRares": [],
+        "RemovedCards": [],
+        "Deck": [],
+        "RareDeck": []
+    }
+}
