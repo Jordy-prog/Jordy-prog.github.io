@@ -19,6 +19,14 @@ body {
     background-size: cover;
 
     font-family: Kreon, sans-serif;
+    overflow: hidden;
+}
+
+#merchantHand {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.1s ease;
 }
 
 #formNav {
