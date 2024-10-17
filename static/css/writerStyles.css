@@ -55,8 +55,10 @@ input, button {
 }
 
 #formNav img {
-    max-width: 100%;
-    max-height: 10vh;
+    width: 15%;
+    max-width: 100px;
+    height: auto;
+
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
@@ -90,10 +92,11 @@ input, button {
 }
 
 .formContainer input {
-    padding: 10px;
+    padding: 5px;
     font-size: 1rem;
     border-radius: 7px;
-    background-color: black;;
+    background-color: black;
+    color: wheat;
 
     background-image: url("/static/images/nameBox.png");
     background-size: cover; /* Cover the entire input field */
