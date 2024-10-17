@@ -10,8 +10,8 @@
 
 /* General Styles */
 
-@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
-@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
+@font-face { font-family: Kreon; src: url('/static/fonts/Kreon-Regular.ttf'); } 
+@font-face { font-family: Kreon; font-weight: bold; src: url('/static/fonts/Kreon-Bold.ttf');}
 
 body {
     background-image: var(--background-img);
@@ -44,7 +44,7 @@ input, button {
     margin-left: auto;
     margin-right: auto;
 
-    max-width: 1024px;
+    max-width: 768px;
 }
 
 /* Nav Styles */
@@ -102,4 +102,46 @@ input, button {
     background-size: cover; /* Cover the entire input field */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
+}
+
+/*  TEST */
+
+/* General styling for the range input */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    height: 10px; /* Adjust track height */
+    border-radius: 5px; /* Make the track rounded */
+}
+
+/* Chrome, Safari, and Opera - styling the thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default thumb appearance */
+    appearance: none;
+    width: 30px; /* Adjust the size of the image */
+    height: 30px;
+    background: url('/static/images/ascension.png'); /* Set your custom image */
+    background-size: cover; /* Ensure the image covers the thumb */
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* Firefox - styling the thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 30px; /* Adjust the size of the image */
+    height: 30px;
+    background: url('/static/images/ascension.png'); /* Set your custom image */
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+/* IE and Edge - styling the thumb */
+input[type="range"]::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    background: url('/static/images/ascension.png');
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
 }
