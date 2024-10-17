@@ -8,12 +8,17 @@
     --background-img: url(/static/images/general_background.jpg);
 }
 
+@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
+@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
+
 body {
     background-image: var(--background-img);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+
+    font-family: Kreon, sans-serif;
 }
 
 #formNav {
