@@ -11,3 +11,7 @@
 - Find Sts option buttons for buttons like "Add Relics", "Add Cards" etc.
 - Style form with theme colors
 - Add actual JS?
+- Finish Ascension slider with nice value box
+- Add Act buttons, maybe with backgrounds from the different Acts?
+- Remove Date Field, can be just DateTime.now from JS
+- Add Coin slider too? what are max. coins

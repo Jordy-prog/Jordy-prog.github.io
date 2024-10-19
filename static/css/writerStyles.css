@@ -8,8 +8,10 @@
     --background-img: url(/static/images/general_background.jpg);
 }
 
-@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
-@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
+/* General Styles */
+
+@font-face { font-family: Kreon; src: url('/static/fonts/Kreon-Regular.ttf'); } 
+@font-face { font-family: Kreon; font-weight: bold; src: url('/static/fonts/Kreon-Bold.ttf');}
 
 body {
     background-image: var(--background-img);
@@ -19,7 +21,35 @@ body {
     background-size: cover;
 
     font-family: Kreon, sans-serif;
+    overflow: hidden;
 }
+
+/* Apply the same font-family to all form elements */
+input, button {
+    font-family: inherit; /* Inherit the font-family from the body */
+    margin: 0px;
+}
+
+#merchantHand {
+    display: none;
+    position: absolute;
+    height: 100%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 768px;
+}
+
+/* Nav Styles */
 
 #formNav {
     display: flex;
@@ -27,8 +57,10 @@ body {
 }
 
 #formNav img {
-    max-width: 100%;
-    max-height: 10vh;
+    width: 15%;
+    max-width: 100px;
+    height: auto;
+
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
@@ -52,4 +84,85 @@ body {
         justify-content: center;
         gap: 40px;
     }
+}
+
+/* Form Styles */
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.formContainer input {
+    padding: 5px;
+    font-size: 1rem;
+    background-color: black;
+    color: wheat;
+
+    background-image: url("/static/images/nameBox.png");
+    background-size: cover; /* Cover the entire input field */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+}
+
+/*  Ascension Range styling */
+
+/* General styling for the range input */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    appearance: none;
+    height: 20px; /* Adjust track height */
+    border: 2px solid;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    border-image: linear-gradient(to right, rgb(21, 0, 0), red) 1;
+}
+
+/* Chrome, Safari, and Opera - styling the thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default thumb appearance */
+    appearance: none;
+    margin-top: 3px;
+    width: 30px; /* Adjust the size of the image */
+    height: 30px;
+    background: url('/static/images/ascension.png');
+    background-size: cover;
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* Firefox - styling the thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 30px; /* Adjust the size of the image */
+    height: 30px;
+    background: url('/static/images/ascension.png'); /* Set your custom image */
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* IE and Edge - styling the thumb */
+input[type="range"]::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    background: url('/static/images/ascension.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.inlineForm {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    align-items: center;
+}
+
+.inlineForm input {
+    border-start-start-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: 0px;
+}
+
+.inlineForm label {
+    display: flex;
+    background-color: white;
+    justify-content: center;
 }
