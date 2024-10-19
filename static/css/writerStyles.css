@@ -27,6 +27,7 @@ body {
 /* Apply the same font-family to all form elements */
 input, button {
     font-family: inherit; /* Inherit the font-family from the body */
+    margin: 0px;
 }
 
 #merchantHand {
@@ -95,7 +96,6 @@ input, button {
 .formContainer input {
     padding: 5px;
     font-size: 1rem;
-    border-radius: 7px;
     background-color: black;
     color: wheat;
 
@@ -105,23 +105,29 @@ input, button {
     background-repeat: no-repeat; /* Prevent the background from repeating */
 }
 
-/*  TEST */
+/*  Ascension Range styling */
 
 /* General styling for the range input */
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling in WebKit browsers */
-    height: 10px; /* Adjust track height */
-    border-radius: 5px; /* Make the track rounded */
+    appearance: none;
+    height: 20px; /* Adjust track height */
+    border: 2px solid;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    border-image: linear-gradient(to right, rgb(21, 0, 0), red) 1;
 }
 
 /* Chrome, Safari, and Opera - styling the thumb */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Remove default thumb appearance */
     appearance: none;
+    margin-top: 3px;
     width: 30px; /* Adjust the size of the image */
     height: 30px;
-    background: url('/static/images/ascension.png'); /* Set your custom image */
-    background-size: cover; /* Ensure the image covers the thumb */
+    background: url('/static/images/ascension.png');
+    background-size: cover;
     cursor: pointer; /* Show pointer on hover */
 }
 
@@ -132,8 +138,6 @@ input[type="range"]::-moz-range-thumb {
     background: url('/static/images/ascension.png'); /* Set your custom image */
     background-size: cover;
     cursor: pointer;
-    border-radius: 50%;
-    border: none;
 }
 
 /* IE and Edge - styling the thumb */
@@ -143,6 +147,22 @@ input[type="range"]::-ms-thumb {
     background: url('/static/images/ascension.png');
     background-size: cover;
     cursor: pointer;
-    border-radius: 50%;
-    border: none;
+}
+
+.inlineForm {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    align-items: center;
+}
+
+.inlineForm input {
+    border-start-start-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: 0px;
+}
+
+.inlineForm label {
+    display: flex;
+    background-color: white;
+    justify-content: center;
 }
