@@ -217,18 +217,21 @@ img:focus, img:active {
 #keyGreenContainerWrapper, #keyBlueRedContainerWrapper {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 21px;
 }
 
 #keyGreenContainer {
     width: 75px;
     position: relative;
-    margin-left: 9px;
 }
 
 #keyRedContainer, #keyBlueContainer {
     position: relative;
     width: 90px;
+}
+
+#keyBlueContainer {
+    margin-right: 7px;
 }
 
 #keyGreen,
