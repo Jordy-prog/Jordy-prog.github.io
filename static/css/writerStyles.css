@@ -57,6 +57,17 @@ img:focus, img:active {
     z-index: 1;
 }
 
+#logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 70%;
+    max-width: 300px;
+}
+
+
 .container {
     padding-top: 15px;
     padding-bottom: 15px;

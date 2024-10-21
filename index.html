@@ -8,6 +8,9 @@
         <link rel="shortcut icon" type="image/png" href="/static/images/enchiridion.ico"/>
     </head>
     <body>
+        <div id="logoContainer">
+            <img id="logo" src="/static/images/SaveTheLogo.png">
+        </div>
         <nav id="formNav">
             <img class="active" onclick="toggleActiveChar(this)" src="/static/images/testButton.png">
             <img onclick="toggleActiveChar(this)" src="/static/images/ironcladButton.png">
@@ -20,7 +23,6 @@
         <div class="container">
             <div id="general" class="formContainer">
                 <form id="saveState"></form>
-                <!-- <input for="saveState" name="campaignName" placeholder="Campaign name" type="text"> -->
                 <div id="campaignNameContainer">
                     <img id="campaignNameBanner" src="/static/images/selectBanner.png">
                     <input id="campaignName" for="saveState" name="campaignName" placeholder="Campaign name" type="text">
