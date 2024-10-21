@@ -109,7 +109,7 @@ img:focus, img:active {
 .formContainer {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
 }
 
 .formContainer input {
