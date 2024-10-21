@@ -5,8 +5,13 @@
     --accent-color-rgb: 108, 117, 125;
     --highlight-color: #F8F9FA;
     --highlight-color-rgb: 248, 249, 250;
-    --background-img: url(/static/images/general_background.jpg);
+    --background-img: url(../images/general_background.jpg);
 }
+
+/* General Styles */
+
+@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
+@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
 
 body {
     background-image: var(--background-img);
@@ -14,9 +19,68 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+
+    font-family: Kreon, sans-serif;
+    overflow: hidden;
 }
 
-#formNav {
-    flex-direction: row;
-    flex
+/* Apply the same font-family to all form elements */
+
+
+#merchantHand {
+    display: none;
+    position: absolute;
+    height: 100%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
 }
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:aqua;
+    max-width: 768px;
+}
+
+/* Nav Styles */
+
+#formNav {
+    display: flex;
+    justify-content: space-around;
+}
+
+#formNav img {
+    width: 15%;
+    max-width: 100px;
+    height: auto;
+
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#formNav img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#formNav img:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#formNav img.active {
+    box-shadow: 0px 0px 20px 3px yellow;
+}
+
+@media (min-width: 768px) {
+    #formNav {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
