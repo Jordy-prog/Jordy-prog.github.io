@@ -37,8 +37,15 @@ input:focus {
     box-shadow: 0 0 5px rgba(245, 222, 179, 0.5);
 }
 
-* {
+img {
+    outline: none;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+img:focus, img:active {
+    outline: none;
+    box-shadow: none;
 }
 
 #merchantHand {
