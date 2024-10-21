@@ -124,73 +124,44 @@ img:focus, img:active {
     background-repeat: no-repeat; /* Prevent the background from repeating */
 }
 
-/*  Ascension Range styling */
-
-/* General styling for the range input */
-input[type="range"] {
-    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
-    appearance: none;
-    height: 20px; /* Adjust track height */
-    border: 2px solid;
-    padding-left: 0px;
-    padding-right: 0px;
-    box-sizing: border-box;
-    border-image: linear-gradient(to right, rgb(21, 0, 0), red) 1;
+/* Campaign Name Styling */
+#campaignNameContainer {
+    position: relative;
 }
 
-/* Chrome, Safari, and Opera - styling the thumb */
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Remove default thumb appearance */
-    appearance: none;
-    margin-top: 3px;
-    width: 30px; /* Adjust the size of the image */
-    height: 30px;
-    background: url('/static/images/ascension.png');
-    background-size: cover;
-    cursor: pointer; /* Show pointer on hover */
+#campaignNameBanner {
+    width: 100%;
 }
 
-/* Firefox - styling the thumb */
-input[type="range"]::-moz-range-thumb {
-    width: 30px; /* Adjust the size of the image */
-    height: 30px;
-    background: url('/static/images/ascension.png'); /* Set your custom image */
-    background-size: cover;
-    cursor: pointer;
+#campaignName {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    border: none;
 }
 
-/* IE and Edge - styling the thumb */
-input[type="range"]::-ms-thumb {
-    width: 30px;
-    height: 30px;
-    background: url('/static/images/ascension.png');
-    background-size: cover;
-    cursor: pointer;
+@media (max-width: 768px) {
+    #campaignName {
+        font-size: 18px; /* Smaller font size */
+    }
 }
 
-#ascensionRange:focus {
-    box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    #campaignName {
+        font-size: 10px; /* Even smaller font size */
+        top: 38%;
+    }
 }
 
-.inlineForm {
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    align-items: center;
-}
-
-.inlineForm input {
-    border-start-start-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-left: 0px;
-}
-
-.inlineForm label {
-    display: flex;
-    background-image: url("/static/images/disabledButton.png");
-    background-size: cover;
-    color: wheat;
-    justify-content: center;
-}
+/* Act Button Styling */
 
 #actButtonContainer {
     display: grid;
@@ -238,43 +209,7 @@ input[type="range"]::-ms-thumb {
     background-repeat: no-repeat;
 }
 
-#download {
-    color: wheat;
-    background: transparent;
-    width: auto;
-    display: inline-block;
-    width: 180px;
-    align-self: center;
-    position: relative;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.1s ease;
-}
-
-#download:hover {
-    transform: scale(1.05);
-}
-
-#download:active {
-    transform: scale(0.95);
-}
-
-#download img {
-    display: block;
-    width: 100%;
-}
-
-#download span {
-    position: absolute;
-    top: 50%; /* Move span to the vertical center */
-    left: 50%; /* Move span to the horizontal center */
-    transform: translate(-50%, -50%); /* Adjust the center point */
-    color: wheat; /* Text color */
-    font-size: 1rem; /* Text size */
-    font-weight: bold;
-    margin-top: 2px;
-    padding: 5px 10px; /* Optional: padding around the text */
-}
+/* Keys Styling */
 
 #keyContainer {
     display: grid;
@@ -355,3 +290,112 @@ input[type="range"]::-ms-thumb {
 .glow {
     animation: glow 5s ease-in-out infinite;
 }
+
+/*  Ascension Range styling */
+
+/* General styling for the range input */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    appearance: none;
+    height: 20px; /* Adjust track height */
+    border: 2px solid;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    border-image: linear-gradient(to right, rgb(21, 0, 0), red) 1;
+}
+
+/* Chrome, Safari, and Opera - styling the thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default thumb appearance */
+    appearance: none;
+    margin-top: 3px;
+    width: 30px; /* Adjust the size of the image */
+    height: 30px;
+    background: url('/static/images/ascension.png');
+    background-size: cover;
+    cursor: pointer; /* Show pointer on hover */
+}
+
+/* Firefox - styling the thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 30px; /* Adjust the size of the image */
+    height: 30px;
+    background: url('/static/images/ascension.png'); /* Set your custom image */
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* IE and Edge - styling the thumb */
+input[type="range"]::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    background: url('/static/images/ascension.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+#ascensionRange:focus {
+    box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
+}
+
+.inlineForm {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    align-items: center;
+}
+
+.inlineForm input {
+    border-start-start-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-left: 0px;
+}
+
+.inlineForm label {
+    display: flex;
+    background-image: url("/static/images/disabledButton.png");
+    background-size: cover;
+    color: wheat;
+    justify-content: center;
+}
+
+/* Download Button Styling */
+
+#download {
+    color: wheat;
+    background: transparent;
+    width: auto;
+    display: inline-block;
+    width: 180px;
+    align-self: center;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#download:hover {
+    transform: scale(1.05);
+}
+
+#download:active {
+    transform: scale(0.95);
+}
+
+#download img {
+    display: block;
+    width: 100%;
+}
+
+#download span {
+    position: absolute;
+    top: 50%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1rem; /* Text size */
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 5px 10px; /* Optional: padding around the text */
+}
+

@@ -20,7 +20,11 @@
         <div class="container">
             <div id="general" class="formContainer">
                 <form id="saveState"></form>
-                <input for="saveState" name="campaignName" placeholder="Campaign name" type="text">
+                <!-- <input for="saveState" name="campaignName" placeholder="Campaign name" type="text"> -->
+                <div id="campaignNameContainer">
+                    <img id="campaignNameBanner" src="/static/images/selectBanner.png">
+                    <input id="campaignName" for="saveState" name="campaignName" placeholder="Campaign name" type="text">
+                </div>
                 <div id="actButtonContainer">
                     <button id="actOne" class="active" onclick="toggleActiveAct(this)">Act 1</button>
                     <button id="actTwo" onclick="toggleActiveAct(this)">Act 2</button>
@@ -52,9 +56,9 @@
                 </div>
                 <button id="download" 
                         onclick="downloadSaveState()"
-                        onmouseover="toggleDownloadButton(this, '/static/images/endTurnButtonGlow.png')"
-                        onmouseout="toggleDownloadButton(this, '/static/images/endTurnButton.png')">
-                    <img src="/static/images/endTurnButton.png">
+                        onmouseover="toggleDownloadButton(this, '/static/images/endTurnButtonGlowJordy.png')"
+                        onmouseout="toggleDownloadButton(this, '/static/images/endTurnButtonJordy.png')">
+                    <img src="/static/images/endTurnButtonJordy.png">
                     <span>Download Save File!</span>
                 </button>
             </div>
