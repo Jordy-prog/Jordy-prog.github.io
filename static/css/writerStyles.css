@@ -21,7 +21,7 @@ body {
     background-size: cover;
 
     font-family: Kreon, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Apply the same font-family to all form elements */
@@ -183,7 +183,7 @@ input[type="range"]::-ms-thumb {
 
 #actButtonContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
@@ -263,4 +263,84 @@ input[type="range"]::-ms-thumb {
     font-weight: bold;
     margin-top: 2px;
     padding: 5px 10px; /* Optional: padding around the text */
+}
+
+#keyContainer {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#keyGreenContainerWrapper, #keyBlueRedContainerWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+#keyGreenContainer {
+    width: 75px;
+    position: relative;
+    margin-left: 1px;
+}
+
+#keyRedContainer, #keyBlueContainer {
+    position: relative;
+    width: 85px;
+}
+
+#keyGreen,
+#keyBlue,
+#keyRed,
+#keyGreenGlow,
+#keyBlueGlow,
+#keyRedGlow {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+#keyBlueGlow, #keyGreenGlow, #keyRedGlow {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(0.5)
+    }
+    10% {
+        filter: brightness(0.6)
+    }
+    20% {
+        filter: brightness(0.7)
+    }
+    30% {
+        filter: brightness(0.8)
+    }
+    40% {
+        filter: brightness(0.9)
+    }
+    50% {
+        filter: brightness(1)
+    }
+    60% {
+        filter: brightness(0.9)
+    }
+    70% {
+        filter: brightness(0.8)
+    }
+    80% {
+        filter: brightness(0.7)
+    }
+    90% {
+        filter: brightness(0.6)
+    }
+    100% {
+        filter: brightness(0.5)
+    }
+}
+
+.glow {
+    animation: glow 5s ease-in-out infinite;
 }

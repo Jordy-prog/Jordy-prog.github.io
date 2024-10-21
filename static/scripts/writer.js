@@ -101,6 +101,15 @@ function downloadSaveState() {
 }
 
 function toggleDownloadButton(el, src) {
-    var img = el.querySelectorAll("img")[0]
+    let img = el.querySelectorAll("img")[0]
     img.src = src
+}
+
+function toggleKeyGlow(glowId) {
+    let glow = document.getElementById(glowId);
+    if (glow.style.visibility == 'visible') {
+        glow.style.visibility = 'hidden';
+    } else {
+        glow.style.visibility = 'visible';
+    }
 }

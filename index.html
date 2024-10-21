@@ -27,6 +27,24 @@
                     <button id="actThree" onclick="toggleActiveAct(this)">Act 3</button>
                     <button id="actFour" onclick="toggleActiveAct(this)">Act 4</button>
                 </div>
+                <div id="keyContainer">
+                    <div id="keyGreenContainerWrapper">
+                        <div id="keyGreenContainer" onclick="toggleKeyGlow('keyGreenGlow')">
+                            <img id="keyGreen" src="/static/images/lock_green2.png">
+                            <img id="keyGreenGlow" class="glow" src="/static/images/glow_green2.png">
+                        </div>
+                    </div>
+                    <div id="keyBlueRedContainerWrapper">
+                        <div id="keyRedContainer" onclick="toggleKeyGlow('keyRedGlow')">
+                            <img id="keyRed" src="/static/images/lock_red2.png">
+                            <img id="keyRedGlow" class="glow" src="/static/images/glow_red2.png">
+                        </div>
+                        <div id="keyBlueContainer" onclick="toggleKeyGlow('keyBlueGlow')">
+                            <img id="keyBlue" src="/static/images/lock_blue2.png">
+                            <img id="keyBlueGlow" class="glow" src="/static/images/glow_blue2.png">
+                        </div>
+                    </div>
+                </div>
                 <div class="inlineForm">
                     <label id="ascensionValue">0</label>
                     <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
