@@ -168,3 +168,48 @@ input[type="range"]::-ms-thumb {
     color: wheat;
     justify-content: center;
 }
+
+#actButtonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#actButtonContainer button {
+    padding: 10px;
+    color: wheat;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#actButtonContainer button.active {
+    color: white;
+    border: 2px solid wheat;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    filter: brightness(1.2);
+}
+
+#actOne {
+    background-image: url('/static/images/actOne.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actTwo {
+    background-image: url('/static/images/actTwo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actThree {
+    background-image: url('/static/images/actThree.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actFour {
+    background-image: url('/static/images/actFour.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}

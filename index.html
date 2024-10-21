@@ -10,10 +10,10 @@
     <body>
         <nav id="formNav">
             <img class="active" onclick="toggleActive(this)" src="/static/images/testButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/ironcladButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/silentButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/defectButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/watcherButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/ironcladButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/silentButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/defectButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/watcherButton.png">
         </nav>
         <img id="merchantHand" src="/static/images/merchantHand.png">
 
@@ -21,6 +21,12 @@
             <div id="general" class="formContainer">
                 <form id="saveState"></form>
                 <input for="saveState" name="campaignName" type="text">
+                <div id="actButtonContainer">
+                    <button id="actOne" class="active" onclick="toggleActiveAct(this)">Act 1</button>
+                    <button id="actTwo" onclick="toggleActiveAct(this)">Act 2</button>
+                    <button id="actThree" onclick="toggleActiveAct(this)">Act 3</button>
+                    <button id="actFour" onclick="toggleActiveAct(this)">Act 4</button>
+                </div>
                 <input for="saveState" name="act" type="number" placeholder="Act" min="1" max="3">
                 <div class="inlineForm">
                     <label id="ascensionValue">0</label>

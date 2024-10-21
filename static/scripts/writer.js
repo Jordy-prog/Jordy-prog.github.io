@@ -1,8 +1,17 @@
-function toggleActive(element) {
+function toggleActiveChar(element) {
     var nav = document.getElementById("formNav")
     var images = nav.querySelectorAll("img")
     images.forEach(img => {
         img.classList.remove("active")
+    });
+    element.classList.add("active")
+}
+
+function toggleActiveAct(element) {
+    var container = document.getElementById("actButtonContainer");
+    var acts = container.querySelectorAll("button")
+    acts.forEach(act => {
+        act.classList.remove("active")
     });
     element.classList.add("active")
 }
