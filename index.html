@@ -9,7 +9,7 @@
     </head>
     <body>
         <nav id="formNav">
-            <img class="active" onclick="toggleActive(this)" src="/static/images/testButton.png">
+            <img class="active" onclick="toggleActiveChar(this)" src="/static/images/testButton.png">
             <img onclick="toggleActiveChar(this)" src="/static/images/ironcladButton.png">
             <img onclick="toggleActiveChar(this)" src="/static/images/silentButton.png">
             <img onclick="toggleActiveChar(this)" src="/static/images/defectButton.png">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="inlineForm">
                     <label id="ascensionValue">0</label>
-                    <input for="saveState" name="ascension" type="range" value="0" min="0" max="20"
+                    <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
                 <button id="download" 

@@ -28,6 +28,13 @@ body {
 input, button {
     font-family: inherit; /* Inherit the font-family from the body */
     margin: 0px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: wheat;
+    box-shadow: 0 0 5px rgba(245, 222, 179, 0.5);
 }
 
 #merchantHand {
@@ -150,6 +157,10 @@ input[type="range"]::-ms-thumb {
     cursor: pointer;
 }
 
+#ascensionRange:focus {
+    box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
+}
+
 .inlineForm {
     display: grid;
     grid-template-columns: 1fr 11fr;
@@ -250,6 +261,6 @@ input[type="range"]::-ms-thumb {
     color: wheat; /* Text color */
     font-size: 1rem; /* Text size */
     font-weight: bold;
+    margin-top: 2px;
     padding: 5px 10px; /* Optional: padding around the text */
-    border-radius: 5px; /* Optional: rounded corners for the background */
 }
