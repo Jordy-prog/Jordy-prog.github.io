@@ -37,7 +37,7 @@ input:focus {
     box-shadow: 0 0 5px rgba(245, 222, 179, 0.5);
 }
 
-img {
+img, button {
     outline: none;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
