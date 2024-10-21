@@ -163,6 +163,8 @@ input[type="range"]::-ms-thumb {
 
 .inlineForm label {
     display: flex;
-    background-color: white;
+    background-image: url("/static/images/disabledButton.png");
+    background-size: cover;
+    color: wheat;
     justify-content: center;
 }
