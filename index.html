@@ -9,24 +9,36 @@
     </head>
     <body>
         <nav id="formNav">
-            <img class="active" onclick="toggleActive(this)" src="/static/images/testButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/ironcladButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/silentButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/defectButton.png">
-            <img onclick="toggleActive(this)" src="/static/images/watcherButton.png">
+            <img class="active" onclick="toggleActiveChar(this)" src="/static/images/testButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/ironcladButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/silentButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/defectButton.png">
+            <img onclick="toggleActiveChar(this)" src="/static/images/watcherButton.png">
         </nav>
         <img id="merchantHand" src="/static/images/merchantHand.png">
 
         <div class="container">
             <div id="general" class="formContainer">
                 <form id="saveState"></form>
-                <input for="saveState" name="campaignName" type="text">
-                <input for="saveState" name="act" type="number" placeholder="Act" min="1" max="3">
+                <input for="saveState" name="campaignName" placeholder="Campaign name" type="text">
+                <div id="actButtonContainer">
+                    <button id="actOne" class="active" onclick="toggleActiveAct(this)">Act 1</button>
+                    <button id="actTwo" onclick="toggleActiveAct(this)">Act 2</button>
+                    <button id="actThree" onclick="toggleActiveAct(this)">Act 3</button>
+                    <button id="actFour" onclick="toggleActiveAct(this)">Act 4</button>
+                </div>
                 <div class="inlineForm">
                     <label id="ascensionValue">0</label>
-                    <input for="saveState" name="ascension" type="range" value="0" min="0" max="20"
+                    <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
+                <button id="download" 
+                        onclick="downloadSaveState()"
+                        onmouseover="toggleDownloadButton(this, '/static/images/endTurnButtonGlow.png')"
+                        onmouseout="toggleDownloadButton(this, '/static/images/endTurnButton.png')">
+                    <img src="/static/images/endTurnButton.png">
+                    <span>Download Save File!</span>
+                </button>
             </div>
         </div>
 

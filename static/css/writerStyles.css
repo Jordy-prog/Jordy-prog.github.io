@@ -28,6 +28,13 @@ body {
 input, button {
     font-family: inherit; /* Inherit the font-family from the body */
     margin: 0px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: wheat;
+    box-shadow: 0 0 5px rgba(245, 222, 179, 0.5);
 }
 
 #merchantHand {
@@ -36,6 +43,7 @@ input, button {
     height: 100%;
     pointer-events: none;
     transition: transform 0.1s ease;
+    z-index: 1;
 }
 
 .container {
@@ -149,6 +157,10 @@ input[type="range"]::-ms-thumb {
     cursor: pointer;
 }
 
+#ascensionRange:focus {
+    box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
+}
+
 .inlineForm {
     display: grid;
     grid-template-columns: 1fr 11fr;
@@ -163,6 +175,92 @@ input[type="range"]::-ms-thumb {
 
 .inlineForm label {
     display: flex;
-    background-color: white;
+    background-image: url("/static/images/disabledButton.png");
+    background-size: cover;
+    color: wheat;
     justify-content: center;
+}
+
+#actButtonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#actButtonContainer button {
+    padding: 10px;
+    color: wheat;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#actButtonContainer button.active {
+    color: white;
+    border: 2px solid wheat;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    filter: brightness(1.2);
+}
+
+#actOne {
+    background-image: url('/static/images/actOne.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actTwo {
+    background-image: url('/static/images/actTwo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actThree {
+    background-image: url('/static/images/actThree.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actFour {
+    background-image: url('/static/images/actFour.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#download {
+    color: wheat;
+    background: transparent;
+    width: auto;
+    display: inline-block;
+    width: 180px;
+    align-self: center;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#download:hover {
+    transform: scale(1.05);
+}
+
+#download:active {
+    transform: scale(0.95);
+}
+
+#download img {
+    display: block;
+    width: 100%;
+}
+
+#download span {
+    position: absolute;
+    top: 50%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1rem; /* Text size */
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 5px 10px; /* Optional: padding around the text */
 }
