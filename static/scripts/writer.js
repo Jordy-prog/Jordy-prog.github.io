@@ -96,6 +96,11 @@ function downloadSaveState() {
 
     // Append the link to the document, click it, and remove it
     document.body.appendChild(link);
-    link.click();
+    // link.click();
     document.body.removeChild(link);
+}
+
+function toggleDownloadButton(el, src) {
+    var img = el.querySelectorAll("img")[0]
+    img.src = src
 }

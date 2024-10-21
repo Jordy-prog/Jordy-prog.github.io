@@ -20,20 +20,25 @@
         <div class="container">
             <div id="general" class="formContainer">
                 <form id="saveState"></form>
-                <input for="saveState" name="campaignName" type="text">
+                <input for="saveState" name="campaignName" placeholder="Campaign name" type="text">
                 <div id="actButtonContainer">
                     <button id="actOne" class="active" onclick="toggleActiveAct(this)">Act 1</button>
                     <button id="actTwo" onclick="toggleActiveAct(this)">Act 2</button>
                     <button id="actThree" onclick="toggleActiveAct(this)">Act 3</button>
                     <button id="actFour" onclick="toggleActiveAct(this)">Act 4</button>
                 </div>
-                <input for="saveState" name="act" type="number" placeholder="Act" min="1" max="3">
                 <div class="inlineForm">
                     <label id="ascensionValue">0</label>
                     <input for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
-                <button onclick="downloadSaveState()">Download!</button>
+                <button id="download" 
+                        onclick="downloadSaveState()"
+                        onmouseover="toggleDownloadButton(this, '/static/images/endTurnButtonGlow.png')"
+                        onmouseout="toggleDownloadButton(this, '/static/images/endTurnButton.png')">
+                    <img src="/static/images/endTurnButton.png">
+                    <span>Download Save File!</span>
+                </button>
             </div>
         </div>
 

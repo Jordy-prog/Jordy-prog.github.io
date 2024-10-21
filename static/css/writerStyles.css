@@ -36,6 +36,7 @@ input, button {
     height: 100%;
     pointer-events: none;
     transition: transform 0.1s ease;
+    z-index: 1;
 }
 
 .container {
@@ -178,6 +179,7 @@ input[type="range"]::-ms-thumb {
 #actButtonContainer button {
     padding: 10px;
     color: wheat;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -212,4 +214,42 @@ input[type="range"]::-ms-thumb {
     background-image: url('/static/images/actFour.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#download {
+    color: wheat;
+    background: transparent;
+    width: auto;
+    display: inline-block;
+    width: 180px;
+    align-self: center;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#download:hover {
+    transform: scale(1.05);
+}
+
+#download:active {
+    transform: scale(0.95);
+}
+
+#download img {
+    display: block;
+    width: 100%;
+}
+
+#download span {
+    position: absolute;
+    top: 50%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1rem; /* Text size */
+    font-weight: bold;
+    padding: 5px 10px; /* Optional: padding around the text */
+    border-radius: 5px; /* Optional: rounded corners for the background */
 }
