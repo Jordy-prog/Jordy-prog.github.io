@@ -147,6 +147,10 @@ img:focus, img:active {
     border: none;
 }
 
+#campaignName:focus {
+    box-shadow: none;
+}
+
 @media (max-width: 768px) {
     #campaignName {
         font-size: 18px; /* Smaller font size */
