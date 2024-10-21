@@ -135,7 +135,7 @@ img:focus, img:active {
 
 #campaignName {
     position: absolute;
-    top: 40%;
+    top: 37%;
     left: 50%;
     width: 40%;
     transform: translate(-50%, -50%);
@@ -151,17 +151,11 @@ img:focus, img:active {
     box-shadow: none;
 }
 
-@media (max-width: 768px) {
-    #campaignName {
-        font-size: 18px; /* Smaller font size */
-    }
-}
-
 /* Media query for very small screens */
 @media (max-width: 480px) {
     #campaignName {
         font-size: 10px; /* Even smaller font size */
-        top: 38%;
+        top: 36%;
     }
 }
 
@@ -223,18 +217,18 @@ img:focus, img:active {
 #keyGreenContainerWrapper, #keyBlueRedContainerWrapper {
     display: flex;
     justify-content: center;
-    gap: 18px;
+    gap: 25px;
 }
 
 #keyGreenContainer {
     width: 75px;
     position: relative;
-    margin-left: 1px;
+    margin-left: 9px;
 }
 
 #keyRedContainer, #keyBlueContainer {
     position: relative;
-    width: 85px;
+    width: 90px;
 }
 
 #keyGreen,
