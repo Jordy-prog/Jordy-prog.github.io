@@ -121,7 +121,7 @@ openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modalId = button.getAttribute('data-target');
         let modal = document.getElementById(modalId)
-        modal.style.display = 'flex';
+        modal.style.display = 'block';
         setTimeout(() => {
             modal.classList.add('active');
         }, 10);
@@ -154,3 +154,53 @@ window.addEventListener('click', (e) => {
         }, 400);
     }
 });
+
+// Relic Modal Functions
+const relics = document.querySelectorAll('.relic')
+
+relics.forEach(relic => {
+    const container = document.getElementById(relic.getAttribute('data-copy-target')).querySelector('.containerBody')
+
+    relic.addEventListener('click', () => {
+        const checkbox = relic.querySelector('.relic-checkbox')
+        const img = relic.querySelector('.relic-image')
+        if (isTicked(checkbox)) {
+            checkbox.src = '/static/images/tickbox_unticked.png'
+            img.classList.remove('active')
+            removeRelic(relic, container);
+        } else {
+            checkbox.src = '/static/images/tickbox_ticked.png'
+            img.classList.add('active')
+            addRelic(relic, container);
+        }
+    })
+})
+
+function isTicked(el) {
+    return el.src.endsWith('_ticked.png');
+}
+
+function addRelic(relic, container) {
+    const placeholder = container.querySelector('.containerPlaceholder')
+    if (placeholder) {
+        container.removeChild(placeholder);
+    }
+
+    const clonedRelic = relic.cloneNode(true);
+    clonedRelic.classList.add('preview')
+    let checkbox = clonedRelic.querySelector('.relic-checkbox');
+    clonedRelic.querySelector('.relic-footer').removeChild(checkbox);
+    container.appendChild(clonedRelic);
+}
+
+function removeRelic(relic, container) {
+    // Find the corresponding relic in selectedRelicsContainer and remove it
+    const relicLabel = relic.querySelector('.relic-label').textContent;
+    const selectedRelic = Array.from(container.children).find(
+        el => el.querySelector('.relic-label').textContent === relicLabel
+    );
+
+    if (selectedRelic) {
+        container.removeChild(selectedRelic);
+    }
+}

@@ -18,7 +18,7 @@
             <img onclick="toggleActiveChar(this)" src="/static/images/defectButton.png">
             <img onclick="toggleActiveChar(this)" src="/static/images/watcherButton.png">
         </nav>
-        <img id="merchantHand" src="/static/images/merchantHand.png">
+        <!-- <img id="merchantHand" src="/static/images/merchantHand.png"> -->
 
         <div class="container">
             <div id="general" class="formContainer">
@@ -56,8 +56,14 @@
                     <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
-                <div id="skippedRelicsContainer">
-                    
+                <div id="skippedRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Relics</span>
+                    </div>
+                    <div class="containerBody">
+                        <span class="containerPlaceholder">No relics yet...</span>
+                    </div>
                 </div>
                 <div class="optionButton open-modal-btn"
                         data-target="skippedRelicsModal"
@@ -75,24 +81,407 @@
                 </button>
 
                 <!-- Modals -->
-                 <div id="skippedRelicsModal" class="modal">
+                <div id="skippedRelicsModal" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
                             <span class="modal-title">Relics</span>
                             <img class="close-modal-btn" data-close="skippedRelicsModal" height="50" src="/static/images/close_button.png">
                         </div>
                         <div class="modal-body">
-
-                        </div>
-                        <div class="modal-footer">
-
+                            <div class="relic-grid">
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/abacus.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">The Abacus</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/akabeko.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Akabeko</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/anchor.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Anchor</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/bag_of_prep.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Bag of Preparation</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/blood_vial.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Blood Vial</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/blueCandle.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Blue Candle</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/boot.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">The Boot</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/calendar.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Stone Calendar</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/calipers.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Calipers</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/captain_wheel.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Captain's Wheel</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/centennialPuzzle.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Centennial Puzzle</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/codex.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Nilry's Codex</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/courier.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">The Courier</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/deadBranch.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Dead Branch</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/duality.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Duality</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/duvuDoll.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Du-Vu Doll</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/gamblingChip.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Gambling Chip</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/goldenIdolRelic.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Golden Idol</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/gremlin_horn.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Gremlin Horn</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/happyflower.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Happy Flower</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/horn_cleat.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Horn Cleat</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/hourglass.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Mercury Hourglass</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/iceCream.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Ice Cream</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/incenseBurner.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Incense Burner</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/ink_bottle.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Ink Bottle</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/juzuBracelet.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Juzu Bracelet</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/lantern.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Lantern</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/letterOpener.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Letter Opener</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/mirror.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Dolly's Mirror</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/moltenEgg.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Molten Egg</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/mummifiedHand.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Mummified Hand</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/mutagen.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Mutagen</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/necronomicon.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Necronomicon</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/ninjaScroll.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Ninja Scroll</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/oldCoin.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Old Coin</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/omamori.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Omamori</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/orichalcum.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Orichalcum</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/ornamentalFan.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Ornamental Fan</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/peacePipe.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Peace Pipe</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/penNib.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Pen Nib</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/pocketwatch.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Pocketwatch</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/redMask.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Red Mask</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/regal_pillow.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Regal Pillow</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/runicPyramid.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Runic Pyramid</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/serpentHead.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Ssserpent Head</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/smooth_stone.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Oddly Smooth Stone</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/strike_dummy.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Strike Dummy</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/sundial.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Sundial</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/toolbox.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Toolbox</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/toxicEgg.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Toxic Egg</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/tungsten.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Tungsten Rod</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/vajra.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Vajra</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/warPaint.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">War Paint</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/whetstone.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Whetstone</span>
+                                    </div>
+                                </div>
+                                <div class="relic" data-copy-target="skippedRelicsContainer">
+                                    <img class="relic-image" src="/static/images/relics/wingedBoots.png">
+                                    <div class="relic-footer">
+                                        <img class="relic-checkbox" src="/static/images/tickbox_unticked.png">
+                                        <span class="relic-label">Wing Boots</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
 
         <script src="/static/scripts/writer.js" type="text/javascript" charset="utf-8"></script>
-        <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script>
+        <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
     </body>
 </html>
