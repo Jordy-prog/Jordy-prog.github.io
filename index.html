@@ -56,6 +56,13 @@
                     <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
+                <div id="SkippedRelicsContainer">
+                    
+                </div>
+                <div class="optionButton">
+                    <img src="/static/images/disabledButton.png">
+                    <span>+ Add Relics</span>
+                </div>
                 <button id="download" 
                         onclick="downloadSaveState()"
                         onmouseover="toggleDownloadButton(this, '/static/images/endTurnButtonGlow.png')"

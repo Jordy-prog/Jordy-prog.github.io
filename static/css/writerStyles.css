@@ -148,7 +148,7 @@ img:focus, img:active {
     position: absolute;
     top: 37%;
     left: 50%;
-    width: 40%;
+    width: 50%;
     transform: translate(-50%, -50%);
     background: transparent;
     color: black;
@@ -165,7 +165,7 @@ img:focus, img:active {
 /* Media query for very small screens */
 @media (max-width: 480px) {
     #campaignName {
-        font-size: 10px; /* Even smaller font size */
+        font-size: 0.8rem; /* Even smaller font size */
         top: 36%;
     }
 }
@@ -369,6 +369,38 @@ input[type="range"]::-ms-thumb {
     background-size: cover;
     color: wheat;
     justify-content: center;
+}
+
+/* Option Button with Modals styling */
+.optionButton {
+    position: relative;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+}
+
+.optionButton img {
+    width: 50%;
+}
+
+.optionButton span {
+    position: absolute;
+    top: 48%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1.2rem; /* Text size */
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .optionButton img {
+        width: 100%;
+    }
+
+    .optionButton span {
+        font-size: 1rem;
+    }
 }
 
 /* Download Button Styling */
