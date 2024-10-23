@@ -50,7 +50,6 @@ img:focus, img:active {
 
 div:focus, div:active, button:focus, button:active {
     outline: none;
-    box-shadow: none;
     -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
 }
 
@@ -60,7 +59,7 @@ div:focus, div:active, button:focus, button:active {
     height: 100%;
     pointer-events: none;
     transition: transform 0.1s ease;
-    z-index: 1;
+    z-index: 2;
 }
 
 #logoContainer {
@@ -377,7 +376,7 @@ input[type="range"]::-ms-thumb {
     justify-content: center;
 }
 
-/* Option Button with Modals styling */
+/* Option Button Styling */
 .optionButton {
     position: relative;
     color: wheat;
@@ -452,3 +451,65 @@ input[type="range"]::-ms-thumb {
     padding: 5px 10px; /* Optional: padding around the text */
 }
 
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-content {
+    background-image: url('/static/images/relicModalBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60%;
+    max-height: 90vh;
+    height: 90vh;
+    border: 2px solid wheat;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background-image: url('/static/images/modalHeaderBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px black;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    color: wheat;
+}
+
+.close-modal-btn {
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    filter: brightness(1.3);
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-open {
+    overflow: hidden;
+}

@@ -56,10 +56,11 @@
                     <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
-                <div id="SkippedRelicsContainer">
+                <div id="skippedRelicsContainer">
                     
                 </div>
-                <div class="optionButton"
+                <div class="optionButton open-modal-btn"
+                        data-target="skippedRelicsModal"
                         onmouseover="toggleButton(this, '/static/images/enabledButton.png')"
                         onmouseout="toggleButton(this, '/static/images/disabledButton.png')">
                     <img src="/static/images/disabledButton.png">
@@ -72,6 +73,22 @@
                     <img src="/static/images/endTurnButton.png">
                     <span>Download Save File!</span>
                 </button>
+
+                <!-- Modals -->
+                 <div id="skippedRelicsModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="modal-title">Relics</span>
+                            <img class="close-modal-btn" data-close="skippedRelicsModal" height="50" src="/static/images/close_button.png">
+                        </div>
+                        <div class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                 </div>
             </div>
         </div>
 
