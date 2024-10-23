@@ -100,7 +100,7 @@ function downloadSaveState() {
     document.body.removeChild(link);
 }
 
-function toggleDownloadButton(el, src) {
+function toggleButton(el, src) {
     let img = el.querySelectorAll("img")[0]
     img.src = src
 }

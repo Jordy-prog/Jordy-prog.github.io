@@ -48,6 +48,12 @@ img:focus, img:active {
     box-shadow: none;
 }
 
+div:focus, div:active, button:focus, button:active {
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
+}
+
 #merchantHand {
     display: none;
     position: absolute;
@@ -377,10 +383,13 @@ input[type="range"]::-ms-thumb {
     color: wheat;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+    width: 50%;
+    align-self: center;
 }
 
 .optionButton img {
-    width: 50%;
+    width: 100%;
 }
 
 .optionButton span {
@@ -394,7 +403,7 @@ input[type="range"]::-ms-thumb {
 }
 
 @media (max-width: 480px) {
-    .optionButton img {
+    .optionButton {
         width: 100%;
     }
 

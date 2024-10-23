@@ -59,14 +59,16 @@
                 <div id="SkippedRelicsContainer">
                     
                 </div>
-                <div class="optionButton">
+                <div class="optionButton"
+                        onmouseover="toggleButton(this, '/static/images/enabledButton.png')"
+                        onmouseout="toggleButton(this, '/static/images/disabledButton.png')">
                     <img src="/static/images/disabledButton.png">
                     <span>+ Add Relics</span>
                 </div>
                 <button id="download" 
                         onclick="downloadSaveState()"
-                        onmouseover="toggleDownloadButton(this, '/static/images/endTurnButtonGlow.png')"
-                        onmouseout="toggleDownloadButton(this, '/static/images/endTurnButton.png')">
+                        onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
+                        onmouseout="toggleButton(this, '/static/images/endTurnButton.png')">
                     <img src="/static/images/endTurnButton.png">
                     <span>Download Save File!</span>
                 </button>
