@@ -155,23 +155,23 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Relic Modal Functions
-const relics = document.querySelectorAll('.relic')
+// Item Modal & Container Functions
+const items = document.querySelectorAll('.item')
 
-relics.forEach(relic => {
-    const container = document.getElementById(relic.getAttribute('data-copy-target')).querySelector('.containerBody')
+items.forEach(item => {
+    const container = document.getElementById(item.getAttribute('data-copy-target')).querySelector('.container-body')
 
-    relic.addEventListener('click', () => {
-        const checkbox = relic.querySelector('.relic-checkbox')
-        const img = relic.querySelector('.relic-image')
+    item.addEventListener('click', () => {
+        const checkbox = item.querySelector('.item-checkbox')
+        const img = item.querySelector('.item-image')
         if (isTicked(checkbox)) {
             checkbox.src = '/static/images/tickbox_unticked.png'
             img.classList.remove('active')
-            removeRelic(relic, container);
+            removeItem(item, container);
         } else {
             checkbox.src = '/static/images/tickbox_ticked.png'
             img.classList.add('active')
-            addRelic(relic, container);
+            addItem(item, container);
         }
     })
 })
@@ -180,27 +180,26 @@ function isTicked(el) {
     return el.src.endsWith('_ticked.png');
 }
 
-function addRelic(relic, container) {
-    const placeholder = container.querySelector('.containerPlaceholder')
+function addItem(item, container) {
+    const placeholder = container.querySelector('.container-placeholder')
     if (placeholder) {
         container.removeChild(placeholder);
     }
 
-    const clonedRelic = relic.cloneNode(true);
-    clonedRelic.classList.add('preview')
-    let checkbox = clonedRelic.querySelector('.relic-checkbox');
-    clonedRelic.querySelector('.relic-footer').removeChild(checkbox);
-    container.appendChild(clonedRelic);
+    const clonedItem = item.cloneNode(true);
+    clonedItem.classList.add('preview')
+    let checkbox = clonedItem.querySelector('.item-checkbox');
+    clonedItem.querySelector('.item-footer').removeChild(checkbox);
+    container.appendChild(clonedItem);
 }
 
-function removeRelic(relic, container) {
-    // Find the corresponding relic in selectedRelicsContainer and remove it
-    const relicLabel = relic.querySelector('.relic-label').textContent;
-    const selectedRelic = Array.from(container.children).find(
-        el => el.querySelector('.relic-label').textContent === relicLabel
+function removeItem(item, container) {
+    const itemLabel = item.querySelector('.item-label').textContent;
+    const selectedItem = Array.from(container.children).find(
+        el => el.querySelector('.item-label').textContent === itemLabel
     );
 
-    if (selectedRelic) {
-        container.removeChild(selectedRelic);
+    if (selectedItem) {
+        container.removeChild(selectedItem);
     }
 }
