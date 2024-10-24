@@ -51,8 +51,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="inlineForm">
-                    <label id="ascensionValue">0</label>
+                <div id="ascensionContainer">
+                    <div id="ascensionWrapper">
+                        <img src="/static/images/ascension1.png">
+                        <img id="ascensionLayer2" src="/static/images/ascension2.png">
+                        <label id="ascensionValue">0</label>
+                    </div>
                     <input id="ascensionRange" for="saveState" name="ascension" type="range" value="0" min="0" max="20"
                     oninput="document.getElementById('ascensionValue').innerHTML = this.value;">
                 </div>
@@ -72,6 +76,7 @@
                     <img src="/static/images/endTurnButton.png">
                     <span>Download Save File!</span>
                 </button>
+                
 
                 <!-- Modals -->
                 <div id="skippedRelicsModal" class="modal">

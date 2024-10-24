@@ -314,7 +314,6 @@ div:focus, div:active, button:focus, button:active {
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling in WebKit browsers */
     appearance: none;
-    height: 20px; /* Adjust track height */
     border: 2px solid;
     padding-left: 0px;
     padding-right: 0px;
@@ -327,8 +326,8 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Remove default thumb appearance */
     appearance: none;
     margin-top: 3px;
-    width: 30px; /* Adjust the size of the image */
-    height: 30px;
+    width: 50px; /* Adjust the size of the image */
+    height: 50px;
     background: url('/static/images/ascension.png');
     background-size: cover;
     cursor: pointer; /* Show pointer on hover */
@@ -336,8 +335,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Firefox - styling the thumb */
 input[type="range"]::-moz-range-thumb {
-    width: 30px; /* Adjust the size of the image */
-    height: 30px;
+    width: 50px; /* Adjust the size of the image */
+    height: 50px;
     background: url('/static/images/ascension.png'); /* Set your custom image */
     background-size: cover;
     cursor: pointer;
@@ -345,35 +344,61 @@ input[type="range"]::-moz-range-thumb {
 
 /* IE and Edge - styling the thumb */
 input[type="range"]::-ms-thumb {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background: url('/static/images/ascension.png');
     background-size: cover;
     cursor: pointer;
+}
+
+#ascensionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#ascensionRange {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 3px;
 }
 
 #ascensionRange:focus {
     box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
 }
 
-.inlineForm {
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    align-items: center;
+#ascensionWrapper {
+    position: relative;
+    width: 100px;
 }
 
-.inlineForm input {
-    border-start-start-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-left: 0px;
+#ascensionWrapper img {
+    width: 100%;
 }
 
-.inlineForm label {
-    display: flex;
-    background-image: url("/static/images/disabledButton.png");
-    background-size: cover;
+#ascensionLayer2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 10s linear infinite;
+}
+
+#ascensionValue {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: wheat;
-    justify-content: center;
+    font-size: 1.5rem;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Option Button Styling */
