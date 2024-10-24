@@ -269,37 +269,13 @@ div:focus, div:active, button:focus, button:active {
 }
 
 @keyframes glow {
-    0% {
+    from {
         filter: brightness(0.5)
-    }
-    10% {
-        filter: brightness(0.6)
-    }
-    20% {
-        filter: brightness(0.7)
-    }
-    30% {
-        filter: brightness(0.8)
-    }
-    40% {
-        filter: brightness(0.9)
     }
     50% {
         filter: brightness(1)
     }
-    60% {
-        filter: brightness(0.9)
-    }
-    70% {
-        filter: brightness(0.8)
-    }
-    80% {
-        filter: brightness(0.7)
-    }
-    90% {
-        filter: brightness(0.6)
-    }
-    100% {
+    to {
         filter: brightness(0.5)
     }
 }
