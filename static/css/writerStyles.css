@@ -21,13 +21,35 @@ body {
     background-size: cover;
 
     font-family: Kreon, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Apply the same font-family to all form elements */
 input, button {
     font-family: inherit; /* Inherit the font-family from the body */
     margin: 0px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: wheat;
+    box-shadow: 0 0 5px rgba(245, 222, 179, 0.5);
+}
+
+img {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+img:focus, img:active {
+    outline: none;
+}
+
+div:focus, div:active, button:focus, button:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
 }
 
 #merchantHand {
@@ -36,7 +58,19 @@ input, button {
     height: 100%;
     pointer-events: none;
     transition: transform 0.1s ease;
+    z-index: 2;
 }
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 70%;
+    max-width: 300px;
+}
+
 
 .container {
     padding-top: 15px;
@@ -90,7 +124,7 @@ input, button {
 .formContainer {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 20px;
 }
 
 .formContainer input {
@@ -103,6 +137,174 @@ input, button {
     background-size: cover; /* Cover the entire input field */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
+}
+
+/* Campaign Name Styling */
+#campaignNameContainer {
+    position: relative;
+}
+
+#campaignNameBanner {
+    width: 100%;
+}
+
+#campaignName {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    border: none;
+}
+
+#campaignName:focus {
+    box-shadow: none;
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    #campaignName {
+        font-size: 0.8rem; /* Even smaller font size */
+        top: 36%;
+    }
+}
+
+/* Act Button Styling */
+
+#actButtonContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+#actButtonContainer button {
+    padding: 10px;
+    color: wheat;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+#actButtonContainer button.active {
+    color: white;
+    border: 2px solid wheat;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    filter: brightness(1.2);
+}
+
+#actOne {
+    background-image: url('/static/images/actOne.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actTwo {
+    background-image: url('/static/images/actTwo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actThree {
+    background-image: url('/static/images/actThree.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#actFour {
+    background-image: url('/static/images/actFour.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Keys Styling */
+
+#keyContainer {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#keyGreenContainerWrapper, #keyBlueRedContainerWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 21px;
+}
+
+#keyGreenContainer {
+    width: 75px;
+    position: relative;
+}
+
+#keyRedContainer, #keyBlueContainer {
+    position: relative;
+    width: 90px;
+}
+
+#keyBlueContainer {
+    margin-right: 7px;
+}
+
+#keyGreen,
+#keyBlue,
+#keyRed,
+#keyGreenGlow,
+#keyBlueGlow,
+#keyRedGlow {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+#keyBlueGlow, #keyGreenGlow, #keyRedGlow {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(0.5)
+    }
+    10% {
+        filter: brightness(0.6)
+    }
+    20% {
+        filter: brightness(0.7)
+    }
+    30% {
+        filter: brightness(0.8)
+    }
+    40% {
+        filter: brightness(0.9)
+    }
+    50% {
+        filter: brightness(1)
+    }
+    60% {
+        filter: brightness(0.9)
+    }
+    70% {
+        filter: brightness(0.8)
+    }
+    80% {
+        filter: brightness(0.7)
+    }
+    90% {
+        filter: brightness(0.6)
+    }
+    100% {
+        filter: brightness(0.5)
+    }
+}
+
+.glow {
+    animation: glow 5s ease-in-out infinite;
 }
 
 /*  Ascension Range styling */
@@ -149,6 +351,10 @@ input[type="range"]::-ms-thumb {
     cursor: pointer;
 }
 
+#ascensionRange:focus {
+    box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
+}
+
 .inlineForm {
     display: grid;
     grid-template-columns: 1fr 11fr;
@@ -163,6 +369,252 @@ input[type="range"]::-ms-thumb {
 
 .inlineForm label {
     display: flex;
-    background-color: white;
+    background-image: url("/static/images/disabledButton.png");
+    background-size: cover;
+    color: wheat;
     justify-content: center;
+}
+
+/* Option Button Styling */
+.optionButton {
+    position: relative;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    width: 50%;
+    align-self: center;
+}
+
+.optionButton img {
+    width: 100%;
+}
+
+.optionButton span {
+    position: absolute;
+    top: 48%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1.2rem; /* Text size */
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .optionButton {
+        width: 100%;
+    }
+
+    .optionButton span {
+        font-size: 1rem;
+    }
+}
+
+/* Download Button Styling */
+
+#download {
+    color: wheat;
+    background: transparent;
+    width: auto;
+    display: inline-block;
+    width: 180px;
+    align-self: center;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#download:hover {
+    transform: scale(1.05);
+}
+
+#download:active {
+    transform: scale(0.95);
+}
+
+#download img {
+    display: block;
+    width: 100%;
+}
+
+#download span {
+    position: absolute;
+    top: 50%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1rem; /* Text size */
+    font-weight: bold;
+    margin-top: 2px;
+    padding: 5px 10px; /* Optional: padding around the text */
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-content {
+    background-image: url('/static/images/relicModalBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 60%;
+    margin: 100px auto;
+    border: 2px solid wheat;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        margin: 0px;
+        border: none;
+    }
+}
+
+.modal-header {
+    background-image: url('/static/images/modalHeaderBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px black;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    color: wheat;
+}
+
+.close-modal-btn {
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    filter: brightness(1.3);
+}
+
+.modal-body {
+    padding: 10px;
+}
+
+.modal.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+/* Relic Modal Styling */
+
+.relic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.relic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.relic.preview {
+    width: 100px;
+    min-width: 100px;
+    cursor: auto;
+    text-align: center;
+}
+
+.relic.preview .relic-footer {
+    justify-content: center;
+}
+
+.relic.preview .relic-image.active {
+    box-shadow: none;
+}
+
+.relic-image {
+    width: 100%;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid wheat;
+    box-shadow: 0 0 10px black;
+    border-radius: 7px;
+}
+
+.relic-image.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px wheat;
+}
+
+.relic-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.relic-label {
+    color: wheat;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
+
+/* Relic Container Styling */
+.relicContainer {
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid wheat;
+}
+
+.containerHeader {
+    position: relative;
+}
+
+.containerLabelImage {
+    height: 50px;
+}
+
+.containerLabel {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: wheat;
+}
+
+.containerBody {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+}
+
+.containerPlaceholder {
+    color: wheat;
+    font-size: 1rem;
 }
