@@ -24,8 +24,30 @@ body {
     overflow: hidden;
 }
 
-/* Apply the same font-family to all form elements */
+img {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
 
+img:focus, img:active {
+    outline: none;
+}
+
+div:focus, div:active, button:focus, button:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
+}
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 70%;
+    max-width: 300px;
+}
 
 #merchantHand {
     display: none;
@@ -35,17 +57,6 @@ body {
     transition: transform 0.1s ease;
 }
 
-.container {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top:30px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color:aqua;
-    max-width: 768px;
-}
 
 /* Nav Styles */
 
@@ -84,3 +95,101 @@ body {
     }
 }
 
+/*Info tabs styling*/
+/* Apply the same font-family to all form elements */
+.container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 768px;
+}
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+.infoContainer h2 {
+    padding: 5px;
+    font-family: inherit; /* Inherit the font-family from the body */
+    margin: 0px;
+}
+/* Campaign Name and Date Styling */
+.campaignDataContainer {
+    position: relative;
+}
+
+#campaignNameBanner {
+    width:100%;
+}
+#campaignName {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#campaignDateBanner {    
+    width:40%;
+    margin-left:30%;
+}
+
+
+#campaignDate {
+    position: absolute;
+    top: 45%;
+    left: 52.5%;
+    transform: translate(-50%, -50%);
+
+    font-size:120%;
+    color: wheat;
+    text-align: center;
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    #campaignName {
+        font-size: 0.8rem; /* Even smaller font size */
+        top: 36%;
+    }
+    #campaignDate {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Act display */
+#levelInfoContainer {
+    margin-top:5%;
+    display: grid;
+    gap: 10px;
+}
+
+#actDisplay {
+    padding: 10px;
+    color: wheat;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    
+    transition: all 0.1s ease-in-out;
+    border: 2px solid silver;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+    width:30%;
+    text-align: center;
+
+    background-image: url('/static/images/actOne.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}

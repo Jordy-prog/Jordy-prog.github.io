@@ -8,6 +8,9 @@
         <link rel="shortcut icon" type="image/png" href="static/images/enchiridion.ico"/>
     </head>
     <body>
+        <div id="logoContainer">
+            <img id="logo" src="/static/images/SaveTheLogo.png">
+        </div>
         <img id="merchantHand" src="static/images/merchantHand.png">
         <nav id="formNav">
             <img class="active" onclick="toggleActive(this)" src="static/images/generalButton.png">
@@ -17,7 +20,20 @@
             <img onclick="toggleActive(this)" src="static/images/watcherButton.png">
         </nav>
         <div class="container">
+            <div class="infoContainer">
+                <div class="campaignDataContainer">
+                    <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
+                    <h2 id="campaignName" placeholder="Campaign name">The most awesome game</h2>                    
+                </div>
+                <div class="campaignDataContainer">
+                    <img id="campaignDateBanner"  src="/static/images/DateBanner.png">
+                    <h2 id="campaignDate">01-01-0001</h2>
+                </div>
+            </div>
+            <div id="levelInfoContainer">
+                <label id="actDisplay">Act 1</label>
 
+            </div>
         </div>
     </body>
 
