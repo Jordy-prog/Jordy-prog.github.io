@@ -4,6 +4,10 @@
 - Implement Form -> Download JSON (Page 1)
 - Upload Form -> Display nicely (Page 2)
 
+# General
+- Write modal generating functions based on filenames
+- 
+
 # Page 1 (Writer)
 - Add sts checkboxes next to relic/card names and replace with checked versions when selected?
 - Create Scroll popup
@@ -11,3 +15,5 @@
 - Add actual JS?
 - Add Coin slider too? what are max. coins
 - Fix 1 px difference in enabledOption button and Save Button
+
+
