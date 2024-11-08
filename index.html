@@ -78,6 +78,15 @@
                         <span class="container-placeholder">No boss relics yet...</span>
                     </div>
                 </div>
+                <div id="skippedPotionsContainer" class="container item-container open-modal-btn" data-target="skippedPotionsModal">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Potions</span>
+                    </div>
+                    <div class="container-body">
+                        <span class="container-placeholder">No potions yet...</span>
+                    </div>
+                </div>
                 <button id="download" 
                         onclick="downloadSaveState()"
                         onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
@@ -625,7 +634,311 @@
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
+                <div id="skippedPotionsModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="modal-title">Skipped Potions</span>
+                            <img class="close-modal-btn" data-close="skippedPotionsModal" height="50" src="/static/images/close_button.png">
+                        </div>
+                        <div class="modal-body item-grid">
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="potion-image" src="/static/images/potions/ambrosia.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Ambrosia</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/ancient_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Ancient Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/attack_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Attack Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/blessing_of_the_forge.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Blessing of the Forge</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/block_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Block Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/blood_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Blood Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/bottled_miracle.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Bottled Miracle</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/colorless_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Colorless Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/cultist_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Cultist Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/cunning_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Cunning Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/dexterity_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Dexterity Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/distilled_chaos.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Distilled Chaos</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/duplication_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Duplication Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/elixir.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Elixir</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/energy_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Energy Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/entropic_brew.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Entropic Brew</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/essence_of_darkness.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Essence of Darkness</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/essence_of_steel.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Essence of Steel</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/explosive_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Explosive Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/fairy_in_a_bottle.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Fairy in a Bottle</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/fear_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Fear Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/fire_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Fire Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/focus_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Focus Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/fruit_juice.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Fruit Juice</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/gambler's_brew.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Gambler's Brew</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/ghost_in_a_jar.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Ghost in a Jar</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/heart_of_iron.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Heart of Iron</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/liquid_bronze.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Liquid Bronze</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/liquid_memories.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Liquid Memories</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/poison_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Poison Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/potion_of_capacity.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Potion of Capacity</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/power_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Power Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/regen_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Regen Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/skill_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Skill Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/smoke_bomb.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Smoke Bomb</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/snecko_oil.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Snecko Oil</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/speed_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Speed Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/stance_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Stance Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/flex_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Flex Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/strength_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Strength Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/swift_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Swift Potion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedPotionsContainer">
+                                <img class="item-image" src="/static/images/potions/weak_potion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Weak Potion</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

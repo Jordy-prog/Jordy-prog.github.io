@@ -566,6 +566,15 @@ input[type="range"]::-ms-thumb {
     border-radius: 7px;
 }
 
+.potion-image {
+    width: 20%;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px solid wheat;
+    box-shadow: 0 0 10px black;
+    border-radius: 7px;
+}
+
 .item-image.active {
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px wheat;
