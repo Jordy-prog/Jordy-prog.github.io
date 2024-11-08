@@ -597,6 +597,16 @@ input[type="range"]::-ms-thumb {
     height: 50px;
 }
 
+/* All varying labels */
+
+#skippedRelicsContainer .containerLabelImage {
+    filter: hue-rotate(176deg);
+}
+
+#skippedBossRelicsContainer .containerLabelImage {
+    filter: hue-rotate(308deg);
+}
+
 .containerLabel {
     position: absolute;
     top: 12px;

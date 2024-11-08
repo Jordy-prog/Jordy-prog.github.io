@@ -69,6 +69,15 @@
                         <span class="container-placeholder">No relics yet...</span>
                     </div>
                 </div>
+                <div id="skippedBossRelicsContainer" class="container item-container open-modal-btn" data-target="skippedBossRelicsModal">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Boss Relics</span>
+                    </div>
+                    <div class="container-body">
+                        <span class="container-placeholder">No boss relics yet...</span>
+                    </div>
+                </div>
                 <button id="download" 
                         onclick="downloadSaveState()"
                         onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
@@ -82,7 +91,7 @@
                 <div id="skippedRelicsModal" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <span class="modal-title">Relics</span>
+                            <span class="modal-title">Skipped Relics</span>
                             <img class="close-modal-btn" data-close="skippedRelicsModal" height="50" src="/static/images/close_button.png">
                         </div>
                         <div class="modal-body item-grid">
@@ -474,6 +483,149 @@
                         </div>
                     </div>
                 </div>
+                <div id="skippedBossRelicsModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="modal-title">Skipped Boss Relics</span>
+                            <img class="close-modal-btn" data-close="skippedBossRelicsModal" height="50" src="/static/images/close_button.png">
+                        </div>
+                        <div class="modal-body item-grid">
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/astrolabe.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Astrolabe</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/battery.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Nuclear Battery</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/bell.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Calling Bell</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/blackBlood.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Black Blood</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/coffeeDripper.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Coffee Dripper</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/ectoplasm.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Ectoplasm</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/cage.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Empty Cage</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/enchiridion.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Enchiridion</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/eternal_feather.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Eternal Feather</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/fusionHammer.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Fusion Hammer</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/orrery.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Orrery</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/pandoras_box.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Pandora's Box</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/serpent_ring.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Ring of the Serpent</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/sneckoEye.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Snecko Eye</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/sozu.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Sozu</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/threadAndNeedle.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Thread and Needle</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/tinyHouse.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Tiny House</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/whiteBeast.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">White Beast Statue</span>
+                                </div>
+                            </div>
+                            <div class="item" data-copy-target="skippedBossRelicsContainer">
+                                <img class="item-image" src="/static/images/boss_relics/wristBlade.png">
+                                <div class="item-footer">
+                                    <img class="item-checkbox" src="/static/images/tickbox_unticked.png">
+                                    <span class="item-label">Wrist Blade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
             </div>
         </div>
 
