@@ -78,32 +78,32 @@
                         <span class="container-placeholder">No boss relics yet...</span>
                     </div>
                 </div>
-                <div id="skippedPotionsContainer" class="container item-container open-modal-btn" data-target="skippedPotionsModal">
+                <div id="skippedPotionsContainer" class="container card-container open-modal-btn" data-target="skippedPotionsModal">
                     <div class="containerHeader">
                         <img class="containerLabelImage" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Potions</span>
                     </div>
-                    <div class="container-body">
+                    <ul class="container-body">
                         <span class="container-placeholder">No potions yet...</span>
-                    </div>
+                    </ul>
                 </div>
-                <div id="skippedCursesContainer" class="container item-container open-modal-btn" data-target="skippedCursesModal">
+                <div id="skippedCursesContainer" class="container card-container open-modal-btn" data-target="skippedCursesModal">
                     <div class="containerHeader">
                         <img class="containerLabelImage" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Curses</span>
                     </div>
-                    <div class="container-body">
+                    <ul class="container-body">
                         <span class="container-placeholder">No curses yet...</span>
-                    </div>
+                    </ul>
                 </div>
-                <div id="skippedColorlessContainer" class="container item-container open-modal-btn" data-target="skippedColorlessModal">
+                <div id="skippedColorlessContainer" class="container card-container open-modal-btn" data-target="skippedColorlessModal">
                     <div class="containerHeader">
                         <img class="containerLabelImage" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Colorless</span>
                     </div>
-                    <div class="container-body">
+                    <ul class="container-body">
                         <span class="container-placeholder">No colorless cards yet...</span>
-                    </div>
+                    </ul>
                 </div>
                 <button id="download" 
                         onclick="downloadSaveState()"
@@ -682,42 +682,42 @@
                             <img class="close-modal-btn" data-close="skippedCursesModal" height="50" src="/static/images/close_button.png">
                         </div>
                         <ul class="modal-body card-list">
-                            <li class="card-list-item" data-copy-target="skippedCursesContainer">
+                            <li id="master_of_strategy" class="card-list-item" data-copy-target="skippedCursesContainer">
                                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
-                                <span class="card-label">Master Of Strategy+</span>
+                                <span class="card-label">Master Of Strategy</span>
                                 <img class="card-upgrade" src="/static/images/upgrade.png">
                                 <div class="flex-spacer"></div>
                                 <img class="card-image" src="/static/images/cards/curses/clumsy.png">
                             </li>
-                            <li class="card-list-item" data-copy-target="skippedCursesContainer">
-                                <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
-                                <span class="card-label">Strike</span>
-                                <img class="card-upgrade" src="/static/images/upgrade.png">
-                                <div class="flex-spacer"></div>
-                                <img class="card-image" src="/static/images/cards/curses/clumsy.png">
-                            </li>
-                            <li class="card-list-item" data-copy-target="skippedCursesContainer">
+                            <li id="strike1" class="card-list-item" data-copy-target="skippedCursesContainer">
                                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                                 <span class="card-label">Strike</span>
                                 <img class="card-upgrade" src="/static/images/upgrade.png">
                                 <div class="flex-spacer"></div>
                                 <img class="card-image" src="/static/images/cards/curses/clumsy.png">
                             </li>
-                            <li class="card-list-item" data-copy-target="skippedCursesContainer">
+                            <li id="strike2" class="card-list-item" data-copy-target="skippedCursesContainer">
                                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                                 <span class="card-label">Strike</span>
                                 <img class="card-upgrade" src="/static/images/upgrade.png">
                                 <div class="flex-spacer"></div>
                                 <img class="card-image" src="/static/images/cards/curses/clumsy.png">
                             </li>
-                            <li class="card-list-item" data-copy-target="skippedCursesContainer">
+                            <li id="strike3" class="card-list-item" data-copy-target="skippedCursesContainer">
                                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                                 <span class="card-label">Strike</span>
                                 <img class="card-upgrade" src="/static/images/upgrade.png">
                                 <div class="flex-spacer"></div>
                                 <img class="card-image" src="/static/images/cards/curses/clumsy.png">
                             </li>
-                            <li class="card-list-item" data-copy-target="skippedCursesContainer">
+                            <li id="strike4" class="card-list-item" data-copy-target="skippedCursesContainer">
+                                <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
+                                <span class="card-label">Strike</span>
+                                <img class="card-upgrade" src="/static/images/upgrade.png">
+                                <div class="flex-spacer"></div>
+                                <img class="card-image" src="/static/images/cards/curses/clumsy.png">
+                            </li>
+                            <li id="strike5" class="card-list-item" data-copy-target="skippedCursesContainer">
                                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                                 <span class="card-label">Strike</span>
                                 <img class="card-upgrade" src="/static/images/upgrade.png">

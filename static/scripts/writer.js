@@ -203,3 +203,98 @@ function removeItem(item, container) {
         container.removeChild(selectedItem);
     }
 }
+
+// Card/Potion Modal and Container Functions
+const cards = document.querySelectorAll('.card-list-item')
+
+cards.forEach(card => {
+    const container = document.getElementById(card.getAttribute('data-copy-target')).querySelector('.container-body')
+
+    card.addEventListener('click', () => {
+        const checkbox = card.querySelector('.card-checkbox')
+        if (isTicked(checkbox)) {
+            checkbox.src = '/static/images/tickbox_unticked.png'
+            removeCard(card, container);
+        } else {
+            checkbox.src = '/static/images/tickbox_ticked.png'
+            addCard(card, container);
+        }
+    })
+})
+
+function addCard(card, container) {
+    const placeholder = container.querySelector('.container-placeholder')
+    if (placeholder) {
+        container.removeChild(placeholder);
+    }
+
+    const clonedItem = card.cloneNode(true);
+    const cardId = card.getAttribute('id');
+    clonedItem.setAttribute('id', cardId + 'container')
+
+    let checkbox = clonedItem.querySelector('.card-checkbox');
+    clonedItem.removeChild(checkbox);
+
+    let upgradeButton = clonedItem.querySelector('.card-upgrade');
+
+    if (upgradeButton) {
+        upgradeButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+    
+            const card = upgradeButton.parentElement;
+            const label = card.querySelector('.card-label');
+            
+            if (label.textContent.includes('+')) {
+                demoteCard(card);
+            } else {
+                upgradeCard(card);
+            }
+        })    
+    }
+    
+    clonedItem.style.paddingLeft = '7px';
+    container.appendChild(clonedItem);
+}
+
+function removeCard(card, container) {
+    const containerCardId = card.getAttribute('id') + 'container';
+    const selectedItem = document.getElementById(containerCardId);
+    container.removeChild(selectedItem);
+}
+
+const upgradeButtons = document.querySelectorAll('.card-upgrade');
+
+upgradeButtons.forEach(upgradeButton => {
+    upgradeButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        const card = upgradeButton.parentElement;
+        const label = card.querySelector('.card-label');
+        
+        if (label.textContent.includes('+')) {
+            demoteCard(card);
+        } else {
+            upgradeCard(card);
+        }
+    })
+})
+
+function upgradeCard(card) {
+    let label = card.querySelector('.card-label');
+    label.textContent = label.textContent + '+';
+    label.style.color = '#7cf901';
+
+    let img = card.querySelector('.card-upgrade');
+    img.style.filter = 'hue-rotate(220deg)';
+    img.style.transform = 'scaleX(-1)';
+}
+
+function demoteCard(card) {
+    let label = card.querySelector('.card-label');
+    label.textContent = label.textContent.slice(0, -1);
+    label.style.color = 'wheat';
+
+    let img = card.querySelector('.card-upgrade');
+    img.style.filter = 'none';
+    img.style.transform = 'scaleX(1)';
+}
