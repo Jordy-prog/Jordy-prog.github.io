@@ -243,13 +243,13 @@ function addCard(card, container) {
         upgradeButton.addEventListener('click', (event) => {
             event.stopPropagation();
     
-            const card = upgradeButton.parentElement;
-            const label = card.querySelector('.card-label');
+            const containerCard = upgradeButton.parentElement;
+            const label = containerCard.querySelector('.card-label');
             
             if (label.textContent.includes('+')) {
-                demoteCard(card);
+                demoteCards([card, containerCard]);
             } else {
-                upgradeCard(card);
+                upgradeCards([card, containerCard]);
             }
         })    
     }
@@ -265,39 +265,42 @@ function removeCard(card, container) {
     container.removeChild(selectedItem);
 }
 
-const upgradeButtons = document.querySelectorAll('.card-upgrade');
+const modalUpgradeButtons = document.querySelectorAll('.card-upgrade');
 
-upgradeButtons.forEach(upgradeButton => {
+modalUpgradeButtons.forEach(upgradeButton => {
     upgradeButton.addEventListener('click', (event) => {
         event.stopPropagation();
 
         const card = upgradeButton.parentElement;
         const label = card.querySelector('.card-label');
+        const containerCard = document.getElementById(card.getAttribute('id') + 'container')
         
         if (label.textContent.includes('+')) {
-            demoteCard(card);
+            demoteCards([card, containerCard]);
         } else {
-            upgradeCard(card);
+            upgradeCards([card, containerCard]);
         }
     })
 })
 
-function upgradeCard(card) {
-    let label = card.querySelector('.card-label');
-    label.textContent = label.textContent + '+';
-    label.style.color = '#7cf901';
-
-    let img = card.querySelector('.card-upgrade');
-    img.style.filter = 'hue-rotate(220deg)';
-    img.style.transform = 'scaleX(-1)';
+function upgradeCards(cards) {
+    cards.forEach(card => {
+        if (card) {
+            let label = card.querySelector('.card-label');
+            label.textContent = label.textContent + '+';
+        
+            card.classList.add('upgraded');
+        }
+    });
 }
 
-function demoteCard(card) {
-    let label = card.querySelector('.card-label');
-    label.textContent = label.textContent.slice(0, -1);
-    label.style.color = 'wheat';
-
-    let img = card.querySelector('.card-upgrade');
-    img.style.filter = 'none';
-    img.style.transform = 'scaleX(1)';
+function demoteCards(cards) {
+    cards.forEach(card => {
+        if (card) {
+            let label = card.querySelector('.card-label');
+            label.textContent = label.textContent.slice(0, -1);
+        
+            card.classList.remove('upgraded');
+        }
+    });
 }

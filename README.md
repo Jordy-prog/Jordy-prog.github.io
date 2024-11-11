@@ -14,7 +14,6 @@
 - Write modal generating functions based on filenames
  - Made it a python script cause javascript can't access the image folders :D...
 - Amount of potions varies? Check in real game
-- Sync the upgrading of cards in container with the modal
 
 # Page 2 (Reader)
 - Add JS function that reads in all filepaths for images to compare with item names for correct display

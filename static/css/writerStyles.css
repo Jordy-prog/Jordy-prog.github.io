@@ -650,6 +650,15 @@ input[type="range"]::-ms-thumb {
     box-sizing: border-box;
 }
 
+.upgraded .card-label {
+    color: #7cf901;
+}
+
+.upgraded .card-upgrade {
+    filter: hue-rotate(220deg);
+    transform: scaleX(-1);
+}
+
 
 
 
