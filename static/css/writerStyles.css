@@ -640,7 +640,7 @@ input[type="range"]::-ms-thumb {
 }
 
 .card-list-item.rare-card {
-    background-color: rgb(233, 186, 72, 0.7);
+    background-color: rgba(233, 186, 72, 0.7);
 }
 
 .card-list-item.curses-card {
@@ -734,19 +734,19 @@ input[type="range"]::-ms-thumb {
 }
 
 .removedTag {
-
+    filter: brightness(0) saturate(100%) invert(27%) sepia(18%) saturate(2940%) hue-rotate(320deg) brightness(86%) contrast(82%);
 }
 
 .deckTag {
-    
+    filter: brightness(0) saturate(100%) invert(43%) sepia(63%) saturate(364%) hue-rotate(62deg) brightness(90%) contrast(86%);
 }
 
 .rareDeckTag {
-    
+    filter: brightness(0) saturate(100%) invert(41%) sepia(89%) saturate(387%) hue-rotate(5deg) brightness(96%) contrast(91%);
 }
 
 .skippedRareTag {
-    
+    filter: brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1696%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
 /* Container styling */
