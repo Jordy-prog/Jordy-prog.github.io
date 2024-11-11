@@ -2,9 +2,19 @@ function toggleActiveChar(element) {
     var nav = document.getElementById("formNav")
     var images = nav.querySelectorAll("img")
     images.forEach(img => {
-        img.classList.remove("active")
+        if (img.classList.contains('active')) {
+            img.classList.remove("active")
+
+            // Hide current content
+            const prevId = img.getAttribute('id').replace('Nav', '');
+            document.getElementById(prevId).style.display = 'none';
+        }
     });
     element.classList.add("active")
+
+    // Show new content
+    const newId = element.getAttribute('id').replace('Nav', '');
+    document.getElementById(newId).style.display = 'flex';
 }
 
 function toggleActiveAct(element) {
@@ -188,20 +198,20 @@ function addItem(item, container) {
 
     const clonedItem = item.cloneNode(true);
     clonedItem.classList.add('preview')
+
+    const itemId = item.getAttribute('id');
+    clonedItem.setAttribute('id', itemId + 'container')
+
     let checkbox = clonedItem.querySelector('.item-checkbox');
     clonedItem.querySelector('.item-footer').removeChild(checkbox);
+
     container.appendChild(clonedItem);
 }
 
 function removeItem(item, container) {
-    const itemLabel = item.querySelector('.item-label').textContent;
-    const selectedItem = Array.from(container.children).find(
-        el => el.querySelector('.item-label').textContent === itemLabel
-    );
-
-    if (selectedItem) {
-        container.removeChild(selectedItem);
-    }
+    const containerItemId = item.getAttribute('id') + 'container';
+    const selectedItem = document.getElementById(containerItemId);
+    container.removeChild(selectedItem);
 }
 
 // Card/Potion Modal and Container Functions
