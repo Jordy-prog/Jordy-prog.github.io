@@ -82,6 +82,10 @@ div:focus, div:active, button:focus, button:active {
     margin-right: auto;
 
     max-width: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Nav Styles */
@@ -121,6 +125,10 @@ div:focus, div:active, button:focus, button:active {
     }
 }
 
+#ironclad, #silent, #defect, #watcher {
+    display: none;
+}
+
 /* Form Styles */
 .formContainer {
     display: flex;
@@ -133,6 +141,9 @@ div:focus, div:active, button:focus, button:active {
     font-size: 1rem;
     background-color: black;
     color: wheat;
+    text-align: center;
+    width: 60%;
+    align-self: center;
 
     background-image: url("/static/images/nameBox.png");
     background-size: cover; /* Cover the entire input field */
@@ -616,8 +627,28 @@ input[type="range"]::-ms-thumb {
 }
 
 .card-list-item.active {
-    background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px wheat inset;
+    filter: brightness(1.1);
+}
+
+.card-list-item.common-card {
+    background-color: rgb(156, 156, 156, 0.7);
+}
+
+.card-list-item.uncommon-card {
+    background-color: rgb(86, 175, 191, 0.7);
+}
+
+.card-list-item.rare-card {
+    background-color: rgb(233, 186, 72, 0.7);
+}
+
+.card-list-item.curses-card {
+    background-color: rgb(46, 44, 44, 0.7);
+}
+
+.card-list-item.colorless-card {
+    background-color: rgb(87, 87, 87, 0.7);
 }
 
 .flex-spacer {
@@ -628,12 +659,18 @@ input[type="range"]::-ms-thumb {
 .card-upgrade {
     height: 50px;
     padding: 7px;
+    padding-left: 0px;
+    padding-right: 0px;
     box-sizing: border-box;
     transition: transform 0.5s ease, filter 0s;
     transition-delay: 0s, 0.2s;
     transition-property: transform, filter;
     transform-origin: center;
     cursor: cell;
+}
+
+.card-label {
+    padding-left: 10px;
 }
 
 .card-image {
@@ -650,7 +687,14 @@ input[type="range"]::-ms-thumb {
     box-sizing: border-box;
 }
 
+.upgraded .card-label {
+    color: #7cf901;
+}
 
+.upgraded .card-upgrade {
+    filter: hue-rotate(220deg);
+    transform: scaleX(-1);
+}
 
 
 /* Relic Container Styling */
@@ -669,24 +713,40 @@ input[type="range"]::-ms-thumb {
 
 /* All varying container labels */
 
-#skippedRelicsContainer .containerLabelImage {
+.relicTag {
     filter: brightness(0) saturate(100%) invert(38%) sepia(49%) saturate(519%) hue-rotate(127deg) brightness(92%) contrast(94%);
 }
 
-#skippedBossRelicsContainer .containerLabelImage {
+.bossRelicTag {
     filter: brightness(0) saturate(100%) invert(25%) sepia(40%) saturate(1509%) hue-rotate(266deg) brightness(92%) contrast(90%);
 }
 
-#skippedPotionsContainer .containerLabelImage {
+.potionTag {
     filter: brightness(0) saturate(100%) invert(46%) sepia(100%) saturate(344%) hue-rotate(337deg) brightness(89%) contrast(97%);
 }
 
-#skippedCursesContainer .containerLabelImage {
+.curseTag {
     filter: brightness(0) saturate(100%) invert(7%) sepia(1%) saturate(2887%) hue-rotate(315deg) brightness(87%) contrast(74%);
 }
 
-#skippedColorlessContainer .containerLabelImage {
+.colorlessTag {
     filter: brightness(0) saturate(100%) invert(53%) sepia(3%) saturate(446%) hue-rotate(300deg) brightness(90%) contrast(82%);
+}
+
+.removedTag {
+
+}
+
+.deckTag {
+    
+}
+
+.rareDeckTag {
+    
+}
+
+.skippedRareTag {
+    
 }
 
 /* Container styling */
