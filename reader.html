@@ -26,13 +26,33 @@
                     <h2 id="campaignName" placeholder="Campaign name">The most awesome game</h2>                    
                 </div>
                 <div class="campaignDataContainer">
-                    <img id="campaignDateBanner"  src="/static/images/DateBanner.png">
+                    <img id="campaignDateBanner"  src="/static/images/BannerDate.png">
                     <h2 id="campaignDate">01-01-0001</h2>
                 </div>
             </div>
             <div id="levelInfoContainer">
-                <label id="actDisplay">Act 1</label>
-
+                <div id="settingsContainer">
+                    <label id="actDisplay">Act 1</label>
+                    <label id="ascDisplay">Ascension 0</label>
+                </div>
+                <div id="keyContainer">
+                    <div id="keyGreenContainerWrapper">
+                        <div id="keyGreenContainer" onclick="toggleKeyGlow('keyGreenGlow')">
+                            <img id="keyGreen" src="/static/images/lock_green3.png">
+                            <img id="keyGreenGlow" class="glow" src="/static/images/glow_green3.png">
+                        </div>
+                    </div>
+                    <div id="keyBlueRedContainerWrapper">
+                        <div id="keyRedContainer" onclick="toggleKeyGlow('keyRedGlow')">
+                            <img id="keyRed" src="/static/images/lock_red3.png">
+                            <img id="keyRedGlow" class="glow" src="/static/images/glow_red3.png">
+                        </div>
+                        <div id="keyBlueContainer" onclick="toggleKeyGlow('keyBlueGlow')">
+                            <img id="keyBlue" src="/static/images/lock_blue3.png">
+                            <img id="keyBlueGlow" class="glow" src="/static/images/glow_blue3.png">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
