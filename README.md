@@ -11,10 +11,7 @@
 # Page 1 (Writer)
 - Add actual JS to build json
 - Fix 1 px difference in enabledOption button and Save Button, compared to their active versions
-- Write modal generating functions based on filenames
- - Made it a python script cause javascript can't access the image folders :D...
 - Amount of potions varies? Check in real game
-- Change Background in card modal based on rarity
 
 # Page 2 (Reader)
 - Add JS function that reads in all filepaths for images to compare with item names for correct display
