@@ -54,7 +54,7 @@ def generateCardModalItems(folders, container_id, upgrade=True):
     result = '''\t\t<ul class="modal-body card-list">\n'''
 
     for name, imagePath in info:
-        amount = 2 if ('/common/' in imagePath or '/curses/' in imagePath) and not 'decay' in imagePath else 1
+        amount = 2 if ('/common/' in imagePath or name in ['Clumsy', 'Regret', 'Parasite', 'Injury']) else 1
         rarity = imagePath.split('/')[-2] + '-card'
 
         for i in range(amount):
