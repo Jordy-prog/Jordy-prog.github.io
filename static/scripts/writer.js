@@ -214,9 +214,11 @@ cards.forEach(card => {
         const checkbox = card.querySelector('.card-checkbox')
         if (isTicked(checkbox)) {
             checkbox.src = '/static/images/tickbox_unticked.png'
+            card.classList.remove('active');
             removeCard(card, container);
         } else {
             checkbox.src = '/static/images/tickbox_ticked.png'
+            card.classList.add('active');
             addCard(card, container);
         }
     })
@@ -253,6 +255,7 @@ function addCard(card, container) {
     }
     
     clonedItem.style.paddingLeft = '7px';
+    clonedItem.classList.remove('active');
     container.appendChild(clonedItem);
 }
 
