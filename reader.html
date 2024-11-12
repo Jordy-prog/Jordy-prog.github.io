@@ -5,13 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Save The Spire!</title>
         <link rel="stylesheet" type="text/css" href="static/css/readerStyles.css">
+        <link rel="stylesheet" type="text/css" href="static/css/writerStyles.css">
         <link rel="shortcut icon" type="image/png" href="static/images/enchiridion.ico"/>
     </head>
     <body>
         <div id="logoContainer">
             <img id="logo" src="/static/images/SaveTheLogo.png">
         </div>
-        <img id="merchantHand" src="static/images/merchantHand.png">
+        <nav id="functionNav">
+            <button class="fancyButton" 
+                    onclick="window.location.href='index.html'"
+                    onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
+                    onmouseout="toggleButton(this, '/static/images/endTurnButton.png')">
+                <img src="/static/images/endTurnButton.png">
+                <span>Writer</span>
+            </button>
+            <button class="fancyButton" 
+                    onclick="window.location.href='reader.html'"
+                    >
+                <img src="/static/images/endTurnButtonGlow.png">
+                <span>Reader</span>
+            </button>
+        </nav>
         <nav id="formNav">
             <img class="active" onclick="toggleActive(this)" src="static/images/generalButton.png">
             <img onclick="toggleActive(this)" src="static/images/ironcladButton.png">
@@ -19,7 +34,8 @@
             <img onclick="toggleActive(this)" src="static/images/defectButton.png">
             <img onclick="toggleActive(this)" src="static/images/watcherButton.png">
         </nav>
-        <div class="container">
+        <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
+        <div class="wrapper">
             <div class="infoContainer">
                 <div class="campaignDataContainer">
                     <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
@@ -66,7 +82,8 @@
         </div>
     </body>
 
-    <script src="static/scripts/reader.js"></script>
+    <script src="static/scripts/reader.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
 </html>
 
 
