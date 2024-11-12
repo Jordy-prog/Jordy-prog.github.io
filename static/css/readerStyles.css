@@ -116,14 +116,18 @@ div:focus, div:active, button:focus, button:active {
     font-family: inherit; /* Inherit the font-family from the body */
     margin: 0px;
 }
+
 /* Campaign Name and Date Styling */
 .campaignDataContainer {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 #campaignNameBanner {
     width:100%;
 }
+
 #campaignName {
     position: absolute;
     top: 38%;
@@ -138,8 +142,7 @@ div:focus, div:active, button:focus, button:active {
 }
 
 #campaignDateBanner {    
-    width:40%;
-    margin-left:30%;
+    width: 40%;
 }
 
 
@@ -156,6 +159,10 @@ div:focus, div:active, button:focus, button:active {
 
 /* Media query for very small screens */
 @media (max-width: 480px) {
+    #campaignDateBanner {
+        width: 60%;
+    }
+
     #campaignName {
         font-size: 0.8rem; /* Even smaller font size */
         top: 36%;
@@ -213,7 +220,8 @@ div:focus, div:active, button:focus, button:active {
     background-size: cover;
     background-repeat: no-repeat;
 }
-* Keys Styling */
+
+/* Keys Styling */
 
 #keyContainer {
     display: grid;
