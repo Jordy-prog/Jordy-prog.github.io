@@ -96,15 +96,19 @@ div:focus, div:active, button:focus, button:active {
 
 /*Info tabs styling*/
 /* Apply the same font-family to all form elements */
-.container {
+.wrapper {
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-left: auto;
     margin-right: auto;
 
     max-width: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .infoContainer {
     display: flex;
@@ -178,7 +182,6 @@ div:focus, div:active, button:focus, button:active {
     color: wheat;
     font-size: 2rem;
     font-weight: bold;
-    cursor: pointer;
     
     transition: all 0.1s ease-in-out;
     border: 2px solid silver;
@@ -193,12 +196,12 @@ div:focus, div:active, button:focus, button:active {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 #ascDisplay {
     padding: 10px;
     color: rgb(255, 58, 58);
     font-size: 2rem;
     font-weight: bold;
-    cursor: pointer;
     
     transition: all 0.1s ease-in-out;
     border: 2px solid darkred;
@@ -213,7 +216,8 @@ div:focus, div:active, button:focus, button:active {
     background-size: cover;
     background-repeat: no-repeat;
 }
-* Keys Styling */
+
+/* Keys Styling */
 
 #keyContainer {
     display: grid;
