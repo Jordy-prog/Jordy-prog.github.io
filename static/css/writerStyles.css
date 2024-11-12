@@ -22,6 +22,7 @@ body {
 
     font-family: Kreon, sans-serif;
     overflow-x: hidden;
+    margin: 0;
 }
 
 /* Apply the same font-family to all form elements */
@@ -72,18 +73,34 @@ div:focus, div:active, button:focus, button:active {
 }
 
 
-.container {
+.wrapper {
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-left: auto;
     margin-right: auto;
 
     max-width: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Nav Styles */
+
+#functionNav {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    padding: 20px;
+}
+
+#functionNav .fancyButton {
+    width: 150px;
+    min-width: 150px;
+}
 
 #formNav {
     display: flex;
@@ -110,7 +127,7 @@ div:focus, div:active, button:focus, button:active {
 }
 
 #formNav img.active {
-    box-shadow: 0px 0px 20px 3px yellow;
+    box-shadow: 0px 0px 20px 3px wheat;
 }
 
 @media (min-width: 768px) {
@@ -118,6 +135,10 @@ div:focus, div:active, button:focus, button:active {
         justify-content: center;
         gap: 40px;
     }
+}
+
+#ironclad, #silent, #defect, #watcher {
+    display: none;
 }
 
 /* Form Styles */
@@ -132,6 +153,9 @@ div:focus, div:active, button:focus, button:active {
     font-size: 1rem;
     background-color: black;
     color: wheat;
+    text-align: center;
+    width: 60%;
+    align-self: center;
 
     background-image: url("/static/images/nameBox.png");
     background-size: cover; /* Cover the entire input field */
@@ -268,37 +292,13 @@ div:focus, div:active, button:focus, button:active {
 }
 
 @keyframes glow {
-    0% {
+    from {
         filter: brightness(0.5)
-    }
-    10% {
-        filter: brightness(0.6)
-    }
-    20% {
-        filter: brightness(0.7)
-    }
-    30% {
-        filter: brightness(0.8)
-    }
-    40% {
-        filter: brightness(0.9)
     }
     50% {
         filter: brightness(1)
     }
-    60% {
-        filter: brightness(0.9)
-    }
-    70% {
-        filter: brightness(0.8)
-    }
-    80% {
-        filter: brightness(0.7)
-    }
-    90% {
-        filter: brightness(0.6)
-    }
-    100% {
+    to {
         filter: brightness(0.5)
     }
 }
@@ -313,7 +313,6 @@ div:focus, div:active, button:focus, button:active {
 input[type="range"] {
     -webkit-appearance: none; /* Remove default styling in WebKit browsers */
     appearance: none;
-    height: 20px; /* Adjust track height */
     border: 2px solid;
     padding-left: 0px;
     padding-right: 0px;
@@ -326,8 +325,8 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none; /* Remove default thumb appearance */
     appearance: none;
     margin-top: 3px;
-    width: 30px; /* Adjust the size of the image */
-    height: 30px;
+    width: 50px; /* Adjust the size of the image */
+    height: 50px;
     background: url('/static/images/ascension.png');
     background-size: cover;
     cursor: pointer; /* Show pointer on hover */
@@ -335,8 +334,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Firefox - styling the thumb */
 input[type="range"]::-moz-range-thumb {
-    width: 30px; /* Adjust the size of the image */
-    height: 30px;
+    width: 50px; /* Adjust the size of the image */
+    height: 50px;
     background: url('/static/images/ascension.png'); /* Set your custom image */
     background-size: cover;
     cursor: pointer;
@@ -344,39 +343,65 @@ input[type="range"]::-moz-range-thumb {
 
 /* IE and Edge - styling the thumb */
 input[type="range"]::-ms-thumb {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background: url('/static/images/ascension.png');
     background-size: cover;
     cursor: pointer;
+}
+
+#ascensionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#ascensionRange {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 3px;
 }
 
 #ascensionRange:focus {
     box-shadow: 0 0 5px rgba(255, 0, 0 ,0.5) inset;
 }
 
-.inlineForm {
-    display: grid;
-    grid-template-columns: 1fr 11fr;
-    align-items: center;
+#ascensionWrapper {
+    position: relative;
+    width: 100px;
 }
 
-.inlineForm input {
-    border-start-start-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-left: 0px;
+#ascensionWrapper img {
+    width: 100%;
 }
 
-.inlineForm label {
-    display: flex;
-    background-image: url("/static/images/disabledButton.png");
-    background-size: cover;
+#ascensionLayer2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 10s linear infinite;
+}
+
+#ascensionValue {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: wheat;
-    justify-content: center;
+    font-size: 1.5rem;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Option Button Styling */
-.optionButton {
+/* .optionButton {
     position: relative;
     color: wheat;
     display: flex;
@@ -392,11 +417,11 @@ input[type="range"]::-ms-thumb {
 
 .optionButton span {
     position: absolute;
-    top: 48%; /* Move span to the vertical center */
-    left: 50%; /* Move span to the horizontal center */
-    transform: translate(-50%, -50%); /* Adjust the center point */
-    color: wheat; /* Text color */
-    font-size: 1.2rem; /* Text size */
+    top: 48%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: wheat; 
+    font-size: 1.2rem; 
     font-weight: bold;
 }
 
@@ -408,16 +433,17 @@ input[type="range"]::-ms-thumb {
     .optionButton span {
         font-size: 1rem;
     }
-}
+} */
 
 /* Download Button Styling */
 
-#download {
+.fancyButton {
     color: wheat;
     background: transparent;
     width: auto;
     display: inline-block;
     width: 180px;
+    min-width: 180px;
     align-self: center;
     position: relative;
     border: none;
@@ -425,20 +451,20 @@ input[type="range"]::-ms-thumb {
     transition: transform 0.1s ease;
 }
 
-#download:hover {
+.fancyButton:hover {
     transform: scale(1.05);
 }
 
-#download:active {
+.fancyButton:active {
     transform: scale(0.95);
 }
 
-#download img {
+.fancyButton img {
     display: block;
     width: 100%;
 }
 
-#download span {
+.fancyButton span {
     position: absolute;
     top: 50%; /* Move span to the vertical center */
     left: 50%; /* Move span to the horizontal center */
@@ -446,11 +472,13 @@ input[type="range"]::-ms-thumb {
     color: wheat; /* Text color */
     font-size: 1rem; /* Text size */
     font-weight: bold;
-    margin-top: 2px;
+    margin-top: 1px;
     padding: 5px 10px; /* Optional: padding around the text */
 }
 
 /* Modal Styling */
+
+/* Item Modal */
 .modal {
     display: none;
     position: fixed;
@@ -481,8 +509,14 @@ input[type="range"]::-ms-thumb {
 @media (max-width: 480px) {
     .modal-content {
         width: 100%;
+        min-height: 100vh;
         margin: 0px;
         border: none;
+    }
+
+    .modal-body {
+        overflow-y: scroll;
+        height: calc(100vh - 70px); /* 70px is height of header */
     }
 }
 
@@ -493,7 +527,7 @@ input[type="range"]::-ms-thumb {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0px 2px 5px black;
     padding: 5px;
     padding-left: 10px;
 }
@@ -503,16 +537,12 @@ input[type="range"]::-ms-thumb {
     color: wheat;
 }
 
-.close-modal-btn {
+.open-modal-btn, .close-modal-btn {
     cursor: pointer;
 }
 
 .close-modal-btn:hover {
     filter: brightness(1.3);
-}
-
-.modal-body {
-    padding: 10px;
 }
 
 .modal.active {
@@ -527,64 +557,161 @@ input[type="range"]::-ms-thumb {
 
 /* Relic Modal Styling */
 
-.relic-grid {
+.item-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
+    padding: 10px;
+    padding-bottom: 0;
     align-items: flex-start;
 }
 
-.relic {
+.item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
 }
 
-.relic.preview {
+.item.preview {
     width: 100px;
     min-width: 100px;
     cursor: auto;
     text-align: center;
 }
 
-.relic.preview .relic-footer {
+.item.preview .item-footer {
     justify-content: center;
 }
 
-.relic.preview .relic-image.active {
+.item.preview .item-image.active {
     box-shadow: none;
 }
 
-.relic-image {
+.item-image {
     width: 100%;
     align-self: center;
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px solid wheat;
     box-shadow: 0 0 10px black;
     border-radius: 7px;
+    box-sizing: border-box;
 }
 
-.relic-image.active {
+.item-image.active {
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px wheat;
 }
 
-.relic-footer {
+.item-footer {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.relic-label {
+.item-label, .card-label {
     color: wheat;
     font-weight: bold;
     text-shadow: 1px 1px 2px black;
 }
 
+/* Card Modal Styling */
+.card-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-list-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid wheat;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.card-list-item:first-child {
+    border: none;
+}
+
+.card-list-item.active {
+    box-shadow: 0 0 10px wheat inset;
+    filter: brightness(1.1);
+}
+
+.card-list-item.common-card {
+    background-color: rgb(156, 156, 156, 0.7);
+}
+
+.card-list-item.uncommon-card {
+    background-color: rgb(86, 175, 191, 0.7);
+}
+
+.card-list-item.rare-card {
+    background-color: rgba(233, 186, 72, 0.7);
+}
+
+.card-list-item.curses-card {
+    background-color: rgb(46, 44, 44, 0.7);
+}
+
+.card-list-item.colorless-card {
+    background-color: rgb(87, 87, 87, 0.7);
+}
+
+.flex-spacer {
+    display: flex;
+    flex-grow: 1;
+}
+
+.card-upgrade {
+    height: 50px;
+    padding: 7px;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease, filter 0s;
+    transition-delay: 0s, 0.2s;
+    transition-property: transform, filter;
+    transform-origin: center;
+    cursor: cell;
+}
+
+.card-image {
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    padding-right: 7px;
+    box-sizing: border-box;
+}
+
+.potion-image {
+    height: 50px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.card-upgrade ~ .card-label {
+    padding-left: 10px;
+}
+
+.upgraded .card-label {
+    color: #7cf901;
+}
+
+.upgraded .card-upgrade {
+    filter: hue-rotate(220deg);
+    transform: scaleX(-1);
+}
+
+
 /* Relic Container Styling */
-.relicContainer {
-    min-height: 100px;
+.container {
     background-color: rgba(0, 0, 0, 0.7);
     border: 2px solid wheat;
 }
@@ -597,15 +724,60 @@ input[type="range"]::-ms-thumb {
     height: 50px;
 }
 
+/* All varying container labels */
+
+.relicTag {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(49%) saturate(519%) hue-rotate(127deg) brightness(92%) contrast(94%);
+}
+
+.bossRelicTag {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(40%) saturate(1509%) hue-rotate(266deg) brightness(92%) contrast(90%);
+}
+
+.potionTag {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(100%) saturate(344%) hue-rotate(337deg) brightness(89%) contrast(97%);
+}
+
+.curseTag {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(1%) saturate(2887%) hue-rotate(315deg) brightness(87%) contrast(74%);
+}
+
+.colorlessTag {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(3%) saturate(446%) hue-rotate(300deg) brightness(90%) contrast(82%);
+}
+
+.removedTag {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(18%) saturate(2940%) hue-rotate(320deg) brightness(86%) contrast(82%);
+}
+
+.deckTag {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(63%) saturate(364%) hue-rotate(62deg) brightness(90%) contrast(86%);
+}
+
+.rareDeckTag {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(89%) saturate(387%) hue-rotate(5deg) brightness(96%) contrast(91%);
+}
+
+.skippedRareTag {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1696%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+/* Container styling */
+
 .containerLabel {
     position: absolute;
     top: 12px;
-    left: 10px;
+    left: 7px;
     font-size: 1.5rem;
     color: wheat;
 }
 
-.containerBody {
+.container-placeholder {
+    color: wheat;
+    font-size: 1rem;
+}
+
+.item-container .container-body {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
@@ -614,7 +786,18 @@ input[type="range"]::-ms-thumb {
     padding: 10px;
 }
 
-.containerPlaceholder {
-    color: wheat;
-    font-size: 1rem;
+.card-container .container-body {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-container .container-body .card-list-item:first-child {
+    border-top: 1px solid wheat;
+}
+
+.card-container .container-body .container-placeholder {
+    padding: 10px;
 }
