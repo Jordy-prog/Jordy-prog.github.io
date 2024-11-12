@@ -44,6 +44,21 @@ def generateRelicModalItems(folders, container_id):
     return result
 
 def generateCardModalItems(folders, container_id, upgrade=True):
+    TIMES2 = [
+        'Clumsy', 
+        'Regret', 
+        'Parasite', 
+        'Injury', 
+        'Block Potion', 
+        'Weak Potion', 
+        'Flex Potion', 
+        'Swift Potion', 
+        'Vulnerable Potion', 
+        'Fire Potion', 
+        'Explosive Potion', 
+        'Energy Potion', 
+        ]
+
     image_paths = []
 
     for folder in folders:
@@ -54,7 +69,7 @@ def generateCardModalItems(folders, container_id, upgrade=True):
     result = '''\t\t<ul class="modal-body card-list">\n'''
 
     for name, imagePath in info:
-        amount = 2 if ('/common/' in imagePath or name in ['Clumsy', 'Regret', 'Parasite', 'Injury']) else 1
+        amount = 2 if ('/common/' in imagePath or name in TIMES2) else 1
         rarity = imagePath.split('/')[-2] + '-card'
 
         for i in range(amount):
