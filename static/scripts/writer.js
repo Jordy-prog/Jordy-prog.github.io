@@ -314,3 +314,15 @@ function demoteCards(cards) {
         }
     });
 }
+
+let counter = 0;
+
+function goldCounter(direction) {
+    if (direction == "up") {
+        counter++;
+        document.getElementById("moneyCounter").innerHTML = counter;
+    } else if (direction == "down") {
+        if(counter != 0) {counter--;}
+        document.getElementById("moneyCounter").innerHTML = counter;
+    }
+}

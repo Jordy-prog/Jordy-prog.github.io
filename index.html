@@ -1078,8 +1078,33 @@
             <div id="ironclad" class="formContainer">
                 <input id="playersIronclad" class="" name="playersIronclad" placeholder="Players" type="text">
                 <!-- Health -->
-                <!-- Gold -->
+                 <div id="healthContainer">
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    <img src="static/images/heartFull.png" class="healthHeart">
 
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    <img src="static/images/heartFull.png" class="healthHeart">
+                    <img src="static/images/heartBroken.png" class="healthHeart">
+                    <img src="static/images/heartBroken.png" class="healthHeart">
+                </div>
+                <!-- Gold -->
+                 <div id="moneyContainer">
+                    <div id="moneyCoinContainer">
+                        <img src="static/images/goldCoin.png" id="goldCoin">
+                        <div id="moneyCounterContainer">
+                            <label id="moneyCounter">0</label>
+                        </div>
+                    </div>
+                    <div id="moneyChangeContainer">
+                        <input type="image" src="/static/images/moneyArrow.png" class="moneyChanger" onclick="goldCounter('up')">
+                        <input type="image" src="/static/images/moneyArrow.png" class="moneyChanger" onclick="goldCounter('down')" id="moneyDown">
+                    </div>
+                </div>
                 <!-- Containers -->
                 <div id="relicsContainerIronclad" class="container item-container open-modal-btn" data-target="relicsModalIronclad">
                     <div class="containerHeader">
