@@ -256,3 +256,38 @@ div:focus, div:active, button:focus, button:active {
     top: 0;
     left: 0;
 }
+.containerHeader {
+    position: relative;
+}
+
+.containerLabelImage {
+    height: 50px;
+}
+
+.containerLabel {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: wheat;
+}
+
+.containerBody {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+}
+
+.containerPlaceholder {
+    color: wheat;
+    font-size: 1rem;
+}
+
+.relicContainer {
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid wheat;
+}
