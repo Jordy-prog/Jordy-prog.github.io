@@ -90,6 +90,18 @@ div:focus, div:active, button:focus, button:active {
 
 /* Nav Styles */
 
+#functionNav {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    padding: 20px;
+}
+
+#functionNav .fancyButton {
+    width: 150px;
+    min-width: 150px;
+}
+
 #formNav {
     display: flex;
     justify-content: space-around;
@@ -425,12 +437,13 @@ input[type="range"]::-ms-thumb {
 
 /* Download Button Styling */
 
-#download {
+.fancyButton {
     color: wheat;
     background: transparent;
     width: auto;
     display: inline-block;
     width: 180px;
+    min-width: 180px;
     align-self: center;
     position: relative;
     border: none;
@@ -438,20 +451,20 @@ input[type="range"]::-ms-thumb {
     transition: transform 0.1s ease;
 }
 
-#download:hover {
+.fancyButton:hover {
     transform: scale(1.05);
 }
 
-#download:active {
+.fancyButton:active {
     transform: scale(0.95);
 }
 
-#download img {
+.fancyButton img {
     display: block;
     width: 100%;
 }
 
-#download span {
+.fancyButton span {
     position: absolute;
     top: 50%; /* Move span to the vertical center */
     left: 50%; /* Move span to the horizontal center */
@@ -459,7 +472,7 @@ input[type="range"]::-ms-thumb {
     color: wheat; /* Text color */
     font-size: 1rem; /* Text size */
     font-weight: bold;
-    margin-top: 2px;
+    margin-top: 1px;
     padding: 5px 10px; /* Optional: padding around the text */
 }
 
