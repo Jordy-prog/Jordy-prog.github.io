@@ -1,4 +1,15 @@
-function toggleActive(element) {
+document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
+
+function loadJsonFile() {
+    const jsonInput = document.getElementById('jsonInput');
+    console.log(jsonInput.files[0]);
+    
+    document.getElementById("mainPage").style.visibility = 'visible';
+    document.getElementById("jsonGetDiv").style.visibility = 'hidden';
+    
+}
+  
+  function toggleActive(element) {
     var nav = document.getElementById("formNav")
     var images = nav.querySelectorAll("img")
     images.forEach(img => {
@@ -6,13 +17,6 @@ function toggleActive(element) {
     });
     element.classList.add("active")
 }
-
-function loadJson() {
-
-    var json = JSON.parse()
-    
-}
-
 
 
 /*     "Ironclad": {
