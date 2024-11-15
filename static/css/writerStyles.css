@@ -433,6 +433,7 @@ input[type="range"]::-ms-thumb {
 }
 .healthHeart {
     width: 10%;
+    cursor: pointer;
 }
 /* Money Input Styling */
 #moneyContainer {

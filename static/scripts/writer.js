@@ -315,6 +315,50 @@ function demoteCards(cards) {
     });
 }
 
+// Health
+let healthContainer = document.getElementById('healthContainer');
+let hearts = Array.from(healthContainer.children);
+let lockedHearts = [];
+
+healthContainer.addEventListener('mouseout', emptyHearts);
+
+hearts.forEach(heart => {
+    heart.addEventListener('mouseover', () => {
+        fillHearts(heart);
+    })
+
+    heart.addEventListener('click', () => {
+        lockHearts(heart);
+    })
+});
+
+function emptyHearts() {
+    hearts.forEach(heart => {
+        if (!lockedHearts.includes(heart)) {
+            heart.src = "static/images/heartBroken.png";
+        }
+    });
+}
+
+function fillHearts(heart) {
+    let max = hearts.findIndex(x => x === heart);
+
+    for (let index = 0; index <= max; index++) {
+        let element = hearts[index];
+        element.src = "static/images/heartFull.png";
+    }
+}
+
+function lockHearts(heart) {
+    lockedHearts = [];
+    let max = hearts.findIndex(x => x === heart);
+
+    for (let index = 0; index <= max; index++) {
+        let element = hearts[index];
+        lockedHearts.push(element);
+    }
+}
+
 // Gold counter
 
 let counter = 0;
