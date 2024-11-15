@@ -1077,34 +1077,63 @@
             </div>
             <div id="ironclad" class="formContainer">
                 <input id="playersIronclad" class="" name="playersIronclad" placeholder="Players" type="text">
-                <!-- Health -->
-                 <div id="healthContainer">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
 
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
-                    <img src="static/images/heartBroken.png" class="healthHeart">
+                <!-- Health -->
+                <div id="healthContainerIronclad" class="healthContainer">
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">1</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">2</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">3</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">4</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">5</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">6</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">7</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">8</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">9</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">10</label>
+                    </div>
                 </div>
+
                 <!-- Gold -->
-                 <div id="moneyContainer">
-                    <div id="moneyCoinContainer">
-                        <img src="static/images/goldCoinOrb.png" id="goldCoin">
-                        <div id="moneyCounterContainer">
-                            <label id="moneyCounter">0</label>
-                        </div>
+                <div id="goldContainerIronclad" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label class="goldCounter">0</label>
                     </div>
-                    <div id="moneyChangeContainer">
-                        <img id="goldIncrementButton" src="/static/images/moneyArrowUp.png" class="moneyChanger" onclick="updateGoldCounter('up')">
-                        <img id="goldDecrementButton" src="/static/images/moneyArrowDown.png" class="moneyChanger" onclick="updateGoldCounter('down')">
+                    <div class="goldChangeContainer">
+                        <img src="/static/images/goldArrowUp.png" class="goldChanger">
+                        <img src="/static/images/goldArrowDown.png" class="goldChanger">
                     </div>
                 </div>
+
                 <!-- Containers -->
                 <div id="relicsContainerIronclad" class="container item-container open-modal-btn" data-target="relicsModalIronclad">
                     <div class="containerHeader">
@@ -3546,7 +3575,56 @@
             <div id="silent" class="formContainer">
                 <input id="playersSilent" class="" name="playersSilent" placeholder="Players" type="text">
                 <!-- Health -->
+                <div id="healthContainerSilent" class="healthContainer">
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">1</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">2</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">3</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">4</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">5</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">6</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">7</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">8</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">9</label>
+                    </div>
+                </div>
+
                 <!-- Gold -->
+                <div id="goldContainerSilent" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label class="goldCounter">0</label>
+                    </div>
+                    <div class="goldChangeContainer">
+                        <img src="/static/images/goldArrowUp.png" class="goldChanger">
+                        <img src="/static/images/goldArrowDown.png" class="goldChanger">
+                    </div>
+                </div>
 
                 <!-- Containers -->
                 <div id="relicsContainerSilent" class="container item-container open-modal-btn" data-target="relicsModalSilent">
@@ -5989,8 +6067,56 @@
             <div id="defect" class="formContainer">
                 <input id="playersDefect" class="" name="playersDefect" placeholder="Players" type="text">
                 <!-- Health -->
-                <!-- Gold -->
+                <div id="healthContainerDefect" class="healthContainer">
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">1</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">2</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">3</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">4</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">5</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">6</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">7</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">8</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">9</label>
+                    </div>
+                </div>
 
+                <!-- Gold -->
+                <div id="goldContainerDefect" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label class="goldCounter">0</label>
+                    </div>
+                    <div class="goldChangeContainer">
+                        <img src="/static/images/goldArrowUp.png" class="goldChanger">
+                        <img src="/static/images/goldArrowDown.png" class="goldChanger">
+                    </div>
+                </div>
                 <!-- Containers -->
                 <div id="relicsContainerDefect" class="container item-container open-modal-btn" data-target="relicsModalDefect">
                     <div class="containerHeader">
@@ -8432,7 +8558,56 @@
             <div id="watcher" class="formContainer">
                 <input id="playersWatcher" class="" name="playersWatcher" placeholder="Players" type="text">
                 <!-- Health -->
+                <div id="healthContainerWatcher" class="healthContainer">
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">1</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">2</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">3</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">4</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">5</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">6</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">7</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">8</label>
+                    </div>
+                    <div class="heartContainer">
+                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <label class="heartLabel">9</label>
+                    </div>
+                </div>
+
                 <!-- Gold -->
+                <div id="goldContainerWatcher" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label class="goldCounter">0</label>
+                    </div>
+                    <div class="goldChangeContainer">
+                        <img src="/static/images/goldArrowUp.png" class="goldChanger">
+                        <img src="/static/images/goldArrowDown.png" class="goldChanger">
+                    </div>
+                </div>
 
                 <!-- Containers -->
                 <div id="relicsContainerWatcher" class="container item-container open-modal-btn" data-target="relicsModalWatcher">
@@ -10883,6 +11058,8 @@
         </div>
 
         <script src="/static/scripts/writer.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/health.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/gold.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
     </body>
 </html>

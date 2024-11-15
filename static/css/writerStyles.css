@@ -422,53 +422,82 @@ input[type="range"]::-ms-thumb {
         font-size: 1rem;
     }
 } */
+
 /* Health Input Styling */
-#healthContainer {
-    display:flex;
-    justify-content: center;
-    /* padding: 1%; */
-    width:100%;
-    /* position:relative; */
-    /* left: 8%; */
+
+.healthContainer {
+    display: flex;
+    width: 100%;
 }
+
+.heartContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 .healthHeart {
-    width: 10%;
+    width: 100%;
     cursor: pointer;
 }
+
+.heartLabel {
+    position: absolute;
+    top: 50%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1.5rem; /* Text size */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .healthContainer {
+        flex-wrap: wrap;
+    }
+
+    .heartContainer {
+        flex: 0 0 calc(20%);
+        max-width: calc(20%);
+    }
+
+    .heartLabel {
+        font-size: 1.5rem;
+    }
+}
+
 /* Money Input Styling */
-#moneyContainer {
-    display:flex;
+
+.goldContainer {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     gap: 10px;
 }
 
-#moneyCoinContainer {
-    width: 150px;
+.goldCoinContainer {
     position: relative;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 150px;
 }
 
-#goldCoin {
+.goldCoin {
     width:100%;
-    height:fit-content;
-
 }
 
-#moneyCounterContainer {
+.goldCounter {
     position: absolute;
-    left:33%;
-    top: 27%;
-    text-align: center;
-    display:inline-block;
-    width: 30%;
+    top: 38%; /* Move span to the vertical center */
+    left: 48%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: #972e0f; /* Text color */
+    font-size: 1.5rem; /* Text size */
+    font-weight: bold;
 }
 
-#moneyCounter {
-    font-size: 24px;
-    color: #972e0f;
-}
-
-#moneyChangeContainer {
+.goldChangeContainer {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -476,17 +505,17 @@ input[type="range"]::-ms-thumb {
     gap: 5px;
 }
 
-.moneyChanger  {
+.goldChanger  {
     width: 40px;
     cursor: pointer;
     transition: transform 0.1s ease;
 }
 
-.moneyChanger:hover {
+.goldChanger:hover {
     transform: scale(1.05);
 }
 
-.moneyChanger:active {
+.goldChanger:active {
     transform: scale(0.95);
 }
 
