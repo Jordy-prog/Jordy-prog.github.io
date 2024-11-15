@@ -12,6 +12,8 @@
 - Add actual JS to build json
 - Fix 1 px difference in enabledOption button and Save Button, compared to their active versions
 - Amount of potions varies? Check in real game
+- Potion modal has too much spacing between checkbox and text
+- Scroll issues in modal with stuff disappearing on mobile?
 
 # Page 2 (Reader)
 - Add JS function that reads in all filepaths for images to compare with item names for correct display

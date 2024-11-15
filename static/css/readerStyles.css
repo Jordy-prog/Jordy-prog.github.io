@@ -1,0 +1,297 @@
+:root {
+    --base-color: #212529;
+    --base-color-rgb: 33, 37, 41;
+    --accent-color: #6C757D;
+    --accent-color-rgb: 108, 117, 125;
+    --highlight-color: #F8F9FA;
+    --highlight-color-rgb: 248, 249, 250;
+    --background-img: url(../images/general_background.jpg);
+}
+
+/* General Styles */
+
+@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
+@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
+
+body {
+    background-image: var(--background-img);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+    font-family: Kreon, sans-serif;
+}
+
+img {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+img:focus, img:active {
+    outline: none;
+}
+
+div:focus, div:active, button:focus, button:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
+}
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 70%;
+    max-width: 300px;
+}
+
+#merchantHand {
+    display: none;
+    position: absolute;
+    height: 100%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}
+
+
+/* Nav Styles */
+
+#formNav {
+    display: flex;
+    justify-content: space-around;
+}
+
+#formNav img {
+    width: 15%;
+    max-width: 100px;
+    height: auto;
+
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#formNav img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#formNav img:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#formNav img.active {
+    box-shadow: 0px 0px 20px 3px yellow;
+}
+
+@media (min-width: 768px) {
+    #formNav {
+        justify-content: center;
+        gap: 40px;
+    }
+}
+
+/*Info tabs styling*/
+/* Apply the same font-family to all form elements */
+.wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 768px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+.infoContainer h2 {
+    padding: 5px;
+    font-family: inherit; /* Inherit the font-family from the body */
+    margin: 0px;
+}
+/* Campaign Name and Date Styling */
+.campaignDataContainer {
+    position: relative;
+}
+
+#campaignNameBanner {
+    width:100%;
+}
+#campaignName {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+
+    color: black;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#campaignDateBanner {    
+    width:40%;
+    margin-left:30%;
+}
+
+
+#campaignDate {
+    position: absolute;
+    top: 45%;
+    left: 52.5%;
+    transform: translate(-50%, -50%);
+
+    font-size:120%;
+    color: wheat;
+    text-align: center;
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+    #campaignName {
+        font-size: 0.8rem; /* Even smaller font size */
+        top: 36%;
+    }
+    #campaignDate {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Act display */
+#levelInfoContainer {
+    margin-top:5%;
+    display: grid;
+    gap: 10px;
+}
+
+#actDisplay {
+    padding: 10px;
+    color: wheat;
+    font-size: 2rem;
+    font-weight: bold;
+    
+    transition: all 0.1s ease-in-out;
+    border: 2px solid silver;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+    display:inline-block;
+    width:28%;
+    text-align: center;
+
+    background-image: url('/static/images/actOne.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#ascDisplay {
+    padding: 10px;
+    color: rgb(255, 58, 58);
+    font-size: 2rem;
+    font-weight: bold;
+    
+    transition: all 0.1s ease-in-out;
+    border: 2px solid darkred;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    float:right;
+
+    width:28%;
+    text-align: center;
+
+    background-image: url('/static/images/ascensionBG.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Keys Styling */
+
+#keyContainer {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+#keyGreenContainerWrapper, #keyBlueRedContainerWrapper {
+    display: flex;
+    justify-content: center;
+    gap: 21px;
+}
+
+#keyGreenContainer {
+    width: 75px;
+    position: relative;
+}
+
+#keyRedContainer, #keyBlueContainer {
+    position: relative;
+    width: 90px;
+}
+
+#keyBlueContainer {
+    margin-right: 7px;
+}
+
+#keyGreen,
+#keyBlue,
+#keyRed,
+#keyGreenGlow,
+#keyBlueGlow,
+#keyRedGlow {
+    width: 100%;
+    cursor: pointer;
+    display: block;
+}
+#keyBlueGlow, #keyGreenGlow, #keyRedGlow {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+.containerHeader {
+    position: relative;
+}
+
+.containerLabelImage {
+    height: 50px;
+}
+
+.containerLabel {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: wheat;
+}
+
+.containerBody {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+}
+
+.containerPlaceholder {
+    color: wheat;
+    font-size: 1rem;
+}
+
+.relicContainer {
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid wheat;
+}
