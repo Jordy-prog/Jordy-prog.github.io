@@ -6,21 +6,18 @@ healthContainers.forEach(healthContainer => {
     lockedHearts[containerId] = [];
 
     let heartContainers = Array.from(healthContainer.children);
-    let hearts = heartContainers.map(child => child.querySelector('img'));
 
     healthContainer.addEventListener('mouseout', () => {
-        emptyHearts(hearts, containerId);
+        emptyHearts(heartContainers, containerId);
     });
 
     heartContainers.forEach(heartContainer => {
-        let heart = heartContainer.querySelector('img');
-
         heartContainer.addEventListener('mouseover', () => {
-            fillHearts(hearts, heart);
+            fillHearts(heartContainers, heartContainer);
         })
 
         heartContainer.addEventListener('click', () => {
-            lockHearts(hearts, heart, containerId);
+            lockHearts(heartContainers, heartContainer, containerId);
         })
     });
 });
@@ -28,7 +25,7 @@ healthContainers.forEach(healthContainer => {
 function emptyHearts(hearts, id) {
     hearts.forEach(heart => {
         if (!lockedHearts[id].includes(heart)) {
-            heart.src = "static/images/heartBroken.png";
+            heart.style.backgroundImage = "url('/static/images/heartBroken.png')";
         }
     });
 }
@@ -38,7 +35,7 @@ function fillHearts(hearts, heart) {
 
     for (let index = 0; index <= max; index++) {
         let element = hearts[index];
-        element.src = "static/images/heartFull.png";
+        element.style.backgroundImage = "url('/static/images/heartFull.png')";
     }
 }
 

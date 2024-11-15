@@ -446,10 +446,15 @@ input[type="range"]::-ms-thumb {
     position: relative;
     display: flex;
     justify-content: center;
+    background-image: url('/static/images/heartBroken.png');
+    background-size: cover;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 .healthHeart {
     width: 100%;
+    visibility: hidden;
     cursor: pointer;
 }
 
