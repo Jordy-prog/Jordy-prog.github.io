@@ -315,14 +315,52 @@ function demoteCards(cards) {
     });
 }
 
-let counter = 0;
+// Gold counter
 
-function goldCounter(direction) {
+let counter = 0;
+let interval = null;
+
+let incrementButton = document.getElementById('goldIncrementButton');
+let decrementButton = document.getElementById('goldDecrementButton');
+let counterDisplay = document.getElementById('moneyCounter');
+
+function updateGoldCounter(direction) {
     if (direction == "up") {
         counter++;
-        document.getElementById("moneyCounter").innerHTML = counter;
+        counterDisplay.innerHTML = counter;
     } else if (direction == "down") {
-        if(counter != 0) {counter--;}
-        document.getElementById("moneyCounter").innerHTML = counter;
+        if(counter > 0) {counter--;}
+        counterDisplay.innerHTML = counter;
     }
 }
+
+function startIncrementing() {
+    if (!interval) {
+        interval = setInterval(() => {
+            counter++;
+            counterDisplay.innerHTML = counter;
+        }, 100);
+    }
+}
+
+function startDecrementing() {
+    if (!interval) {
+        interval = setInterval(() => {
+            if(counter > 0) {counter--;}
+            counterDisplay.innerHTML = counter;
+        }, 100);
+    }
+}
+
+function stopInterval() {
+    clearInterval(interval);
+    interval = null;
+}
+
+incrementButton.addEventListener('mousedown', startIncrementing);
+incrementButton.addEventListener('mouseup', stopInterval);
+incrementButton.addEventListener('mouseleave', stopInterval);
+
+decrementButton.addEventListener('mousedown', startDecrementing);
+decrementButton.addEventListener('mouseup', stopInterval);
+decrementButton.addEventListener('mouseleave', stopInterval);
