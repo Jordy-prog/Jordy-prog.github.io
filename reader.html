@@ -27,56 +27,62 @@
                 <span>Reader</span>
             </button>
         </nav>
-        <nav id="formNav">
-            <img class="active" onclick="toggleActive(this)" src="static/images/generalButton.png">
-            <img onclick="toggleActive(this)" src="static/images/ironcladButton.png">
-            <img onclick="toggleActive(this)" src="static/images/silentButton.png">
-            <img onclick="toggleActive(this)" src="static/images/defectButton.png">
-            <img onclick="toggleActive(this)" src="static/images/watcherButton.png">
-        </nav>
-        <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
-        <div class="wrapper">
-            <div class="infoContainer">
-                <div class="campaignDataContainer">
-                    <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
-                    <h2 id="campaignName" placeholder="Campaign name">The most awesome game</h2>                    
-                </div>
-                <div class="campaignDataContainer">
-                    <img id="campaignDateBanner"  src="/static/images/BannerDate.png">
-                    <h2 id="campaignDate">01-01-0001</h2>
-                </div>
-            </div>
-            <div id="levelInfoContainer">
-                <div id="settingsContainer">
-                    <label id="actDisplay">Act 1</label>
-                    <label id="ascDisplay">Ascension 0</label>
-                </div>
-                <div id="keyContainer">
-                    <div id="keyGreenContainerWrapper">
-                        <div id="keyGreenContainer" onclick="toggleKeyGlow('keyGreenGlow')">
-                            <img id="keyGreen" src="/static/images/lock_green3.png">
-                            <img id="keyGreenGlow" class="glow" src="/static/images/glow_green3.png">
-                        </div>
+        <div class="wrapper" id="jsonGetDiv">
+            <label for="jsonInput">Please select a matching JSON file.</label>
+            <input type="file" id="jsonInput">
+        </div>
+        <div id="mainPage">
+            <nav id="formNav">
+                <img class="active" onclick="toggleActive(this)" src="static/images/generalButton.png">
+                <img onclick="toggleActive(this)" src="static/images/ironcladButton.png">
+                <img onclick="toggleActive(this)" src="static/images/silentButton.png">
+                <img onclick="toggleActive(this)" src="static/images/defectButton.png">
+                <img onclick="toggleActive(this)" src="static/images/watcherButton.png">
+            </nav>
+            <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
+            <div class="wrapper">
+                <div class="infoContainer">
+                    <div class="campaignDataContainer">
+                        <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
+                        <h2 id="campaignName" placeholder="Campaign name">The most awesome game</h2>                    
                     </div>
-                    <div id="keyBlueRedContainerWrapper">
-                        <div id="keyRedContainer" onclick="toggleKeyGlow('keyRedGlow')">
-                            <img id="keyRed" src="/static/images/lock_red3.png">
-                            <img id="keyRedGlow" class="glow" src="/static/images/glow_red3.png">
-                        </div>
-                        <div id="keyBlueContainer" onclick="toggleKeyGlow('keyBlueGlow')">
-                            <img id="keyBlue" src="/static/images/lock_blue3.png">
-                            <img id="keyBlueGlow" class="glow" src="/static/images/glow_blue3.png">
-                        </div>
+                    <div class="campaignDataContainer">
+                        <img id="campaignDateBanner" src="/static/images/BannerDate.png">
+                        <h2 id="campaignDate">01-01-0001</h2>
                     </div>
                 </div>
-            </div>
-            <div id="skippedRelicsContainer" class="relicContainer">
-                <div class="containerHeader">
-                    <img class="containerLabelImage" src="/static/images/panelTag.png">
-                    <span class="containerLabel">Relics</span>
+                <div id="levelInfoContainer">
+                    <div id="settingsContainer">
+                        <label id="actDisplay">Act 1</label>
+                        <label id="ascDisplay">Ascension 0</label>
+                    </div>
+                    <div id="keyContainer">
+                        <div id="keyGreenContainerWrapper">
+                            <div id="keyGreenContainer" onclick="toggleKeyGlow('keyGreenGlow')">
+                                <img id="keyGreen" src="/static/images/lock_green3.png">
+                                <img id="keyGreenGlow" class="glow" src="/static/images/glow_green3.png">
+                            </div>
+                        </div>
+                        <div id="keyBlueRedContainerWrapper">
+                            <div id="keyRedContainer" onclick="toggleKeyGlow('keyRedGlow')">
+                                <img id="keyRed" src="/static/images/lock_red3.png">
+                                <img id="keyRedGlow" class="glow" src="/static/images/glow_red3.png">
+                            </div>
+                            <div id="keyBlueContainer" onclick="toggleKeyGlow('keyBlueGlow')">
+                                <img id="keyBlue" src="/static/images/lock_blue3.png">
+                                <img id="keyBlueGlow" class="glow" src="/static/images/glow_blue3.png">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="containerBody">
-                    <span class="containerPlaceholder">No relics yet...</span>
+                <div id="skippedRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Relics</span>
+                    </div>
+                    <div class="containerBody">
+                        <span class="containerPlaceholder">No relics yet...</span>
+                    </div>
                 </div>
             </div>
         </div>
