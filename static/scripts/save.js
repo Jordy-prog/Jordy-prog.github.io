@@ -1,3 +1,15 @@
+var changed = false;
+
+window.addEventListener('beforeunload', (event) => {
+    if (changed) {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener('click', () => {
+    changed = true;
+})
+
 function downloadSaveState() {
     const date = new Date()
 
