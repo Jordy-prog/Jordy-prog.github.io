@@ -15,8 +15,8 @@
         <nav id="functionNav">
             <button class="fancyButton" 
                     onclick="window.location.href='index.html'"
-                    onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
-                    onmouseout="toggleButton(this, '/static/images/endTurnButton.png')">
+                    onmouseover="toggleFancyGlowButton(this, '/static/images/endTurnButtonGlow.png')"
+                    onmouseout="toggleFancyGlowButton(this, '/static/images/endTurnButton.png')">
                 <img src="/static/images/endTurnButton.png">
                 <span>Writer</span>
             </button>
@@ -33,11 +33,11 @@
         </div>
         <div id="mainPage">
             <nav id="formNav">
-                <img class="active" onclick="toggleActive(this)" src="static/images/generalButton.png">
-                <img onclick="toggleActive(this)" src="static/images/ironcladButton.png">
-                <img onclick="toggleActive(this)" src="static/images/silentButton.png">
-                <img onclick="toggleActive(this)" src="static/images/defectButton.png">
-                <img onclick="toggleActive(this)" src="static/images/watcherButton.png">
+                <img class="active" onclick="toggleActiveChar(this)" src="static/images/generalButton.png">
+                <img onclick="toggleActiveChar(this)" src="static/images/ironcladButton.png">
+                <img onclick="toggleActiveChar(this)" src="static/images/silentButton.png">
+                <img onclick="toggleActiveChar(this)" src="static/images/defectButton.png">
+                <img onclick="toggleActiveChar(this)" src="static/images/watcherButton.png">
             </nav>
             <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
             <div class="wrapper">
@@ -106,6 +106,7 @@
         </div>
     </body>
 
+    <script src="static/scripts/toggles.js" type="text/javascript" charset="utf-8"></script>
     <script src="static/scripts/reader.js" type="text/javascript" charset="utf-8"></script>
     <script src="static/scripts/jsonRead.js" type="module" charset="utf-8"></script>
     <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->

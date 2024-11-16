@@ -435,6 +435,107 @@ input[type="range"]::-ms-thumb {
     }
 } */
 
+/* Health Input Styling */
+
+.healthContainer {
+    display: flex;
+    width: 100%;
+}
+
+.heartContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url('/static/images/heartBroken.png');
+    background-size: cover;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.healthHeart {
+    width: 100%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.heartLabel {
+    position: absolute;
+    top: 50%; /* Move span to the vertical center */
+    left: 50%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: wheat; /* Text color */
+    font-size: 1.5rem; /* Text size */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .healthContainer {
+        flex-wrap: wrap;
+    }
+
+    .heartContainer {
+        flex: 0 0 calc(20%);
+        max-width: calc(20%);
+    }
+
+    .heartLabel {
+        font-size: 1.5rem;
+    }
+}
+
+/* Money Input Styling */
+
+.goldContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.goldCoinContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 150px;
+}
+
+.goldCoin {
+    width:100%;
+}
+
+.goldCounter {
+    position: absolute;
+    top: 38%; /* Move span to the vertical center */
+    left: 48%; /* Move span to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust the center point */
+    color: #972e0f; /* Text color */
+    font-size: 1.5rem; /* Text size */
+    font-weight: bold;
+}
+
+.goldChangeContainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.goldChanger  {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.goldChanger:hover {
+    transform: scale(1.05);
+}
+
+.goldChanger:active {
+    transform: scale(0.95);
+}
+
 /* Download Button Styling */
 
 .fancyButton {
@@ -546,7 +647,6 @@ input[type="range"]::-ms-thumb {
 }
 
 .modal.active {
-    display: block;
     opacity: 1;
     visibility: visible;
 }
@@ -800,4 +900,21 @@ input[type="range"]::-ms-thumb {
 
 .card-container .container-body .container-placeholder {
     padding: 10px;
+}
+
+/* Character variables */
+.playerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.playerIcon {
+    width: 15%;
+}
+
+@media (max-width: 480px) {
+    .playerIcon {
+        width: 20%;
+    }
 }
