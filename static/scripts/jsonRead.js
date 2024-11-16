@@ -1,19 +1,42 @@
-document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
+/*
+let jsonBlob = null;
 
+window
+    .fetch(new Request('/static/TestList.json'))
+    .then((response => {
+            if (!response.ok) {
+                throw new Error('Fetch error! ${response.status}');
+            }
+            return response.blob();
+    }))
+    .then((response => {
+        jsonBlob = response;
+    })
+) */
+
+
+document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
+    
+
+
+//displays actual reader after uploading file 
+//TODO: Only do so on succesful parse!!!
 function loadJsonFile() {
     fileToJSON(document.getElementById('jsonInput'));
-
+    
     document.getElementById("mainPage").style.visibility = 'visible';
     document.getElementById("jsonGetDiv").style.visibility = 'hidden';
     
 }
 
+
+//Mostly just filereader translation to 
 function fileToJSON(jsonInput) {    
     try {
         var fileReader = new FileReader();
 
-        fileReader.onload = jsonToArray;
-        
+        fileReader.onload = jsonToArray;        
+
         fileReader.readAsText(jsonInput.files[0])
     } catch {
         console.log("Error loading file. Are you sure you selected a file?")
@@ -119,4 +142,14 @@ function fillCardList(listName, cardList, cardContainer) {
     } else {
         itemContainer.innerHTML += '<span class="containerPlaceholder">None!</span>';
     }
-} 
+}
+
+function testBlob() { 
+    var fileReader = new FileReader();
+    
+    fileReader.onload = function(event) {
+        console.log(JSON.parse(event.target.result));
+    }
+    
+    fileReader.readAsText(jsonBlob);
+}
