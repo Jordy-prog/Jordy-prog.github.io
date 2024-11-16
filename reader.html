@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Save The Spire!</title>
-        <link rel="stylesheet" type="text/css" href="static/css/readerStyles.css">
         <link rel="stylesheet" type="text/css" href="static/css/writerStyles.css">
+        <link rel="stylesheet" type="text/css" href="static/css/readerStyles.css">
         <link rel="shortcut icon" type="image/png" href="static/images/enchiridion.ico"/>
     </head>
     <body>
@@ -77,11 +77,29 @@
                 </div>
                 <div id="skippedRelicsContainer" class="relicContainer">
                     <div class="containerHeader">
-                        <img class="containerLabelImage" src="/static/images/panelTag.png">
-                        <span class="containerLabel">Relics</span>
+                        <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Relics</span>
                     </div>
-                    <div class="containerBody">
-                        <span class="containerPlaceholder">No relics yet...</span>
+                    <div class="containerBody" id="skippedRelicsBody">
+                        
+                    </div>
+                </div>
+                <div id="skippedBossRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Boss Relics</span>
+                    </div>
+                    <div class="containerBody" id="skippedBossRelicsBody">
+                        
+                    </div>
+                </div>
+                <div id="skippedPotionsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Potions</span>
+                    </div>
+                    <div class="containerBody" id="skippedPotionsBody">
+                        
                     </div>
                 </div>
             </div>
@@ -89,6 +107,7 @@
     </body>
 
     <script src="static/scripts/reader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/scripts/jsonRead.js" type="text/javascript" charset="utf-8"></script>
     <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
 </html>
 
