@@ -58,7 +58,7 @@ function displayGeneral(generalObject) {
     fillItemList("boss_relics", generalObject.SkippedBossRelics, document.getElementById("skippedBossRelicsBody"));
 
     //Fille potions and cards
-    fillItemList("potions", generalObject.SkippedPotions, document.getElementById("skippedPotionsBody"));
+    fillCardList("potions", generalObject.SkippedPotions, document.getElementById("skippedPotionsBody"));
 
     console.log('hey');
 
@@ -81,6 +81,38 @@ function fillItemList(listName, itemList, itemContainer) {
                             + '</div>';  
         
             itemContainer.innerHTML += htmlString;
+            console.log(htmlString);
+            console.log('hey');
+        });
+    } else {
+        itemContainer.innerHTML += '<span class="containerPlaceholder">None!</span>';
+    }
+} 
+
+function fillCardList(listName, cardList, cardContainer) {
+    
+    if(listName = "potions") {
+        pathStart = '/static/images/' + listName + '/';
+    } else {
+        pathStart = '/static/images/' + listName + '/';
+    }
+
+    if (cardList.length != 0) {
+        cardList.forEach(element => {
+            var lowerCaseName = element.toLowerCase();
+            var convertedName = lowerCaseName.replace(/ /g, "_");
+            
+            var filePath = pathStart + convertedName + '.png';
+
+            var htmlString = '<li class="card-list-item potions-card">'
+                            + '<span class="card-label">' + element + '</span>'
+                            + '<div class="flex-spacer"></div>'
+                            + '<img class="card-image" src=' + filePath + '>';
+                            + '</li>';  
+                            
+                            
+        
+            cardContainer.innerHTML += htmlString;
             console.log(htmlString);
             console.log('hey');
         });

@@ -338,3 +338,7 @@ div:focus, div:active, button:focus, button:active {
 .item-label {
     text-align: center;
 }
+
+.card-list-item {
+    background-color: transparent;
+}
