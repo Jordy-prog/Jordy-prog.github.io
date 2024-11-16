@@ -1,10 +1,5 @@
 :root {
-    --base-color: #212529;
-    --base-color-rgb: 33, 37, 41;
-    --accent-color: #6C757D;
-    --accent-color-rgb: 108, 117, 125;
-    --highlight-color: #F8F9FA;
-    --highlight-color-rgb: 248, 249, 250;
+    --base-color: wheat;
     --background-img: url(/static/images/general_background.jpg);
 }
 
@@ -32,9 +27,13 @@ input, button {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+input {
+    border: 2px inset #767676;
+}
+
 input:focus {
     outline: none;
-    border-color: wheat;
+    border-color: var(--base-color);
     box-shadow: 0 0 5px rgba(245, 222, 179, 0.5);
 }
 
@@ -71,7 +70,6 @@ div:focus, div:active, button:focus, button:active {
     width: 70%;
     max-width: 300px;
 }
-
 
 .wrapper {
     padding-top: 15px;
@@ -127,7 +125,7 @@ div:focus, div:active, button:focus, button:active {
 }
 
 #formNav img.active {
-    box-shadow: 0px 0px 20px 3px wheat;
+    box-shadow: 0px 0px 20px 3px var(--base-color);
 }
 
 @media (min-width: 768px) {
@@ -152,7 +150,7 @@ div:focus, div:active, button:focus, button:active {
     padding: 5px;
     font-size: 1rem;
     background-color: black;
-    color: wheat;
+    color: var(--base-color);
     text-align: center;
     width: 60%;
     align-self: center;
@@ -164,6 +162,7 @@ div:focus, div:active, button:focus, button:active {
 }
 
 /* Campaign Name Styling */
+
 #campaignNameContainer {
     position: relative;
 }
@@ -207,8 +206,9 @@ div:focus, div:active, button:focus, button:active {
 }
 
 #actButtonContainer button {
+    border: 2px outset #545454;
     padding: 10px;
-    color: wheat;
+    color: var(--base-color);
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
@@ -217,7 +217,7 @@ div:focus, div:active, button:focus, button:active {
 
 #actButtonContainer button.active {
     color: white;
-    border: 2px solid wheat;
+    border: 2px solid var(--base-color);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     filter: brightness(1.2);
 }
@@ -338,6 +338,7 @@ input[type="range"]::-moz-range-thumb {
     height: 50px;
     background: url('/static/images/ascension.png'); /* Set your custom image */
     background-size: cover;
+    border: none;
     cursor: pointer;
 }
 
@@ -387,7 +388,7 @@ input[type="range"]::-ms-thumb {
     top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: wheat;
+    color: var(--base-color);
     font-size: 1.5rem;
 }
 
@@ -400,40 +401,23 @@ input[type="range"]::-ms-thumb {
     }
 }
 
-/* Option Button Styling */
-/* .optionButton {
-    position: relative;
-    color: wheat;
+/* Character variables */
+
+.playerContainer {
     display: flex;
     justify-content: center;
-    cursor: pointer;
-    width: 50%;
-    align-self: center;
+    gap: 20px;
 }
 
-.optionButton img {
-    width: 100%;
-}
-
-.optionButton span {
-    position: absolute;
-    top: 48%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    color: wheat; 
-    font-size: 1.2rem; 
-    font-weight: bold;
+.playerIcon {
+    width: 15%;
 }
 
 @media (max-width: 480px) {
-    .optionButton {
-        width: 100%;
+    .playerIcon {
+        width: 20%;
     }
-
-    .optionButton span {
-        font-size: 1rem;
-    }
-} */
+}
 
 /* Health Input Styling */
 
@@ -463,7 +447,7 @@ input[type="range"]::-ms-thumb {
     top: 50%; /* Move span to the vertical center */
     left: 50%; /* Move span to the horizontal center */
     transform: translate(-50%, -50%); /* Adjust the center point */
-    color: wheat; /* Text color */
+    color: var(--base-color); /* Text color */
     font-size: 1.5rem; /* Text size */
     font-weight: bold;
     cursor: pointer;
@@ -484,7 +468,7 @@ input[type="range"]::-ms-thumb {
     }
 }
 
-/* Money Input Styling */
+/* Gold Input Styling */
 
 .goldContainer {
     display: flex;
@@ -539,7 +523,7 @@ input[type="range"]::-ms-thumb {
 /* Download Button Styling */
 
 .fancyButton {
-    color: wheat;
+    color: var(--base-color);
     background: transparent;
     width: auto;
     display: inline-block;
@@ -570,7 +554,7 @@ input[type="range"]::-ms-thumb {
     top: 50%; /* Move span to the vertical center */
     left: 50%; /* Move span to the horizontal center */
     transform: translate(-50%, -50%); /* Adjust the center point */
-    color: wheat; /* Text color */
+    color: var(--base-color); /* Text color */
     font-size: 1rem; /* Text size */
     font-weight: bold;
     margin-top: 1px;
@@ -579,7 +563,8 @@ input[type="range"]::-ms-thumb {
 
 /* Modal Styling */
 
-/* Item Modal */
+/* General Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -604,7 +589,7 @@ input[type="range"]::-ms-thumb {
     background-repeat: no-repeat;
     width: 60%;
     margin: 100px auto;
-    border: 2px solid wheat;
+    border: 2px solid var(--base-color);
 }
 
 @media (max-width: 480px) {
@@ -635,7 +620,7 @@ input[type="range"]::-ms-thumb {
 
 .modal-title {
     font-size: 1.4rem;
-    color: wheat;
+    color: var(--base-color);
 }
 
 .open-modal-btn, .close-modal-btn {
@@ -692,7 +677,7 @@ input[type="range"]::-ms-thumb {
     width: 100%;
     align-self: center;
     background-color: rgba(0, 0, 0, 0.4);
-    border: 2px solid wheat;
+    border: 2px solid var(--base-color);
     box-shadow: 0 0 10px black;
     border-radius: 7px;
     box-sizing: border-box;
@@ -700,7 +685,7 @@ input[type="range"]::-ms-thumb {
 
 .item-image.active {
     background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 10px wheat;
+    box-shadow: 0 0 10px var(--base-color);
 }
 
 .item-footer {
@@ -710,7 +695,7 @@ input[type="range"]::-ms-thumb {
 }
 
 .item-label, .card-label {
-    color: wheat;
+    color: var(--base-color);
     font-weight: bold;
     text-shadow: 1px 1px 2px black;
 }
@@ -730,7 +715,7 @@ input[type="range"]::-ms-thumb {
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 50px;
-    border-top: 1px solid wheat;
+    border-top: 1px solid var(--base-color);
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -740,7 +725,7 @@ input[type="range"]::-ms-thumb {
 }
 
 .card-list-item.active {
-    box-shadow: 0 0 10px wheat inset;
+    box-shadow: 0 0 10px var(--base-color) inset;
     filter: brightness(1.1);
 }
 
@@ -809,11 +794,11 @@ input[type="range"]::-ms-thumb {
     transform: scaleX(-1);
 }
 
+/* Container Styling */
 
-/* Relic Container Styling */
 .container {
     background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid wheat;
+    border: 2px solid var(--base-color);
 }
 
 .containerHeader {
@@ -822,6 +807,19 @@ input[type="range"]::-ms-thumb {
 
 .containerLabelImage {
     height: 50px;
+}
+
+.containerLabel {
+    position: absolute;
+    top: 12px;
+    left: 7px;
+    font-size: 1.5rem;
+    color: var(--base-color);
+}
+
+.container-placeholder {
+    color: var(--base-color);
+    font-size: 1rem;
 }
 
 /* All varying container labels */
@@ -862,20 +860,7 @@ input[type="range"]::-ms-thumb {
     filter: brightness(0) saturate(100%) invert(23%) sepia(24%) saturate(1696%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
-/* Container styling */
-
-.containerLabel {
-    position: absolute;
-    top: 12px;
-    left: 7px;
-    font-size: 1.5rem;
-    color: wheat;
-}
-
-.container-placeholder {
-    color: wheat;
-    font-size: 1rem;
-}
+/* Relic/Card Container styling */
 
 .item-container .container-body {
     display: flex;
@@ -895,26 +880,11 @@ input[type="range"]::-ms-thumb {
 }
 
 .card-container .container-body .card-list-item:first-child {
-    border-top: 1px solid wheat;
+    border-top: 1px solid var(--base-color);
 }
 
 .card-container .container-body .container-placeholder {
     padding: 10px;
 }
 
-/* Character variables */
-.playerContainer {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
 
-.playerIcon {
-    width: 15%;
-}
-
-@media (max-width: 480px) {
-    .playerIcon {
-        width: 20%;
-    }
-}
