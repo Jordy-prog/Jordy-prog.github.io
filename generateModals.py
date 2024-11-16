@@ -4,6 +4,15 @@ import os
 ROOT = 'static/images/'
 
 
+def titleCase(x):
+    titled = x.split('/')[-1].replace('.png', '').replace('_', ' ').title()
+
+    if "'" in titled:
+        parts = titled.split("'", 1)
+        titled = f"{parts[0]}'{parts[1][0].lower() + parts[1][1:]}"
+
+    return (titled, x)
+
 def generateModalHeader(modal_id, title):
     return f'''<div id="{modal_id}" class="modal">
     <div class="modal-content">
@@ -24,7 +33,7 @@ def generateRelicModalItems(folders, container_id):
 
     image_paths.sort(key=lambda x: x.split('/')[-1])
 
-    info = list(map(lambda x: (x.split('/')[-1].replace('.png', '').replace('_', ' ').title(), x), image_paths))
+    info = list(map(titleCase, image_paths))
 
     result = '''\t\t<div class="modal-body item-grid">\n'''
 
@@ -64,19 +73,19 @@ def generateCardModalItems(folders, container_id, upgrade=True, addStarters=Fals
     for folder in folders:
         image_paths.extend(map(lambda image: '/' + folder + image, os.listdir(folder)))
 
-    info = list(map(lambda x: (x.split('/')[-1].replace('.png', '').replace('_', ' ').title(), x), image_paths))
+    info = list(map(titleCase, image_paths))
 
     result = '''\t\t<ul class="modal-body card-list">'''
 
     if addStarters:
         if 'Ironclad' in container_id:
-            result += getIroncladStarters()
+            result += getIroncladStarters(container_id)
         elif 'Silent' in container_id:
-            result += getSilentStarters()
+            result += getSilentStarters(container_id)
         elif 'Defect' in container_id:
-            result += getDefectStarters()
+            result += getDefectStarters(container_id)
         else:
-            result += getWatcherStarters()
+            result += getWatcherStarters(container_id)
     else:
         result += '''\n\t'''
 
@@ -105,72 +114,72 @@ def generateCardModalItems(folders, container_id, upgrade=True, addStarters=Fals
 
     return result
 
-def getIroncladStarters():
-    return '''
-            <li id="deckContainerIronclad_defend0" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+def getIroncladStarters(container_id):
+    return f'''
+            <li id="{container_id}_defend0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/defend.png">
             </li>
-            <li id="deckContainerIronclad_defend1" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_defend1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/defend.png">
             </li>
-            <li id="deckContainerIronclad_defend2" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_defend2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/defend.png">
             </li>
-            <li id="deckContainerIronclad_defend3" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_defend3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/defend.png">
             </li>
-            <li id="deckContainerIronclad_strike0" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_strike0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/strike.png">
             </li>
-            <li id="deckContainerIronclad_strike1" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_strike1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/strike.png">
             </li>
-            <li id="deckContainerIronclad_strike2" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_strike2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/strike.png">
             </li>
-            <li id="deckContainerIronclad_strike3" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_strike3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/strike.png">
             </li>
-            <li id="deckContainerIronclad_strike4" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_strike4" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/ironclad/starter/strike.png">
             </li>
-            <li id="deckContainerIronclad_bash0" class="card-list-item common-card" data-copy-target="deckContainerIronclad">
+            <li id="{container_id}_bash0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Bash</span>
@@ -179,86 +188,86 @@ def getIroncladStarters():
             </li>
     '''
 
-def getSilentStarters():
-    return '''
-            <li id="deckContainerSilent_defend0" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+def getSilentStarters(container_id):
+    return f'''
+            <li id="{container_id}_defend0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/defend.png">
             </li>
-            <li id="deckContainerSilent_defend1" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_defend1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/defend.png">
             </li>
-            <li id="deckContainerSilent_defend2" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_defend2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/defend.png">
             </li>
-            <li id="deckContainerSilent_defend3" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_defend3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/defend.png">
             </li>
-            <li id="deckContainerSilent_defend4" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_defend4" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/defend.png">
             </li>
-            <li id="deckContainerSilent_strike0" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_strike0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/strike.png">
             </li>
-            <li id="deckContainerSilent_strike1" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_strike1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/strike.png">
             </li>
-            <li id="deckContainerSilent_strike2" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_strike2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/strike.png">
             </li>
-            <li id="deckContainerSilent_strike3" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_strike3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/strike.png">
             </li>
-            <li id="deckContainerSilent_strike4" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_strike4" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/strike.png">
             </li>
-            <li id="deckContainerSilent_neutralize0" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_neutralize0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Neutralize</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/silent/starter/neutralize.png">
             </li>
-            <li id="deckContainerSilent_survivor0" class="card-list-item common-card" data-copy-target="deckContainerSilent">
+            <li id="{container_id}_survivor0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Survivor</span>
@@ -267,72 +276,72 @@ def getSilentStarters():
             </li>
     '''
 
-def getDefectStarters():
-    return '''
-            <li id="deckContainerDefect_defend0" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+def getDefectStarters(container_id):
+    return f'''
+            <li id="{container_id}_defend0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/defend.png">
             </li>
-            <li id="deckContainerDefect_defend1" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_defend1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/defend.png">
             </li>
-            <li id="deckContainerDefect_defend2" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_defend2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/defend.png">
             </li>
-            <li id="deckContainerDefect_defend3" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_defend3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/defend.png">
             </li>
-            <li id="deckContainerDefect_strike0" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_strike0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/strike.png">
             </li>
-            <li id="deckContainerDefect_strike1" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_strike1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/strike.png">
             </li>
-            <li id="deckContainerDefect_strike2" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_strike2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/strike.png">
             </li>
-            <li id="deckContainerDefect_strike3" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_strike3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/strike.png">
             </li>
-            <li id="deckContainerDefect_dualcast0" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_dualcast0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Dualcast</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/defect/starter/dualcast.png">
             </li>
-            <li id="deckContainerDefect_zap0" class="card-list-item common-card" data-copy-target="deckContainerDefect">
+            <li id="{container_id}_zap0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Zap</span>
@@ -341,72 +350,72 @@ def getDefectStarters():
             </li>
     '''
 
-def getWatcherStarters():
-    return '''
-            <li id="deckContainerWatcher_defend0" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+def getWatcherStarters(container_id):
+    return f'''
+            <li id="{container_id}_defend0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/defend.png">
             </li>
-            <li id="deckContainerWatcher_defend1" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_defend1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/defend.png">
             </li>
-            <li id="deckContainerWatcher_defend2" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_defend2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/defend.png">
             </li>
-            <li id="deckContainerWatcher_defend3" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_defend3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Defend</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/defend.png">
             </li>
-            <li id="deckContainerWatcher_strike0" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_strike0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/strike.png">
             </li>
-            <li id="deckContainerWatcher_strike1" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_strike1" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/strike.png">
             </li>
-            <li id="deckContainerWatcher_strike2" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_strike2" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/strike.png">
             </li>
-            <li id="deckContainerWatcher_strike3" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_strike3" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Strike</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/strike.png">
             </li>
-            <li id="deckContainerWatcher_eruption0" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_eruption0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Eruption</span>
                 <div class="flex-spacer"></div>
                 <img class="card-image" src="/static/images/cards/watcher/starter/eruption.png">
             </li>
-            <li id="deckContainerWatcher_vigilance0" class="card-list-item common-card" data-copy-target="deckContainerWatcher">
+            <li id="{container_id}_vigilance0" class="card-list-item common-card" data-copy-target="{container_id}">
                 <img class="card-checkbox" src="/static/images/tickbox_unticked.png">
                 <img class="card-upgrade" src="/static/images/upgrade.png">
                 <span class="card-label">Vigilance</span>
@@ -436,7 +445,7 @@ def createGeneralModals():
     curseModal += generateModalClose()
 
     colorlessModal = generateModalHeader('skippedColorlessModal', 'Skipped Colorless Cards')
-    colorlessModal += generateCardModalItems([ROOT + 'cards/colorless/'], 'skippedColorlessContainer')
+    colorlessModal += generateCardModalItems([ROOT + 'cards/colorless/'], 'skippedColorlessContainer', False)
     colorlessModal += generateModalClose()
 
     # Add modals
