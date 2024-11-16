@@ -18,8 +18,8 @@
             </button>
             <button class="fancyButton" 
                     onclick="window.location.href='reader.html'"
-                    onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
-                    onmouseout="toggleButton(this, '/static/images/endTurnButton.png')">
+                    onmouseover="toggleFancyGlowButton(this, '/static/images/endTurnButtonGlow.png')"
+                    onmouseout="toggleFancyGlowButton(this, '/static/images/endTurnButton.png')">
                 <img src="/static/images/endTurnButton.png">
                 <span>Reader</span>
             </button>
@@ -11880,16 +11880,19 @@
 
             <button class="fancyButton"
                     onclick="downloadSaveState()"
-                    onmouseover="toggleButton(this, '/static/images/endTurnButtonGlow.png')"
-                    onmouseout="toggleButton(this, '/static/images/endTurnButton.png')">
+                    onmouseover="toggleFancyGlowButton(this, '/static/images/endTurnButtonGlow.png')"
+                    onmouseout="toggleFancyGlowButton(this, '/static/images/endTurnButton.png')">
                 <img src="/static/images/endTurnButton.png">
                 <span>Download Save File!</span>
             </button>
         </div>
 
-        <script src="/static/scripts/writer.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/toggles.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/scripts/health.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/scripts/gold.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/modals.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/itemModals.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/cardModals.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/scripts/save.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
     </body>

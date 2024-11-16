@@ -647,7 +647,6 @@ input[type="range"]::-ms-thumb {
 }
 
 .modal.active {
-    display: block;
     opacity: 1;
     visibility: visible;
 }
