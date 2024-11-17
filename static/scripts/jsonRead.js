@@ -35,7 +35,7 @@ function fileToJSON(jsonInput) {
     try {
         var fileReader = new FileReader();
 
-        fileReader.onload = jsonToArray;        
+        fileReader.onload = jsonParse;        
 
         fileReader.readAsText(jsonInput.files[0])
     } catch {
@@ -44,7 +44,7 @@ function fileToJSON(jsonInput) {
     }
 }
 
-function jsonToArray(event) {
+function jsonParse(event) {
     try {
         let stringFile = event.target.result;
         let jsonFile = JSON.parse(stringFile);
@@ -52,9 +52,6 @@ function jsonToArray(event) {
         //console.log(stringFile);
 
         displayGeneral(jsonFile.General);
-        
-
-
 
     } catch {
         console.log("Error parsing file. Are you sure the file is in the right format?")
@@ -82,6 +79,8 @@ function displayGeneral(generalObject) {
 
     //Fille potions and cards
     fillCardList("potions", generalObject.SkippedPotions, document.getElementById("skippedPotionsBody"));
+    fillCardList("curses", generalObject.SkippedCurses, document.getElementById("skippedCursesBody"));
+    fillCardList("colorless", generalObject.SkippedColorless, document.getElementById("skippedColorlessBody"));
 
     console.log('hey');
 
@@ -113,12 +112,7 @@ function fillItemList(listName, itemList, itemContainer) {
 } 
 
 function fillCardList(listName, cardList, cardContainer) {
-    
-    if(listName = "potions") {
-        pathStart = '/static/images/' + listName + '/';
-    } else {
-        pathStart = '/static/images/' + listName + '/';
-    }
+    var pathStart = '/static/images/' + listName + '/';
 
     if (cardList.length != 0) {
         cardList.forEach(element => {
@@ -127,7 +121,9 @@ function fillCardList(listName, cardList, cardContainer) {
             
             var filePath = pathStart + convertedName + '.png';
 
-            var htmlString = '<li class="card-list-item potions-card">'
+            console.log(filePath);
+
+            var htmlString = '<li class="card-list-item ' + listName + '-card">'
                             + '<span class="card-label">' + element + '</span>'
                             + '<div class="flex-spacer"></div>'
                             + '<img class="card-image" src=' + filePath + '>';

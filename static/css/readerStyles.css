@@ -341,4 +341,5 @@ div:focus, div:active, button:focus, button:active {
 
 .card-list-item {
     background-color: transparent;
+    padding-left: 10px;
 }
