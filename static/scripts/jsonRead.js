@@ -1,24 +1,8 @@
-/*
-let jsonBlob = null;
 
-window
-    .fetch(new Request('/static/TestList.json'))
-    .then((response => {
-            if (!response.ok) {
-                throw new Error('Fetch error! ${response.status}');
-            }
-            return response.blob();
-    }))
-    .then((response => {
-        jsonBlob = response;
-    })
-) */
 
 
 document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
     
-
-
 //displays actual reader after uploading file 
 //TODO: Only do so on succesful parse!!!
 function loadJsonFile() {
@@ -33,9 +17,9 @@ function loadJsonFile() {
 //Mostly just filereader translation to 
 function fileToJSON(jsonInput) {    
     try {
-        var fileReader = new FileReader();
+        let fileReader = new FileReader();
 
-        fileReader.onload = jsonParse;        
+        fileReader.onload = jsonParse;     
 
         fileReader.readAsText(jsonInput.files[0])
     } catch {
@@ -43,11 +27,13 @@ function fileToJSON(jsonInput) {
         console.log(error);
     }
 }
+;
 
 function jsonParse(event) {
     try {
         let stringFile = event.target.result;
         let jsonFile = JSON.parse(stringFile);
+        readCardList();
 
         displayGeneral(jsonFile.General);
         displayPlayer(jsonFile.Ironclad, "ironclad");
@@ -108,6 +94,7 @@ function displayPlayer(playerObject, playerClass) {
     fillCardList(playerClass, playerObject.RareDeck, document.getElementById(playerClass + "RareBody"));
     fillCardList(playerClass, playerObject.RemovedCards, document.getElementById(playerClass + "RemovedBody"));
     fillCardList(playerClass, playerObject.SkippedRares, document.getElementById(playerClass + "SkippedRareBody"));
+
     } catch (error) {
         console.log("Error parsing player! (" + playerClass + ") Are you sure the file is in the right format?");
         console.log(error);
@@ -119,11 +106,11 @@ function fillItemList(listName, itemList, itemContainer) {
     
     if (itemList.length != 0) {
         itemList.forEach(element => {
-            var lowerCaseName = element.toLowerCase();
-            var convertedName = lowerCaseName.replace(/ /g, "_");
+            let lowerCaseName = element.toLowerCase();
+            let convertedName = lowerCaseName.replace(/ /g, "_");
             
 
-            var htmlString = '<div class="item">'
+            let htmlString = '<div class="item">'
                             + '<img class="item-image" src="/static/images/' + listName + '/' + convertedName + '.png">'
                             + '<div class="item-footer">'
                             + '<span class="item-label">' + element + '</span>'
@@ -140,31 +127,31 @@ function fillItemList(listName, itemList, itemContainer) {
 } 
 
 function fillCardList(listName, cardList, cardContainer) {
-    var pathStart = '/static/images/' + listName + '/';
+    let pathStart = '/static/images/' + listName + '/';
 
     if (cardList.length != 0) {
         cardList.forEach(element => {
             //convert a written name to the file name
-            var lowerCaseName = element.toLowerCase();
-            var convertedName = lowerCaseName.replace(/ /g, "_");
+            let lowerCaseName = element.toLowerCase();
+            let convertedName = lowerCaseName.replace(/ /g, "_");
             //remove upgrade for file name
-            var extraClass = "";
+            let extraClass = "";
             if(convertedName.endsWith("+")){
                 convertedName = convertedName.substring(0, convertedName.length - 1);
                 extraClass = "upgraded-card-label";
             }
 
             //set image class for sizing
-            var imageClass = "card-image";
+            let imageClass = "card-image";
             if(listName == "potions") {
                 imageClass = "potion-image";
             }
 
             //set file path
-            var filePath = pathStart + convertedName + '.png';
+            let filePath = pathStart + convertedName + '.png';
 
             //Create html element
-            var htmlString = '<li class="card-list-item ' + listName + '-card">'
+            let htmlString = '<li class="card-list-item ' + listName + '-card">'
                             + '<span class="card-label ' + extraClass + '">' + element + '</span>'
                             + '<div class="flex-spacer"></div>'
                             + '<img class="' + imageClass + '" src=' + filePath + '>';
@@ -206,14 +193,4 @@ function setPlayerHealth(heartContainer, amount) {
         hearts[i].style.backgroundImage = "url('/static/images/heartFull.png')";
     }
         
-}
-
-function testBlob() { 
-    var fileReader = new FileReader();
-    
-    fileReader.onload = function(event) {
-        console.log(JSON.parse(event.target.result));
-    }
-    
-    fileReader.readAsText(jsonBlob);
 }

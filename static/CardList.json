@@ -1,0 +1,12 @@
+{
+    "Ironclad": {
+        "Starter": ["strike", "defend", "bash"],
+        "Common": ["anger", "body_slam", "cleave", "clothesline", "flex", "havoc", "heavy_blade", "iron_wave", "pommel_strike", "seeing_red", "shrug_it_off", "true_grit", 
+        "twin_strike", "warcry", "wild_strike"],
+        "Uncommon": ["battle_trance", "blood_for_blood", "burning_pact", "carnage", "clash", "combust", "dark_embrace", "disarm", "entrench", "evolve", "feel_no_pain", 
+        "fire_breathing", "flame_barrier", "ghostly_armor", "headbutt", "inflame", "metallicize", "perfect_strike", "power_through", "rage", "rampage", "rupture", "second_wind", 
+        "sentinel", "sever_soul", "shockwave", "spot_weakness", "whirlwind"],
+        "Rare": ["barricade", "berserk", "bludgeon", "corruption", "demon_form", "double_tap", "exhume", "feed", "fiend_fire", "immolate", "impervious", "juggernaut", "limit_break",
+        "offering", "uppercut"]
+    }    
+}
