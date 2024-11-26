@@ -1,0 +1,33 @@
+{
+    "relics": ["relic"],
+    "bossRelics": ["bossRelic"],
+    "potions": ["potion"],
+    "cards": {
+        "curses": ["curse"],
+        "colorless": ["colorless"],
+        "ironclad": {
+            "starter": ["starter"],
+            "common": ["common"],
+            "uncommon": ["uncommon"],
+            "rare": ["rare"]
+        },
+        "silent": {
+            "starter": ["starter"],
+            "common": ["common"],
+            "uncommon": ["uncommon"],
+            "rare": ["rare"]
+        },
+        "defect": {
+            "starter": ["starter"],
+            "common": ["common"],
+            "uncommon": ["uncommon"],
+            "rare": ["rare"]
+        },
+        "watcher": {
+            "starter": ["starter"],
+            "common": ["common"],
+            "uncommon": ["uncommon"],
+            "rare": ["rare"]
+        }
+    }
+}
