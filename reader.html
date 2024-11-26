@@ -33,25 +33,25 @@
         </div>
         <div id="mainPage">
             <nav id="formNav">
-                <img class="active" onclick="toggleActiveChar(this)" src="static/images/generalButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/ironcladButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/silentButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/defectButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/watcherButton.png">
+                <img id="generalNav" class="active" onclick="toggleActiveChar(this)" src="static/images/generalButton.png">
+                <img id="ironcladNav" onclick="toggleActiveChar(this)" src="static/images/ironcladButton.png">
+                <img id="silentNav" onclick="toggleActiveChar(this)" src="static/images/silentButton.png">
+                <img id="defectNav" onclick="toggleActiveChar(this)" src="static/images/defectButton.png">
+                <img id="watcherNav" onclick="toggleActiveChar(this)" src="static/images/watcherButton.png">
             </nav>
             <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
-            <div class="wrapper">
-                <div class="infoContainer">
-                    <div class="campaignDataContainer">
-                        <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
-                        <h2 id="campaignName" placeholder="Campaign name">The most awesome game</h2>                    
+            <div id="general" class="wrapper">
+                <div class="pageContainer">
+                    <div class="infoContainer">
+                        <div class="campaignDataContainer">
+                            <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
+                            <h2 id="campaignName" placeholder="Campaign name">The Nameless Game</h2>                    
+                        </div>
+                        <div class="campaignDataContainer">
+                            <img id="campaignDateBanner" src="/static/images/BannerDate.png">
+                            <h2 id="campaignDate">01-01-0001</h2>
+                        </div>
                     </div>
-                    <div class="campaignDataContainer">
-                        <img id="campaignDateBanner" src="/static/images/BannerDate.png">
-                        <h2 id="campaignDate">01-01-0001</h2>
-                    </div>
-                </div>
-                <div id="levelInfoContainer">
                     <div id="settingsContainer">
                         <label id="actDisplay">Act 1</label>
                         <label id="ascDisplay">Ascension 0</label>
@@ -117,6 +117,358 @@
                         <span class="containerLabel">Skipped Colorless</span>
                     </div>
                     <ul class="containerBody" id="skippedColorlessBody">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div id="ironclad" class="wrapper">                
+                <div class="playerContainer">
+                    <img class="playerNameBanner" src="/static/images/disabledButton.png">
+                    <h2 class="playerNameText" id="ironcladNames">Nobody!</h2>    
+                    <img class="playerIcon" src="/static/images/IroncladIcon.png">
+                </div>
+                <!-- Health -->
+                <div id="ironcladHealthContainer" class="healthContainer">
+
+                </div>
+
+                <!-- Gold -->
+                <div id="ironcladGoldContainer" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label id="ironcladGoldCount" class="goldCounter">0</label>
+                    </div>
+                </div>
+
+                <!--Item containers -->
+                <div id="ironcladRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Relics</span>
+                    </div>
+                    <div class="containerBody" id="ironcladRelicsBody">
+
+                    </div>
+                </div>
+                <div id="ironcladBossRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Boss Relics</span>
+                    </div>
+                    <div class="containerBody" id="ironcladBossRelicsBody">
+
+                    </div>
+                </div>
+                <div id="ironcladPotionsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Potions</span>
+                    </div>
+                    <ul class="containerBody" id="ironcladPotionsBody">
+
+                    </ul>
+                </div>
+
+                <!--Deck containers-->
+                <div id="ironcladDeckContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage deckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Deck</span>
+                    </div>
+                    <ul class="containerBody" id="ironcladDeckBody">
+
+                    </ul>
+                </div>
+                <div id="ironcladRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage rareDeckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Rare Cards</span>
+                    </div>
+                    <ul class="containerBody" id="ironcladRareBody">
+
+                    </ul>
+                </div>
+
+                <!--Removed cards containers-->
+                <div id="ironcladRemovedContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage removedTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Removed Cards</span>
+                    </div>
+                    <ul class="containerBody" id="ironcladRemovedBody">
+
+                    </ul>
+                </div>
+                <div id="ironcladSkippedRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage skippedRareTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Rares</span>
+                    </div>
+                    <ul class="containerBody" id="ironcladSkippedRareBody">
+                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="silent" class="wrapper">                
+                <div class="playerContainer">
+                    <img class="playerNameBanner" src="/static/images/disabledButton.png">
+                    <h2 class="playerNameText" id="silentNames">Nobody!</h2>    
+                    <img class="playerIcon" src="/static/images/silentIcon.png">
+                </div>
+                <!-- Health -->
+                <div id="silentHealthContainer" class="healthContainer">
+                    
+                </div>
+
+                <!-- Gold -->
+                <div id="silentGoldContainer" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label id="silentGoldCount" class="goldCounter">0</label>
+                    </div>
+                </div>
+
+                <!--Item containers -->
+                <div id="silentRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Relics</span>
+                    </div>
+                    <div class="containerBody" id="silentRelicsBody">
+
+                    </div>
+                </div>
+                <div id="silentBossRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Boss Relics</span>
+                    </div>
+                    <div class="containerBody" id="silentBossRelicsBody">
+
+                    </div>
+                </div>
+                <div id="silentPotionsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Potions</span>
+                    </div>
+                    <ul class="containerBody" id="silentPotionsBody">
+
+                    </ul>
+                </div>
+
+                <!--Deck containers-->
+                <div id="silentDeckContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage deckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Deck</span>
+                    </div>
+                    <ul class="containerBody" id="silentDeckBody">
+
+                    </ul>
+                </div>
+                <div id="silentRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage rareDeckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Rare Cards</span>
+                    </div>
+                    <ul class="containerBody" id="silentRareBody">
+
+                    </ul>
+                </div>
+
+                <!--Removed cards containers-->
+                <div id="silentRemovedContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage removedTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Removed Cards</span>
+                    </div>
+                    <ul class="containerBody" id="silentRemovedBody">
+
+                    </ul>
+                </div>
+                <div id="silentSkippedRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage skippedRareTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Rares</span>
+                    </div>
+                    <ul class="containerBody" id="silentSkippedRareBody">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div id="defect" class="wrapper">                
+                <div class="playerContainer">
+                    <img class="playerNameBanner" src="/static/images/disabledButton.png">
+                    <h2 class="playerNameText" id="defectNames">Nobody!</h2>    
+                    <img class="playerIcon" src="/static/images/defectIcon.png">
+                </div>
+                <!-- Health -->
+                <div id="defectHealthContainer" class="healthContainer">
+
+                </div>
+
+                <!-- Gold -->
+                <div id="defectGoldContainer" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label id="defectGoldCount" class="goldCounter">0</label>
+                    </div>
+                </div>
+
+                <!--Item containers -->
+                <div id="defectRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Relics</span>
+                    </div>
+                    <div class="containerBody" id="defectRelicsBody">
+
+                    </div>
+                </div>
+                <div id="defectBossRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Boss Relics</span>
+                    </div>
+                    <div class="containerBody" id="defectBossRelicsBody">
+
+                    </div>
+                </div>
+                <div id="defectPotionsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Potions</span>
+                    </div>
+                    <ul class="containerBody" id="defectPotionsBody">
+
+                    </ul>
+                </div>
+
+                <!--Deck containers-->
+                <div id="defectDeckContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage deckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Deck</span>
+                    </div>
+                    <ul class="containerBody" id="defectDeckBody">
+
+                    </ul>
+                </div>
+                <div id="defectRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage rareDeckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Rare Cards</span>
+                    </div>
+                    <ul class="containerBody" id="defectRareBody">
+
+                    </ul>
+                </div>
+
+                <!--Removed cards containers-->
+                <div id="defectRemovedContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage removedTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Removed Cards</span>
+                    </div>
+                    <ul class="containerBody" id="defectRemovedBody">
+
+                    </ul>
+                </div>
+                <div id="defectSkippedRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage skippedRareTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Rares</span>
+                    </div>
+                    <ul class="containerBody" id="defectSkippedRareBody">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div id="watcher" class="wrapper">                
+                <div class="playerContainer">
+                    <img class="playerNameBanner" src="/static/images/disabledButton.png">
+                    <h2 class="playerNameText" id="watcherNames">Nobody!</h2>    
+                    <img class="playerIcon" src="/static/images/watcherIcon.png">
+                </div>
+                <!-- Health -->
+                <div id="watcherHealthContainer" class="healthContainer">
+                </div>
+
+                <!-- Gold -->
+                <div id="watcherGoldContainer" class="goldContainer">
+                    <div class="goldCoinContainer">
+                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <label id="watcherGoldCount" class="goldCounter">0</label>
+                    </div>
+                </div>
+
+                <!--Item containers -->
+                <div id="watcherRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Relics</span>
+                    </div>
+                    <div class="containerBody" id="watcherRelicsBody">
+
+                    </div>
+                </div>
+                <div id="watcherBossRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Boss Relics</span>
+                    </div>
+                    <div class="containerBody" id="watcherBossRelicsBody">
+
+                    </div>
+                </div>
+                <div id="watcherPotionsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Potions</span>
+                    </div>
+                    <ul class="containerBody" id="watcherPotionsBody">
+
+                    </ul>
+                </div>
+
+                <!--Deck containers-->
+                <div id="watcherDeckContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage deckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Deck</span>
+                    </div>
+                    <ul class="containerBody" id="watcherDeckBody">
+
+                    </ul>
+                </div>
+                <div id="watcherRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage rareDeckTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Rare Cards</span>
+                    </div>
+                    <ul class="containerBody" id="watcherRareBody">
+
+                    </ul>
+                </div>
+
+                <!--Removed cards containers-->
+                <div id="watcherRemovedContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage removedTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Removed Cards</span>
+                    </div>
+                    <ul class="containerBody" id="watcherRemovedBody">
+
+                    </ul>
+                </div>
+                <div id="watcherSkippedRareContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage skippedRareTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Rares</span>
+                    </div>
+                    <ul class="containerBody" id="watcherSkippedRareBody">
                         
                     </ul>
                 </div>

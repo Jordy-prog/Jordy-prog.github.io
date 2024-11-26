@@ -69,7 +69,7 @@ div:focus, div:active, button:focus, button:active {
 
     width:300px;
     padding:5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+    border-radius: 2px;
 
     background-image: url("/static/images/nameBox.png");
     background-repeat: no-repeat;
@@ -113,8 +113,7 @@ div:focus, div:active, button:focus, button:active {
     }
 }
 
-/*Info tabs styling*/
-/* Apply the same font-family to all form elements */
+/* Main page containers */
 .wrapper {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -128,12 +127,21 @@ div:focus, div:active, button:focus, button:active {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
     align-items: center;
 }
+.pageContainer {
+    width: 100%;
+    margin-top:5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*Campaign id tabs styling*/
 .infoContainer {
     display: flex;
     flex-direction: column;
-    gap: 10%;
 }
 .infoContainer h2 {
     padding: 5px;
@@ -146,6 +154,7 @@ div:focus, div:active, button:focus, button:active {
     position: relative;
     display: flex;
     justify-content: center;
+    
 }
 
 #campaignNameBanner {
@@ -188,27 +197,21 @@ div:focus, div:active, button:focus, button:active {
     }
 
     #campaignName {
-        font-size: 0.8rem; /* Even smaller font size */
+        font-size: 1rem; /* Even smaller font size */
         top: 36%;
     }
     #campaignDate {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
 
 
-/* Act display */
-#levelInfoContainer {
-    width: 100%;
-    margin-top:5%;
-    display: grid;
-    gap: 10px;
-}
+/* Act and ascension display */
 
 #actDisplay {
     padding: 10px;
     color: wheat;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     
     transition: all 0.1s ease-in-out;
@@ -217,7 +220,7 @@ div:focus, div:active, button:focus, button:active {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 
     display:inline-block;
-    width:28%;
+    width:175px;
     text-align: center;
 
     background-image: url('/static/images/actOne.jpg');
@@ -228,7 +231,7 @@ div:focus, div:active, button:focus, button:active {
 #ascDisplay {
     padding: 10px;
     color: rgb(255, 58, 58);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     
     transition: all 0.1s ease-in-out;
@@ -237,7 +240,7 @@ div:focus, div:active, button:focus, button:active {
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     float:right;
 
-    width:28%;
+    width: 175px;
     text-align: center;
 
     background-image: url('/static/images/ascensionBG.png');
@@ -288,6 +291,41 @@ div:focus, div:active, button:focus, button:active {
     top: 0;
     left: 0;
 }
+
+/*Player character page styling*/
+.playerContainer {
+    width: 400px;
+    position: relative;
+}
+.playerNameBanner {
+    width: 400px;
+    height: 50px;
+    margin: 27px 0px 27px 20px;
+
+    border-radius: 5px;
+    
+
+    z-index: -1;
+}
+.playerNameText {
+    position: absolute;
+    top: 26px;
+    left: 110px;
+
+
+    font-size: 1.1rem;
+    color: wheat;
+    box-shadow: 10px 10px 10px 10px, black;
+}
+.playerIcon {
+    position: absolute;
+    width: 105px;
+    left: 0px;
+
+}
+
+/*Main container styling for reader, slight adjustments from writerStyles*/
+
 .containerHeader {
     position: relative;
 }
@@ -328,7 +366,7 @@ div:focus, div:active, button:focus, button:active {
 }
 
 .item-image {
-    width: 100px;
+    width: 95px;
 }
 
 .item-footer {
@@ -340,6 +378,17 @@ div:focus, div:active, button:focus, button:active {
 }
 
 .card-list-item {
-    background-color: transparent;
+    /*background-color: transparent;*/
+    border-radius: 2px;
     padding-left: 10px;
+    height: auto;
+}
+
+.upgraded-card-label {
+    color: rgb(125, 225, 80);
+}
+
+.card-image {
+    width: 100px;
+    height: auto;
 }
