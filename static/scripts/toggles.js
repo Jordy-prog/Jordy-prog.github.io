@@ -1,12 +1,12 @@
 function toggleActiveChar(element) {
     var nav = document.getElementById("formNav")
-    var images = nav.querySelectorAll("img")
-    images.forEach(img => {
-        if (img.classList.contains('active')) {
-            img.classList.remove("active")
+    var divs = nav.querySelectorAll("div")
+    divs.forEach(div => {
+        if (div.classList.contains('active')) {
+            div.classList.remove("active")
 
             // Hide current content
-            const prevId = img.getAttribute('id').replace('Nav', '');
+            const prevId = div.getAttribute('id').replace('Nav', '');
             document.getElementById(prevId).style.display = 'none';
         }
     });
