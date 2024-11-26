@@ -1,5 +1,5 @@
 
-
+import { jsonCardObject } from "./readCardList";
 
 document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
     

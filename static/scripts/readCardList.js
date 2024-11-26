@@ -1,29 +1,15 @@
-var jsonBlob = null;
+var jsonObject;
 
 window
     .fetch(new Request('/static/CardList.json'))
-    .then((response => {
+    .then(response => {
             if (!response.ok) {
                 throw new Error('Fetch error! ${response.status}');
             }
-            readCardList(response.json());
-    })
-) 
-
-function readCardList(json) { 
-    let fileReader = new FileReader();
-    
-    fileReader.onload = function(event) {
-        translateCardList(JSON.parse(event.target.result));
+            return response.json();
+    }).then(promse => {        
+        jsonObject = promse;
     }
-    
-    fileReader.readAsText(json);
-}
+)
 
-
-function translateCardList(cardJson) {
-    cardJson.forEach(element => {
-        console.log(element);
-    });
-}
-
+export { jsonCardObject };
