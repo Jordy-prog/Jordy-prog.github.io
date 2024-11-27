@@ -220,7 +220,7 @@ div:focus, div:active, button:focus, button:active {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 
     display:inline-block;
-    width:175px;
+    width:150px;
     text-align: center;
 
     background-image: url('/static/images/actOne.jpg');
@@ -240,7 +240,7 @@ div:focus, div:active, button:focus, button:active {
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     float:right;
 
-    width: 175px;
+    width: 150px;
     text-align: center;
 
     background-image: url('/static/images/ascensionBG.png');
@@ -248,6 +248,12 @@ div:focus, div:active, button:focus, button:active {
     background-repeat: no-repeat;
 }
 
+@media (max-width: 360px) {
+    #ascDisplay, #actDisplay {
+        width: 110px;
+        font-size: 1.3rem;
+    }
+}
 /* Keys Styling */
 
 #keyContainer {
@@ -294,7 +300,6 @@ div:focus, div:active, button:focus, button:active {
 
 /*Player character page styling*/
 .playerContainer {
-    width: 400px;
     position: relative;
 }
 .playerNameBanner {
@@ -309,7 +314,7 @@ div:focus, div:active, button:focus, button:active {
 }
 .playerNameText {
     position: absolute;
-    top: 26px;
+    top: 25%;
     left: 110px;
 
 
@@ -322,6 +327,18 @@ div:focus, div:active, button:focus, button:active {
     width: 105px;
     left: 0px;
 
+}
+
+@media (max-width: 440px) {
+    .playerNameBanner {
+        width: 80%;
+        height: 40px;
+
+    }
+
+    .playerIcon {
+        width: 95px;
+    }
 }
 
 /*Main container styling for reader, slight adjustments from writerStyles*/

@@ -29,7 +29,7 @@
             "prepared", "slice", "sneaky_strike"],
             "uncommon": ["accuracy", "all-out_attack", "backstab", "bane", "blur", "bouncing_flask", "calculated_gamble", "catalyst", "choke", "concentrate", "crippling_cloud",
             "dash", "distraction", "escape_plan", "expertise", "finisher", "flechettes", "footwork", "infinite_blades", "leg_sweep", "masterful_stab", "noxious_fumes", "outmaneuver",
-            "piercing_wail", "predator", "reflex", "riddle_with_holes", "setup", "skewer", "tactician", "terror", "well_laid_plans"],
+            "piercing_wail", "predator", "reflex", "riddle_with_holes", "setup", "skewer", "tactician", "terror", "well-laid_plans"],
             "rare": ["a_thousand_cuts", "adrenaline", "after_image", "bullet_time", "burst", "corpse_explosion", "die_die_die", "doppelganger", "envenom", "grand_finale", "malaise",
             "storm_of_steel", "tools_of_the_trade", "unload", "wraith_form"]
         },
