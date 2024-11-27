@@ -82,7 +82,7 @@ function displayGeneral(generalObject) {
 
 function displayPlayer(playerObject, playerClass) {
     try {
-    document.getElementById(playerClass + "Names").innerHTML = playersToString(playerObject.Players);
+    document.getElementById(playerClass + "Names").innerHTML = playerObject.Players;
 
     setPlayerHealth(document.getElementById(playerClass + "HealthContainer"), playerObject.Health);
     document.getElementById(playerClass + "GoldCount").innerHTML = playerObject.Gold;
@@ -208,26 +208,6 @@ function getCardRarity(playerName, cardName) {
     }
 
     return rarity;
-}
-
-function playersToString(playerObject) {
-    var stringToReturn = "";
-
-    playerObject.forEach((element, index )=> {
-        if(index == 0) {
-            stringToReturn += element;
-        } else if (index > 0 && index < playerObject.length - 1) {
-            stringToReturn += ", " + element;
-        } else {
-            stringToReturn += " and " + element;
-        }
-
-        
-    console.log(stringToReturn);
-    });
-
-
-    return stringToReturn;
 }
 
 function setPlayerHealth(heartContainer, amount) {
