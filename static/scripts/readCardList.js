@@ -1,4 +1,4 @@
-var jsonObject;
+var jsonCardObject;
 
 window
     .fetch(new Request('/static/CardList.json'))
@@ -8,7 +8,7 @@ window
             }
             return response.json();
     }).then(promse => {        
-        jsonObject = promse;
+        jsonCardObject = promse;
     }
 )
 

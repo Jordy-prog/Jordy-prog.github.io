@@ -2,7 +2,7 @@
   
 function toggleActive(element) {
     var nav = document.getElementById("formNav")
-    var images = nav.querySelectorAll("img")
+    var images = nav.querySelectorAll("div")
     images.forEach(img => {
         img.classList.remove("active")
     });
@@ -18,7 +18,7 @@ function createPlayerPages() {
         document.getElementById(element).innerHTML += 
                 '<div class="playerContainer">'
                 +'    <img class="playerNameBanner" src="/static/images/disabledButton.png">'
-                +'    <h2 class="playerNameText" id="' + element + 'Names">Nobody!</h2>'
+                +'    <h2 class="playerNameText" id="' + element + 'Names">A Spooky Ghost!</h2>'
                 +'    <img class="playerIcon" src="/static/images/' + element + 'Icon.png">'
                 +'</div>'
                 +'<!-- Health -->'
