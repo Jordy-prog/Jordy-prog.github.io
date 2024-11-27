@@ -1,6 +1,8 @@
 function toggleActiveChar(element) {
     var nav = document.getElementById("formNav")
     var divs = nav.querySelectorAll("div")
+    console.log(nav);
+
     divs.forEach(div => {
         if (div.classList.contains('active')) {
             div.classList.remove("active")

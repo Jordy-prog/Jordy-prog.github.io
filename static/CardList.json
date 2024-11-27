@@ -1,0 +1,56 @@
+{
+    "relics": ["akabeko", "anchor", "bag_of_preparation", "bird-faced_urn", "blood_vial", "blue_candle", "calipers", "captain's_wheel", "centennial_puzzle", "charon's_ashes", 
+    "dead_branch", "dolly's_mirror", "duality", "du-vu_doll", "gambling_chip", "golden_eye", "golden_idol", "gremlin_horn", "happy_flower", "horn_cleat", "ice_cream", 
+    "incense_burner", "ink_bottle", "lantern", "meat_on_the_bone", "mercury_hourglass", "molten_egg", "mummified_hand", "mutagen", "necronomicon", "nilry's_codex", "ninja_scroll", 
+    "oddly_smooth_stone", "old_coin", "omamori", "orichalcum", "peace_pipe", "pen_nib", "pocketwatch", "red_mask", "red_skull", "regal_pillow", "runic_pyramid", "self-forming_clay", 
+    "ssserpent_head", "stone_calendar", "strike_dummy", "sundial", "the_abacus", "the_boot", "the_courier", "toolbox", "toxic_egg", "tungsten_rod", "vajra", "war_paint", "whetstone", "wing_boots"],
+    "bossRelics": ["astrolabe", "black_blood", "calling_bell", "coffee_dripper", "cursed_key", "ectoplasm", "empty_cage", "enchiridion", "frozen_core", "fusion_hammer", "holy_water",
+    "mark_of_pain", "orrery", "pandora's_box", "ring_of_the_serpent", "snecko_eye", "sozu", "tiny_house", "white_beast_statue", "wrist_blade"],
+    "potions": ["ancient_potion", "attack_potion", "block_potion", "blood_potion", "cunning_potion", "distilled_chaos", "energy_potion", "entropic_brew", "explosive_potion",
+    "fairy_in_a_bottle", "fire_potion", "flex_potion", "gambler's_brew", "ghost_in_a_jar", "heart_of_iron", "liquid_bronze", "liquid_memories", "purity_potion", "skill_potion",
+    "snecko_oil", "swift_potion", "vulnerable_potion", "weak_potion"],
+    "cards": {
+        "curses": ["clumsy", "decay", "doubt", "injury", "pain", "parasite", "regret", "shame", "writhe"],
+        "colorless": ["apotheosis", "apparition", "blind", "dark_shackles", "dramatic_entrance", "finesse", "flash_of_steel", "good_instincts", "hand_of_greed", "impatience", 
+        "madness", "master_of_strategy", "mayhem", "mind_blast", "panacea", "panache", "purity", "sadistic_nature", "swift_strike", "the_bomb", "thinking_ahead", "trip"],
+        "ironclad": {
+            "starter": ["strike", "defend", "bash"],
+            "common": ["anger", "body_slam", "cleave", "clothesline", "flex", "havoc", "heavy_blade", "iron_wave", "pommel_strike", "seeing_red", "shrug_it_off", "true_grit", 
+            "twin_strike", "warcry", "wild_strike"],
+            "uncommon": ["battle_trance", "blood_for_blood", "burning_pact", "carnage", "clash", "combust", "dark_embrace", "disarm", "entrench", "evolve", "feel_no_pain", 
+            "fire_breathing", "flame_barrier", "ghostly_armor", "headbutt", "inflame", "metallicize", "perfect_strike", "power_through", "rage", "rampage", "rupture", "second_wind", 
+            "sentinel", "sever_soul", "shockwave", "spot_weakness", "whirlwind"],
+            "rare": ["barricade", "berserk", "bludgeon", "corruption", "demon_form", "double_tap", "exhume", "feed", "fiend_fire", "immolate", "impervious", "juggernaut", "limit_break",
+            "offering", "uppercut"]
+        },
+        "silent": {
+            "starter": ["strike", "defend", "neutralize", "survivor"],
+            "common": ["acrobatics", "backflip", "blade_dance", "cloak_and_dagger", "dagger_spray", "dagger_throw", "deadly_poison", "deflect", "dodge_and_roll", "poisoned_stab",
+            "prepared", "slice", "sneaky_strike"],
+            "uncommon": ["accuracy", "all-out_attack", "backstab", "bane", "blur", "bouncing_flask", "calculated_gamble", "catalyst", "choke", "concentrate", "crippling_cloud",
+            "dash", "distraction", "escape_plan", "expertise", "finisher", "flechettes", "footwork", "infinite_blades", "leg_sweep", "masterful_stab", "noxious_fumes", "outmaneuver",
+            "piercing_wail", "predator", "reflex", "riddle_with_holes", "setup", "skewer", "tactician", "terror", "well-laid_plans"],
+            "rare": ["a_thousand_cuts", "adrenaline", "after_image", "bullet_time", "burst", "corpse_explosion", "die_die_die", "doppelganger", "envenom", "grand_finale", "malaise",
+            "storm_of_steel", "tools_of_the_trade", "unload", "wraith_form"]
+        },
+        "defect": {
+            "starter": ["strike", "defend", "zap", "dualcast"],
+            "common": ["ball_lightning", "barrage", "chaos", "charge_battery", "claw", "cold_snap", "compile_driver", "coolheaded", "go_for_the_eyes", "leap", "recursion", "scrape",
+            "skim", "steam_barrier", "sweeping_beam", "turbo"],
+            "uncommon": ["beam_cell", "blizzard", "capacitor", "consume", "darkness", "doom_and_gloom", "double_energy", "equilibrium", "forcefield", "ftl", "fusion", "glacier",
+            "heatstinks", "hologram", "loop", "machine_learning", "melter", "overclock", "recycle", "reinforced_body", "reprogram", "stack", "storm", "streamline", "sunder", "tempest"],
+            "rare": ["all_for_one", "amplify", "buffer", "core_surge", "defragment", "echo_form", "electrodynamics", "fission", "hyper_beam", "meteor_strike", "multicast", "rainbow",
+            "seek", "static_discharge", "thunder_strike"]
+        },
+        "watcher": {
+            "starter": ["strike", "defend", "eruption", "vigilance"],
+            "common": ["collect", "consecrate", "crescendo", "cut_through_fate", "empty_body", "empty_fist", "flurry_of_blows", "flying_sleeves", "halt", "just_lucky", "protect",
+            "third_eye", "tranquility"],
+            "uncommon": ["battle_hymn", "carve_reality", "conclude", "crush_joints", "empty_mind", "fear_no_evil", "foreign_influence", "foresight", "indignation", "inner_peace",
+            "like_water", "meditate", "mental_fortress", "nirvana", "perserverence", "pray", "prostrate", "reach_heaven", "rushdown", "sands_of_time", "sash_whip", "signature_move",
+            "simmering_fury", "study", "swivel", "talk_to_the_hand", "tantrum", "wallop", "weave", "windmill_strike", "worship", "wreath_of_flame"],
+            "rare": ["blasphemy", "brilliance", "conjure_blade", "deus_ex_machina", "deva_form", "devotion", "establishment", "judgment", "omega", "omniscience", "ragnarok", "scrawl",
+            "spirit_shield", "vault", "wish"]
+        }
+    }
+}
