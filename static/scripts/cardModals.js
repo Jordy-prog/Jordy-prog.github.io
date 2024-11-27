@@ -1,21 +1,23 @@
-const cards = document.querySelectorAll('.card-list-item')
+function setupCards() {
+    const cards = document.querySelectorAll('.card-list-item')
 
-cards.forEach(card => {
-    const container = document.getElementById(card.getAttribute('data-copy-target')).querySelector('.container-body')
+    cards.forEach(card => {
+        const container = document.getElementById(card.getAttribute('data-copy-target')).querySelector('.container-body')
 
-    card.addEventListener('click', () => {
-        const checkbox = card.querySelector('.card-checkbox')
-        if (isTicked(checkbox)) {
-            checkbox.src = '/static/images/tickbox_unticked.png'
-            card.classList.remove('active');
-            removeCard(card, container);
-        } else {
-            checkbox.src = '/static/images/tickbox_ticked.png'
-            card.classList.add('active');
-            addCard(card, container);
-        }
+        card.addEventListener('click', () => {
+            const checkbox = card.querySelector('.card-checkbox')
+            if (isTicked(checkbox)) {
+                checkbox.src = '/static/images/tickbox_unticked.png'
+                card.classList.remove('active');
+                removeCard(card, container);
+            } else {
+                checkbox.src = '/static/images/tickbox_ticked.png'
+                card.classList.add('active');
+                addCard(card, container);
+            }
+        })
     })
-})
+}
 
 function addCard(card, container) {
     const placeholder = container.querySelector('.container-placeholder')
@@ -97,3 +99,5 @@ function demoteCards(cards) {
         }
     });
 }
+
+export { setupCards };

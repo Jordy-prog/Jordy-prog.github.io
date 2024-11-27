@@ -1,25 +1,21 @@
-fetch(new Request('/static/example.json'))
-    .then(response => {
-            if (!response.ok) {
-                throw new Error(`Fetch error! ${response.status}`);
-            }
-            return response.json();
-    })
-    .then(data => {
-        generateModals(data);
-    })
-    .catch(error => {
-        console.error(error);
-    });
+import { getImageObject } from "./readImageList.js";
+import { setupItems } from "./itemModals.js";
+import { setupCards } from "./cardModals.js";
 
-function generateModals(imageObject) {
-    generateGeneralModals(imageObject);
+const jsonImageObject = await getImageObject();
+generateModals();
+setupItems();
+setupCards();
+
+
+function generateModals() {
+    generateGeneralModals();
 }
 
-function generateGeneralModals(imageObject) {
+function generateGeneralModals() {
     let container = document.getElementById('skippedRelicsModal').querySelector('.modal-body')
 
-    imageObject.relics.forEach(relic => {
+    jsonImageObject.relics.forEach(relic => {
         let relicElement = document.createElement('div');
         relicElement.id = "skippedRelicsContainer_" + relic;
         relicElement.classList.add("item");

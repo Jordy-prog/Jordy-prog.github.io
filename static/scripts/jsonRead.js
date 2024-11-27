@@ -1,6 +1,8 @@
 
-import { jsonCardObject } from "./readCardList.js";
+import { getImageObject } from "./readImageList.js";
 
+var jsonImageObject = await getImageObject();
+console.log(jsonImageObject);
 document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
     
 //displays actual reader after uploading file 
@@ -34,6 +36,8 @@ function jsonParse(event) {
     try {
         let stringFile = event.target.result;
         let jsonFile = JSON.parse(stringFile);
+
+        console.log(jsonFile);
 
         displayGeneral(jsonFile.General);
         displayPlayer(jsonFile.Ironclad, "ironclad");
@@ -178,7 +182,9 @@ function fillCardList(listName, cardList, cardContainer) {
 function getCardRarity(playerName, cardName) {
 
     let rarity = "";
-    Object.entries(jsonCardObject.cards[playerName]).forEach(([listKey, list]) => {
+
+    console.log(jsonImageObject);
+    Object.entries(jsonImageObject.cards[playerName]).forEach(([listKey, list]) => {
         //console.log(listKey);
         Object.entries(list).forEach(card => {
 
@@ -188,12 +194,12 @@ function getCardRarity(playerName, cardName) {
         });
     });
     if(rarity == "") {
-        Object.entries(jsonCardObject.cards["curses"]).forEach(card => {
+        Object.entries(jsonImageObject.cards["curses"]).forEach(card => {
             if(card[1] == cardName) {
                 rarity = "curses";
             } 
         });
-        Object.entries(jsonCardObject.cards["colorless"]).forEach(card => {
+        Object.entries(jsonImageObject.cards["colorless"]).forEach(card => {
             if(card[1] == cardName) {
                 rarity = "colorless";
             } 
