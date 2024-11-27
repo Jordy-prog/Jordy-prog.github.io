@@ -294,7 +294,7 @@ div:focus, div:active, button:focus, button:active {
 }
 .playerNameBanner {
     width: 400px;
-    height: 50px;
+    height: 60px;
     margin: 27px 0px 27px 20px;
 
     border-radius: 5px;
@@ -302,6 +302,23 @@ div:focus, div:active, button:focus, button:active {
 
     z-index: -1;
 }
+
+#ironcladNameBanner {
+    filter: hue-rotate(0deg);
+}
+
+#silentNameBanner {
+    filter: hue-rotate(100deg);
+}
+
+#defectNameBanner {
+    filter:  hue-rotate(190deg);
+}
+
+#watcherNameBanner {
+    filter:  hue-rotate(250deg);
+}
+
 .playerNameText {
     position: absolute;
     top: 25%;
@@ -314,15 +331,15 @@ div:focus, div:active, button:focus, button:active {
 }
 .playerIcon {
     position: absolute;
-    width: 105px;
-    left: 0px;
+    width: 100px;
+    top: 8px;
+    left: 5px;
 
 }
 
 @media (max-width: 440px) {
     .playerNameBanner {
         width: 80%;
-        height: 40px;
 
     }
 

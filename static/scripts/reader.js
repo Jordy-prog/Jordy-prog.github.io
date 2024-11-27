@@ -17,7 +17,7 @@ function createPlayerPages() {
 
         document.getElementById(element).innerHTML += 
                 '<div class="playerContainer">'
-                +'    <img class="playerNameBanner" src="/static/images/disabledButton.png">'
+                +'    <img class="playerNameBanner" id="'+ element + 'NameBanner" src="/static/images/nameBanner.png">'
                 +'    <h2 class="playerNameText" id="' + element + 'Names">A Spooky Ghost!</h2>'
                 +'    <img class="playerIcon" src="/static/images/' + element + 'Icon.png">'
                 +'</div>'
