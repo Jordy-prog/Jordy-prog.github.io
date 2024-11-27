@@ -1,20 +1,10 @@
-:root {
-    --base-color: #212529;
-    --base-color-rgb: 33, 37, 41;
-    --accent-color: #6C757D;
-    --accent-color-rgb: 108, 117, 125;
-    --highlight-color: #F8F9FA;
-    --highlight-color-rgb: 248, 249, 250;
-    --background-img: url(/static/images/general_background.jpg);
-}
-
 /* General Styles */
 
 @font-face { font-family: Kreon; src: url('/static/fonts/Kreon-Regular.ttf'); } 
 @font-face { font-family: Kreon; font-weight: bold; src: url('/static/fonts/Kreon-Bold.ttf');}
 
 body {
-    background-image: var(--background-img);
+    background-image: url("/static/images/general_background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -23,6 +13,44 @@ body {
     font-family: Kreon, sans-serif;
     overflow-x: hidden;
     margin: 0;
+}
+
+#background_general {
+    background-image: url("/static/images/general_background.jpg");
+}
+
+#background_ironclad {
+    background-image: url("/static/images/ironclad_background.jpg");
+}
+
+#background_silent {
+    background-image: url("/static/images/silent_background.jpg");
+}
+
+#background_defect {
+    background-image: url("/static/images/defect_background.jpg");
+}
+
+#background_watcher {
+    background-image: url("/static/images/watcher_background.jpg");
+}
+
+@media (max-width: 480px) {
+    #background_ironclad {
+        background-image: url("/static/images/ironclad_backgroundM.jpg");
+    }
+    
+    #background_silent {
+        background-image: url("/static/images/silent_backgroundM.jpg");
+    }
+    
+    #background_defect {
+        background-image: url("/static/images/defect_backgroundM.jpg");
+    }
+
+    #background_watcher {
+        background-image: url("/static/images/watcher_backgroundM.jpg");
+    }
 }
 
 /* Apply the same font-family to all form elements */
@@ -143,8 +171,6 @@ div:focus, div:active, button:focus, button:active {
     visibility: visible;
     animation: glow 5s ease-in-out infinite;
 }
-
-
 
 @media (min-width: 768px) {
     #formNav {

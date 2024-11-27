@@ -1,7 +1,6 @@
 function toggleActiveChar(element) {
     var nav = document.getElementById("formNav")
     var divs = nav.querySelectorAll("div")
-    console.log(nav);
 
     divs.forEach(div => {
         if (div.classList.contains('active')) {
@@ -17,6 +16,7 @@ function toggleActiveChar(element) {
     // Show new content
     const newId = element.getAttribute('id').replace('Nav', '');
     document.getElementById(newId).style.display = 'flex';
+    document.body.id = `background_${newId}`;
 }
 
 function toggleActiveAct(element) {
