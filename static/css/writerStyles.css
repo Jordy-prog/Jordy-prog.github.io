@@ -1,6 +1,5 @@
 :root {
     --base-color: wheat;
-    --background-img: url(/static/images/general_background.jpg);
 }
 
 /* General Styles */
@@ -9,7 +8,7 @@
 @font-face { font-family: Kreon; font-weight: bold; src: url('/static/fonts/Kreon-Bold.ttf');}
 
 body {
-    background-image: var(--background-img);
+    background-image: url("/static/images/general_background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -18,6 +17,44 @@ body {
     font-family: Kreon, sans-serif;
     overflow-x: hidden;
     margin: 0;
+}
+
+#background_general {
+    background-image: url("/static/images/general_background.jpg");
+}
+
+#background_ironclad {
+    background-image: url("/static/images/ironclad_background.jpg");
+}
+
+#background_silent {
+    background-image: url("/static/images/silent_background.jpg");
+}
+
+#background_defect {
+    background-image: url("/static/images/defect_background.jpg");
+}
+
+#background_watcher {
+    background-image: url("/static/images/watcher_background.jpg");
+}
+
+@media (max-width: 480px) {
+    #background_ironclad {
+        background-image: url("/static/images/ironclad_backgroundM.jpg");
+    }
+    
+    #background_silent {
+        background-image: url("/static/images/silent_backgroundM.jpg");
+    }
+    
+    #background_defect {
+        background-image: url("/static/images/defect_backgroundM.jpg");
+    }
+
+    #background_watcher {
+        background-image: url("/static/images/watcher_backgroundM.jpg");
+    }
 }
 
 /* Apply the same font-family to all form elements */
@@ -105,27 +142,41 @@ div:focus, div:active, button:focus, button:active {
     justify-content: space-around;
 }
 
-#formNav img {
+#formNav div {
     width: 15%;
     max-width: 100px;
     height: auto;
+    position: relative;
 
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-#formNav img:hover {
+#formNav div:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-#formNav img:active {
+#formNav div:active {
     transform: scale(0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-#formNav img.active {
-    box-shadow: 0px 0px 20px 3px var(--base-color);
+#formNav div img {
+    width: 100%;
+    display: block;
+}
+
+.navGlow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+#formNav div.active .navGlow {
+    visibility: visible;
+    animation: glow 5s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
@@ -729,6 +780,10 @@ input[type="range"]::-ms-thumb {
     filter: brightness(1.1);
 }
 
+.card-list-item.starter-card {
+    background-color: rgb(156, 156, 156, 0.7);
+}
+
 .card-list-item.common-card {
     background-color: rgb(156, 156, 156, 0.7);
 }
@@ -741,7 +796,7 @@ input[type="range"]::-ms-thumb {
     background-color: rgba(233, 186, 72, 0.7);
 }
 
-.card-list-item.curses-card {
+.card-list-item.curse-card {
     background-color: rgb(46, 44, 44, 0.7);
 }
 

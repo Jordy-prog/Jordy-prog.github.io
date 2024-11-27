@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Save The Spire!</title>
-        <link rel="stylesheet" type="text/css" href="static/css/readerStyles.css">
         <link rel="stylesheet" type="text/css" href="static/css/writerStyles.css">
+        <link rel="stylesheet" type="text/css" href="static/css/readerStyles.css">
         <link rel="shortcut icon" type="image/png" href="static/images/enchiridion.ico"/>
     </head>
     <body>
@@ -33,25 +33,40 @@
         </div>
         <div id="mainPage">
             <nav id="formNav">
-                <img class="active" onclick="toggleActiveChar(this)" src="static/images/generalButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/ironcladButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/silentButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/defectButton.png">
-                <img onclick="toggleActiveChar(this)" src="static/images/watcherButton.png">
+                <div id="generalNav" onclick="toggleActiveChar(this)">
+                    <img src="/static/images/generalButton.png">
+                    <img class="navGlow" src="/static/images/generalButtonGlow.png">
+                </div>
+                <div id="ironcladNav" onclick="toggleActiveChar(this)">
+                    <img src="/static/images/ironcladButton.png">
+                    <img class="navGlow" src="/static/images/ironcladButtonGlow.png">
+                </div>
+                <div id="silentNav" onclick="toggleActiveChar(this)">
+                    <img src="/static/images/silentButton.png">
+                    <img class="navGlow" src="/static/images/silentButtonGlow.png">
+                </div>
+                <div id="defectNav" onclick="toggleActiveChar(this)">
+                    <img src="/static/images/defectButton.png">
+                    <img class="navGlow" src="/static/images/defectButtonGlow.png">
+                </div>
+                <div id="watcherNav" onclick="toggleActiveChar(this)">
+                    <img src="/static/images/watcherButton.png">
+                    <img class="navGlow" src="/static/images/watcherButtonGlow.png">
+                </div>
             </nav>
             <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
-            <div class="wrapper">
-                <div class="infoContainer">
-                    <div class="campaignDataContainer">
-                        <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
-                        <h2 id="campaignName" placeholder="Campaign name">The most awesome game</h2>                    
+            <div id="general" class="wrapper">
+                <div class="pageContainer">
+                    <div class="infoContainer">
+                        <div class="campaignDataContainer">
+                            <img id="campaignNameBanner"  src="/static/images/selectBanner.png">
+                            <h2 id="campaignName" placeholder="Campaign name">The Nameless Game</h2>                    
+                        </div>
+                        <div class="campaignDataContainer">
+                            <img id="campaignDateBanner" src="/static/images/BannerDate.png">
+                            <h2 id="campaignDate">01-01-0001</h2>
+                        </div>
                     </div>
-                    <div class="campaignDataContainer">
-                        <img id="campaignDateBanner" src="/static/images/BannerDate.png">
-                        <h2 id="campaignDate">01-01-0001</h2>
-                    </div>
-                </div>
-                <div id="levelInfoContainer">
                     <div id="settingsContainer">
                         <label id="actDisplay">Act 1</label>
                         <label id="ascDisplay">Ascension 0</label>
@@ -77,19 +92,71 @@
                 </div>
                 <div id="skippedRelicsContainer" class="relicContainer">
                     <div class="containerHeader">
-                        <img class="containerLabelImage" src="/static/images/panelTag.png">
-                        <span class="containerLabel">Relics</span>
+                        <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Relics</span>
                     </div>
-                    <div class="containerBody">
-                        <span class="containerPlaceholder">No relics yet...</span>
+                    <div class="containerBody" id="skippedRelicsBody">
+                        
                     </div>
                 </div>
+                <div id="skippedBossRelicsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Boss Relics</span>
+                    </div>
+                    <div class="containerBody" id="skippedBossRelicsBody">
+                        
+                    </div>
+                </div>
+                <div id="skippedPotionsContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Potions</span>
+                    </div>
+                    <ul class="containerBody" id="skippedPotionsBody">
+                        
+                    </ul>
+                </div>
+                <div id="skippedCursesContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage cursesTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Curses</span>
+                    </div>
+                    <ul class="containerBody" id="skippedCursesBody">
+                        
+                    </ul>
+                </div>
+                <div id="skippedColorlessContainer" class="relicContainer">
+                    <div class="containerHeader">
+                        <img class="containerLabelImage colorlessTag" src="/static/images/panelTag.png">
+                        <span class="containerLabel">Skipped Colorless</span>
+                    </div>
+                    <ul class="containerBody" id="skippedColorlessBody">
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div id="ironclad" class="wrapper">
+            </div>
+            
+            <div id="silent" class="wrapper">
+            </div>
+
+            <div id="defect" class="wrapper">
+            </div>
+
+            <div id="watcher" class="wrapper">                 
             </div>
         </div>
     </body>
 
+
+
+    <script src="static/scripts/readImag" charset="utf-8"></script>
     <script src="static/scripts/toggles.js" type="text/javascript" charset="utf-8"></script>
     <script src="static/scripts/reader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="static/scripts/jsonRead.js" type="module" charset="utf-8"></script>
     <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
 </html>
 

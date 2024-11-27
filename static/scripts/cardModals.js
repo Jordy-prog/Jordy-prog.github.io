@@ -1,21 +1,41 @@
-const cards = document.querySelectorAll('.card-list-item')
+function setupCards() {
+    const cards = document.querySelectorAll('.card-list-item')
 
-cards.forEach(card => {
-    const container = document.getElementById(card.getAttribute('data-copy-target')).querySelector('.container-body')
+    cards.forEach(card => {
+        const container = document.getElementById(card.getAttribute('data-copy-target')).querySelector('.container-body')
 
-    card.addEventListener('click', () => {
-        const checkbox = card.querySelector('.card-checkbox')
-        if (isTicked(checkbox)) {
-            checkbox.src = '/static/images/tickbox_unticked.png'
-            card.classList.remove('active');
-            removeCard(card, container);
-        } else {
-            checkbox.src = '/static/images/tickbox_ticked.png'
-            card.classList.add('active');
-            addCard(card, container);
-        }
+        card.addEventListener('click', () => {
+            const checkbox = card.querySelector('.card-checkbox')
+            if (isTicked(checkbox)) {
+                checkbox.src = '/static/images/tickbox_unticked.png'
+                card.classList.remove('active');
+                removeCard(card, container);
+            } else {
+                checkbox.src = '/static/images/tickbox_ticked.png'
+                card.classList.add('active');
+                addCard(card, container);
+            }
+        })
     })
-})
+
+    const modalUpgradeButtons = document.querySelectorAll('.card-upgrade');
+
+    modalUpgradeButtons.forEach(upgradeButton => {
+        upgradeButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            const card = upgradeButton.parentElement;
+            const label = card.querySelector('.card-label');
+            const containerCard = document.getElementById(card.getAttribute('id') + 'container')
+            
+            if (label.textContent.includes('+')) {
+                demoteCards([card, containerCard]);
+            } else {
+                upgradeCards([card, containerCard]);
+            }
+        })
+    })
+}
 
 function addCard(card, container) {
     const placeholder = container.querySelector('.container-placeholder')
@@ -58,23 +78,9 @@ function removeCard(card, container) {
     container.removeChild(selectedItem);
 }
 
-const modalUpgradeButtons = document.querySelectorAll('.card-upgrade');
-
-modalUpgradeButtons.forEach(upgradeButton => {
-    upgradeButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-
-        const card = upgradeButton.parentElement;
-        const label = card.querySelector('.card-label');
-        const containerCard = document.getElementById(card.getAttribute('id') + 'container')
-        
-        if (label.textContent.includes('+')) {
-            demoteCards([card, containerCard]);
-        } else {
-            upgradeCards([card, containerCard]);
-        }
-    })
-})
+function isTicked(el) {
+    return el.src.endsWith('_ticked.png');
+}
 
 function upgradeCards(cards) {
     cards.forEach(card => {
@@ -97,3 +103,5 @@ function demoteCards(cards) {
         }
     });
 }
+
+export { setupCards };
