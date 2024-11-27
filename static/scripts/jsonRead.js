@@ -68,9 +68,9 @@ function displayGeneral(generalObject) {
     fillItemList("boss_relics", generalObject.SkippedBossRelics, document.getElementById("skippedBossRelicsBody"));
 
     //Fill potions and cards
-    fillCardList("potions", generalObject.SkippedPotions, document.getElementById("skippedPotionsBody"));
-    fillCardList("curses", generalObject.SkippedCurses, document.getElementById("skippedCursesBody"));
-    fillCardList("colorless", generalObject.SkippedColorless, document.getElementById("skippedColorlessBody"));
+    filleLongItemList("potions", generalObject.SkippedPotions, document.getElementById("skippedPotionsBody"), "potions");
+    filleLongItemList("curses", generalObject.SkippedCurses, document.getElementById("skippedCursesBody"), "cards");
+    filleLongItemList("colorless", generalObject.SkippedColorless, document.getElementById("skippedColorlessBody"), "cards");
 
 
 
@@ -88,11 +88,11 @@ function displayPlayer(playerObject, playerClass) {
     fillItemList("boss_relics", playerObject.BossRelics, document.getElementById(playerClass + "BossRelicsBody"));
     
     //fill potions and cards
-    fillCardList("potions", playerObject.Potions, document.getElementById(playerClass + "PotionsBody"));
-    fillCardList(playerClass, playerObject.Deck, document.getElementById(playerClass + "DeckBody"));
-    fillCardList(playerClass, playerObject.RareDeck, document.getElementById(playerClass + "RareBody"));
-    fillCardList(playerClass, playerObject.RemovedCards, document.getElementById(playerClass + "RemovedBody"));
-    fillCardList(playerClass, playerObject.SkippedRares, document.getElementById(playerClass + "SkippedRareBody"));
+    filleLongItemList("potions", playerObject.Potions, document.getElementById(playerClass + "PotionsBody"), "potions");
+    filleLongItemList(playerClass, playerObject.Deck, document.getElementById(playerClass + "DeckBody"), "cards");
+    filleLongItemList(playerClass, playerObject.RareDeck, document.getElementById(playerClass + "RareBody"), "rare");
+    filleLongItemList(playerClass, playerObject.RemovedCards, document.getElementById(playerClass + "RemovedBody"), "cards");
+    filleLongItemList(playerClass, playerObject.SkippedRares, document.getElementById(playerClass + "SkippedRareBody"), "rare");
 
     } catch (error) {
         console.log("Error parsing player! (" + playerClass + ") Are you sure the file is in the right format?");
@@ -125,13 +125,16 @@ function fillItemList(listName, itemList, itemContainer) {
     }
 } 
 
-function fillCardList(listName, cardList, cardContainer) {
+function filleLongItemList(listName, cardList, cardContainer, listType) {
 
     if (cardList.length != 0) {
-        cardList.forEach(element => {
+        let longItems = sortCardList(cardList, listName, listType);
+        
+        console.log(longItems);
+        longItems.forEach(element => {
             let filePath = '/static/images/';
             //convert a written name to the file name
-            let lowerCaseName = element.toLowerCase();
+            let lowerCaseName = element[0].toLowerCase();
             let convertedName = lowerCaseName.replace(/ /g, "_");
             //remove upgrade for file name
             let extraClass = "";
@@ -143,34 +146,99 @@ function fillCardList(listName, cardList, cardContainer) {
             //set image class for sizing
             let imageClass = "";
             let itemClass = "";
-            if(listName == "potions") {
+            if(listType == "potions") {
                 filePath += "potions/" + convertedName + ".png";
                 imageClass = "potion-image";
             } else {
-                let rarity = getCardRarity(listName, convertedName);
-                if(rarity == "colorless" || rarity == "curses") {
-                    filePath += "cards/" + rarity + "/" + convertedName + ".png";
+                //Get and use the rarity if applicable
+                if(element[1] == "colorless" || element[1] == "curses") {
+                    filePath += "cards/" + element[1] + "/" + convertedName + ".png";
                 } else { 
-                    filePath += "cards/" + listName + "/" + rarity + "/" + convertedName + ".png";
+                    filePath += "cards/" + listName + "/" + element[1] + "/" + convertedName + ".png";
                 }
 
-                itemClass = rarity + "-card";
+                itemClass = element[1] + "-card";
                 
                 imageClass = "card-image";
             }
             //Create html element
             let htmlString = '<li class="card-list-item ' + itemClass + '">'
-                            + '<span class="card-label ' + extraClass + '">' + element + '</span>'
+                            + '<span class="card-label ' + extraClass + '">' + element[0] + '</span>'
                             + '<div class="flex-spacer"></div>'
                             + '<img class="' + imageClass + '" src=' + filePath + '>';
                             + '</li>';                            
         
             cardContainer.innerHTML += htmlString;
-            console.log(htmlString);
-            console.log('hey');
         });
     } else {
         cardContainer.innerHTML += '<span class="containerPlaceholder">None!</span>';
+    }
+}
+
+function sortCardList(cardList, listName, listType) {
+            
+    if(listType == "cards") {
+        let starter = [];
+        let common = [];
+        let uncommon = [];
+        let curses = [];
+        let colorless = [];
+
+        let rare = [];
+
+        console.log(cardList);
+        cardList.forEach(element => {
+            //convert a written name to the file name
+            let lowerCaseName = element.toLowerCase();
+            let convertedName = lowerCaseName.replace(/ /g, "_");
+            //remove upgrade for file name
+            let extraClass = "";
+            if(convertedName.endsWith("+")){
+                convertedName = convertedName.substring(0, convertedName.length - 1);
+                extraClass = "upgraded-card-label";
+            }
+                    
+            let rarity = getCardRarity(listName, convertedName);
+            console.log(rarity);
+            switch(rarity) {
+                case "starter": 
+                    starter.push([element, rarity]);
+                    break;
+                case "common" :
+                    common.push([element, rarity]);
+                    break;
+                case "uncommon" :
+                    uncommon.push([element, rarity]);
+                    break;
+                case "curses" :
+                    curses.push([element, rarity]);
+                    break;
+                case "colorless" :
+                    colorless.push([element, rarity]);
+                    break;
+                case "rare" :
+                    rare.push([element, rarity]);
+                    break;
+            }
+        });
+
+        starter.sort((a,b) => a[0].localeCompare(b[0]));
+        common.sort((a,b) => a[0].localeCompare(b[0]));
+        uncommon.sort((a,b) => a[0].localeCompare(b[0]));
+        curses.sort((a,b) => a[0].localeCompare(b[0]));
+        colorless.sort((a,b) => a[0].localeCompare(b[0]));
+        rare.sort((a,b) => a[0].localeCompare(b[0]))
+
+        return starter.concat(common, uncommon, curses, colorless, rare);
+    } else {
+        let potionArray = [];
+        cardList.forEach(element => {
+            potionArray.push([element, listType]);
+        });
+        potionArray.sort((a,b) => a[0].localeCompare(b[0]));
+
+        return potionArray;
+
     }
 }
 
@@ -178,8 +246,6 @@ function fillCardList(listName, cardList, cardContainer) {
 function getCardRarity(playerName, cardName) {
 
     let rarity = "";
-
-    console.log(jsonImageObject);
     Object.entries(jsonImageObject.cards[playerName]).forEach(([listKey, list]) => {
         //console.log(listKey);
         Object.entries(list).forEach(card => {

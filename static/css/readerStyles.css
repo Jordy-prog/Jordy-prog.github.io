@@ -1,60 +1,3 @@
-:root {
-    --base-color: #212529;
-    --base-color-rgb: 33, 37, 41;
-    --accent-color: #6C757D;
-    --accent-color-rgb: 108, 117, 125;
-    --highlight-color: #F8F9FA;
-    --highlight-color-rgb: 248, 249, 250;
-    --background-img: url(../images/general_background.jpg);
-}
-
-/* General Styles */
-
-@font-face { font-family: Kreon; src: url('../fonts/Kreon-Regular.ttf'); } 
-@font-face { font-family: Kreon; font-weight: bold; src: url('../fonts/Kreon-Bold.ttf');}
-
-body {
-    background-image: var(--background-img);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-
-    font-family: Kreon, sans-serif;
-}
-
-img {
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-}
-
-img:focus, img:active {
-    outline: none;
-}
-
-div:focus, div:active, button:focus, button:active {
-    outline: none;
-    -webkit-tap-highlight-color: transparent; /* For WebKit browsers */
-}
-
-#logoContainer {
-    display: flex;
-    justify-content: center;
-}
-
-#logo {
-    width: 70%;
-    max-width: 300px;
-}
-
-#merchantHand {
-    display: none;
-    position: absolute;
-    height: 100%;
-    pointer-events: none;
-    transition: transform 0.1s ease;
-}
 
 #mainPage {
     visibility: hidden;
@@ -76,42 +19,6 @@ div:focus, div:active, button:focus, button:active {
     background-size: cover;
 }
 
-/* Nav Styles */
-
-#formNav {
-    display: flex;
-    justify-content: space-around;
-}
-
-#formNav img {
-    width: 15%;
-    max-width: 100px;
-    height: auto;
-
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-#formNav img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-#formNav img:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-#formNav img.active {
-    box-shadow: 0px 0px 20px 3px yellow;
-}
-
-@media (min-width: 768px) {
-    #formNav {
-        justify-content: center;
-        gap: 40px;
-    }
-}
 
 /* Main page containers */
 .pageWrapper {
@@ -158,6 +65,7 @@ div:focus, div:active, button:focus, button:active {
     transform: translate(-50%, -50%);
     background: transparent;
 
+    cursor: default;
     color: black;
     font-weight: bold;
     font-size: 1.4rem;
@@ -178,6 +86,7 @@ div:focus, div:active, button:focus, button:active {
     font-size:120%;
     color: wheat;
     text-align: center;
+    cursor: default;
 }
 
 /* Media query for very small screens */
@@ -244,48 +153,13 @@ div:focus, div:active, button:focus, button:active {
         font-size: 1.1rem;
     }
 }
-/* Keys Styling */
-
-#keyContainer {
-    display: grid;
-    grid-template-rows: auto auto;
-}
-
-#keyGreenContainerWrapper, #keyBlueRedContainerWrapper {
-    display: flex;
-    justify-content: center;
-    gap: 21px;
-}
-
-#keyGreenContainer {
-    width: 75px;
-    position: relative;
-}
-
-#keyRedContainer, #keyBlueContainer {
-    position: relative;
-    width: 90px;
-}
-
-#keyBlueContainer {
-    margin-right: 7px;
-}
-
 #keyGreen,
 #keyBlue,
 #keyRed,
 #keyGreenGlow,
 #keyBlueGlow,
 #keyRedGlow {
-    width: 100%;
-    cursor: pointer;
-    display: block;
-}
-#keyBlueGlow, #keyGreenGlow, #keyRedGlow {
-    position: absolute;
-    visibility: hidden;
-    top: 0;
-    left: 0;
+    cursor: default;
 }
 
 /*Player character page styling*/
@@ -348,6 +222,15 @@ div:focus, div:active, button:focus, button:active {
     }
 }
 
+.heartLabel {
+    cursor: default;
+}
+
+.healthHeart {
+    cursor: default;
+}
+
+
 /*Main container styling for reader, slight adjustments from writerStyles*/
 .item-container .container-body {
     flex-wrap: wrap;
@@ -362,22 +245,15 @@ div:focus, div:active, button:focus, button:active {
     height: 50px;
 }
 
-.containerLabel {
-    position: absolute;
-    top: 12px;
-    left: 10px;
-    font-size: 1.5rem;
-    color: wheat;
-}
-
 .containerPlaceholder {
     color: wheat;
     font-size: 1rem;
+    padding: 10px;
 }
-
 
 .item {
     width: 95px;
+    cursor: default;
 }
 
 .item-footer {
@@ -394,6 +270,10 @@ div:focus, div:active, button:focus, button:active {
     border-radius: 2px;
     padding-left: 10px;
     height: auto;
+    cursor: default;
+}
+.card-list-item.starter-card {
+    background-color: transparent;
 }
 
 .upgraded-card-label {
