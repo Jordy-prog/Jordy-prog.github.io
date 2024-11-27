@@ -50,7 +50,6 @@ function generatePlayerModals(player, starterAmounts) {
     addCardsToModal(`deckModal${toTitleCase(player)}`, jsonImageObject.cards[player].starter, "starter", `${player}/starter`, true, starterAmounts);
     addCardsToModal(`deckModal${toTitleCase(player)}`, jsonImageObject.cards[player].common, "common", `${player}/common`, true);
     addCardsToModal(`deckModal${toTitleCase(player)}`, jsonImageObject.cards[player].uncommon, "uncommon", `${player}/uncommon`, true);
-    addCardsToModal(`deckModal${toTitleCase(player)}`, jsonImageObject.cards[player].rare, "rare", `${player}/rare`, true);
     addCardsToModal(`deckModal${toTitleCase(player)}`, jsonImageObject.cards.curses, "curse", "curses", false);
     addCardsToModal(`deckModal${toTitleCase(player)}`, jsonImageObject.cards.colorless, "colorless", "colorless", true);
     // Rare Deck Modal
