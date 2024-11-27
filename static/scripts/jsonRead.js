@@ -8,10 +8,6 @@ document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
 function loadJsonFile() {
     fileToJSON(document.getElementById('jsonInput'));
     
-    document.getElementById("mainPage").style.visibility = 'visible';
-    document.getElementById("generalNav").classList += 'active';
-    document.getElementById("jsonGetDiv").style.display = 'none';
-    
 }
 
 
@@ -41,7 +37,7 @@ function jsonParse(event) {
         displayPlayer(jsonFile.Defect, "defect");
         displayPlayer(jsonFile.Watcher, "watcher");
 
-
+        loadMainPage();
     } catch (error) {
         console.log("Error parsing file. Are you sure the file is in the right format?")
         console.log(error);
@@ -231,4 +227,10 @@ function setPlayerHealth(heartContainer, amount) {
         hearts[i].style.backgroundImage = "url('/static/images/heartFull.png')";
     }
         
+}
+
+function loadMainPage() {    
+    document.getElementById("mainPage").style.visibility = 'visible';
+    document.getElementById("generalNav").classList += 'active';
+    document.getElementById("jsonGetDiv").style.display = 'none';
 }
