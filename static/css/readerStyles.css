@@ -114,22 +114,12 @@ div:focus, div:active, button:focus, button:active {
 }
 
 /* Main page containers */
-.wrapper {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-left: auto;
-    margin-right: auto;
-
-    max-width: 768px;
-
+.pageWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    align-items: center;
+    gap: 20px;
 }
+
 .pageContainer {
     width: 100%;
     margin-top:5%;
@@ -342,6 +332,10 @@ div:focus, div:active, button:focus, button:active {
 }
 
 /*Main container styling for reader, slight adjustments from writerStyles*/
+.item-container .container-body {
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
 
 .containerHeader {
     position: relative;
@@ -359,34 +353,18 @@ div:focus, div:active, button:focus, button:active {
     color: wheat;
 }
 
-.containerBody {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    overflow-x: auto;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px;
-}
-
 .containerPlaceholder {
     color: wheat;
     font-size: 1rem;
 }
 
-.relicContainer {
-    width: 100%;
-    margin-top: 25px;
-    min-height: 100px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid wheat;
-}
 
-.item-image {
+.item {
     width: 95px;
 }
 
 .item-footer {
+    width:100%;
     justify-content: center;
 }
 

@@ -10,7 +10,7 @@ function loadJsonFile() {
     
     document.getElementById("mainPage").style.visibility = 'visible';
     document.getElementById("generalNav").classList += 'active';
-    document.getElementById("jsonGetDiv").style.visibility = 'hidden';
+    document.getElementById("jsonGetDiv").style.display = 'none';
     
 }
 

@@ -31,7 +31,7 @@
             <label for="jsonInput">Please select a matching JSON file.</label>
             <input type="file" id="jsonInput">
         </div>
-        <div id="mainPage">
+        <div id="mainPage" class="wrapper">
             <nav id="formNav">
                 <div id="generalNav" onclick="toggleActiveChar(this)">
                     <img src="/static/images/crowbotButtonJordy.png">
@@ -55,7 +55,8 @@
                 </div>
             </nav>
             <!-- <img id="merchantHand" src="static/images/merchantHand.png"> -->
-            <div id="general" class="wrapper">
+             
+            <div id="general" class="pageWrapper">
                 <div class="pageContainer">
                     <div class="infoContainer">
                         <div class="campaignDataContainer">
@@ -90,63 +91,63 @@
                         </div>
                     </div>
                 </div>
-                <div id="skippedRelicsContainer" class="relicContainer">
+                <div id="skippedRelicsContainer" class="item-container container">
                     <div class="containerHeader">
                         <img class="containerLabelImage relicTag" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Relics</span>
                     </div>
-                    <div class="containerBody" id="skippedRelicsBody">
+                    <div class="container-body" id="skippedRelicsBody">
                         
                     </div>
                 </div>
-                <div id="skippedBossRelicsContainer" class="relicContainer">
+                <div id="skippedBossRelicsContainer" class="item-container container">
                     <div class="containerHeader">
                         <img class="containerLabelImage bossRelicTag" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Boss Relics</span>
                     </div>
-                    <div class="containerBody" id="skippedBossRelicsBody">
+                    <div class="container-body" id="skippedBossRelicsBody">
                         
                     </div>
                 </div>
-                <div id="skippedPotionsContainer" class="relicContainer">
+                <div id="skippedPotionsContainer" class="card-container container">
                     <div class="containerHeader">
                         <img class="containerLabelImage potionTag" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Potions</span>
                     </div>
-                    <ul class="containerBody" id="skippedPotionsBody">
+                    <ul class="container-body" id="skippedPotionsBody">
                         
                     </ul>
                 </div>
-                <div id="skippedCursesContainer" class="relicContainer">
+                <div id="skippedCursesContainer" class="card-container container">
                     <div class="containerHeader">
                         <img class="containerLabelImage cursesTag" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Curses</span>
                     </div>
-                    <ul class="containerBody" id="skippedCursesBody">
+                    <ul class="container-body" id="skippedCursesBody">
                         
                     </ul>
                 </div>
-                <div id="skippedColorlessContainer" class="relicContainer">
+                <div id="skippedColorlessContainer" class="card-container container">
                     <div class="containerHeader">
                         <img class="containerLabelImage colorlessTag" src="/static/images/panelTag.png">
                         <span class="containerLabel">Skipped Colorless</span>
                     </div>
-                    <ul class="containerBody" id="skippedColorlessBody">
+                    <ul class="container-body" id="skippedColorlessBody">
                         
                     </ul>
                 </div>
             </div>
 
-            <div id="ironclad" class="wrapper">
+            <div id="ironclad" class="pageWrapper">
             </div>
             
-            <div id="silent" class="wrapper">
+            <div id="silent" class="pageWrapper">
             </div>
 
-            <div id="defect" class="wrapper">
+            <div id="defect" class="pageWrapper">
             </div>
 
-            <div id="watcher" class="wrapper">                 
+            <div id="watcher" class="pageWrapper">                 
             </div>
         </div>
     </body>
