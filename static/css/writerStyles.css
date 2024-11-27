@@ -760,6 +760,10 @@ input[type="range"]::-ms-thumb {
     filter: brightness(1.1);
 }
 
+.card-list-item.starter-card {
+    background-color: rgb(156, 156, 156, 0.7);
+}
+
 .card-list-item.common-card {
     background-color: rgb(156, 156, 156, 0.7);
 }
@@ -772,7 +776,7 @@ input[type="range"]::-ms-thumb {
     background-color: rgba(233, 186, 72, 0.7);
 }
 
-.card-list-item.curses-card {
+.card-list-item.curse-card {
     background-color: rgb(46, 44, 44, 0.7);
 }
 

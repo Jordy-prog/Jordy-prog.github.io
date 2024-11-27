@@ -17,6 +17,24 @@ function setupCards() {
             }
         })
     })
+
+    const modalUpgradeButtons = document.querySelectorAll('.card-upgrade');
+
+    modalUpgradeButtons.forEach(upgradeButton => {
+        upgradeButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+
+            const card = upgradeButton.parentElement;
+            const label = card.querySelector('.card-label');
+            const containerCard = document.getElementById(card.getAttribute('id') + 'container')
+            
+            if (label.textContent.includes('+')) {
+                demoteCards([card, containerCard]);
+            } else {
+                upgradeCards([card, containerCard]);
+            }
+        })
+    })
 }
 
 function addCard(card, container) {
@@ -60,23 +78,9 @@ function removeCard(card, container) {
     container.removeChild(selectedItem);
 }
 
-const modalUpgradeButtons = document.querySelectorAll('.card-upgrade');
-
-modalUpgradeButtons.forEach(upgradeButton => {
-    upgradeButton.addEventListener('click', (event) => {
-        event.stopPropagation();
-
-        const card = upgradeButton.parentElement;
-        const label = card.querySelector('.card-label');
-        const containerCard = document.getElementById(card.getAttribute('id') + 'container')
-        
-        if (label.textContent.includes('+')) {
-            demoteCards([card, containerCard]);
-        } else {
-            upgradeCards([card, containerCard]);
-        }
-    })
-})
+function isTicked(el) {
+    return el.src.endsWith('_ticked.png');
+}
 
 function upgradeCards(cards) {
     cards.forEach(card => {
