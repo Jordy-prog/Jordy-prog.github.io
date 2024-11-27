@@ -18,7 +18,7 @@
             "common": ["anger", "body_slam", "cleave", "clothesline", "flex", "havoc", "heavy_blade", "iron_wave", "pommel_strike", "seeing_red", "shrug_it_off", "true_grit", 
             "twin_strike", "warcry", "wild_strike"],
             "uncommon": ["battle_trance", "blood_for_blood", "burning_pact", "carnage", "clash", "combust", "dark_embrace", "disarm", "entrench", "evolve", "feel_no_pain", 
-            "fire_breathing", "flame_barrier", "ghostly_armor", "headbutt", "inflame", "metallicize", "perfect_strike", "power_through", "rage", "rampage", "rupture", "second_wind", 
+            "fire_breathing", "flame_barrier", "ghostly_armor", "headbutt", "inflame", "metallicize", "perfected_strike", "power_through", "rage", "rampage", "rupture", "second_wind", 
             "sentinel", "sever_soul", "shockwave", "spot_weakness", "whirlwind"],
             "rare": ["barricade", "berserk", "bludgeon", "corruption", "demon_form", "double_tap", "exhume", "feed", "fiend_fire", "immolate", "impervious", "juggernaut", "limit_break",
             "offering", "uppercut"]
@@ -38,7 +38,7 @@
             "common": ["ball_lightning", "barrage", "chaos", "charge_battery", "claw", "cold_snap", "compile_driver", "coolheaded", "go_for_the_eyes", "leap", "recursion", "scrape",
             "skim", "steam_barrier", "sweeping_beam", "turbo"],
             "uncommon": ["beam_cell", "blizzard", "capacitor", "consume", "darkness", "doom_and_gloom", "double_energy", "equilibrium", "forcefield", "ftl", "fusion", "glacier",
-            "heatstinks", "hologram", "loop", "machine_learning", "melter", "overclock", "recycle", "reinforced_body", "reprogram", "stack", "storm", "streamline", "sunder", "tempest"],
+            "heatsinks", "hologram", "loop", "machine_learning", "melter", "overclock", "recycle", "reinforced_body", "reprogram", "stack", "storm", "streamline", "sunder", "tempest"],
             "rare": ["all_for_one", "amplify", "buffer", "core_surge", "defragment", "echo_form", "electrodynamics", "fission", "hyper_beam", "meteor_strike", "multicast", "rainbow",
             "seek", "static_discharge", "thunder_strike"]
         },
@@ -47,7 +47,7 @@
             "common": ["collect", "consecrate", "crescendo", "cut_through_fate", "empty_body", "empty_fist", "flurry_of_blows", "flying_sleeves", "halt", "just_lucky", "protect",
             "third_eye", "tranquility"],
             "uncommon": ["battle_hymn", "carve_reality", "conclude", "crush_joints", "empty_mind", "fear_no_evil", "foreign_influence", "foresight", "indignation", "inner_peace",
-            "like_water", "meditate", "mental_fortress", "nirvana", "perserverence", "pray", "prostrate", "reach_heaven", "rushdown", "sands_of_time", "sash_whip", "signature_move",
+            "like_water", "meditate", "mental_fortress", "nirvana", "perseverance", "pray", "prostrate", "reach_heaven", "rushdown", "sands_of_time", "sash_whip", "signature_move",
             "simmering_fury", "study", "swivel", "talk_to_the_hand", "tantrum", "wallop", "weave", "windmill_strike", "worship", "wreath_of_flame"],
             "rare": ["blasphemy", "brilliance", "conjure_blade", "deus_ex_machina", "deva_form", "devotion", "establishment", "judgment", "omega", "omniscience", "ragnarok", "scrawl",
             "spirit_shield", "vault", "wish"]
