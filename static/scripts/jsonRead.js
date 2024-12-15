@@ -3,13 +3,15 @@ import { getImageObject } from "./readImageList.js";
 
 var jsonImageObject = await getImageObject();
 console.log(jsonImageObject);
+document.getElementById('uploadButton').addEventListener('click', () => {
+    document.getElementById('jsonInput').click();
+})
 document.getElementById('jsonInput').addEventListener('change', loadJsonFile);
     
 //displays actual reader after uploading file 
 //TODO: Only do so on succesful parse!!!
 function loadJsonFile() {
     fileToJSON(document.getElementById('jsonInput'));
-    
 }
 
 
