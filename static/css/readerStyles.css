@@ -223,11 +223,9 @@
     }
 }
 
-.heartLabel {
-    cursor: default;
-}
-
-.healthHeart {
+.heartContainer.reader,
+.heartLabel,
+.healtHeart {
     cursor: default;
 }
 

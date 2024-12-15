@@ -116,7 +116,7 @@ function addHearts() {
         //console.log(healthContainer);
 
         for(let i = 1; i <= amount; i++) {
-            healthContainer.innerHTML += '<div class="heartContainer">' 
+            healthContainer.innerHTML += '<div class="heartContainer reader">' 
                                     + '<img src="static/images/heartBroken.png" class="healthHeart">'
                                     + '<label class="heartLabel">' + i + '</label>'
                                     + '</div>'
