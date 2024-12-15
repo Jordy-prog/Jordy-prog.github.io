@@ -235,7 +235,7 @@
 /*Main container styling for reader, slight adjustments from writerStyles*/
 .item-container .container-body {
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
 .containerHeader {
@@ -246,10 +246,16 @@
     height: 50px;
 }
 
+.item-container .container-body.has-placeholder {
+    justify-content: start;
+    padding: 0px;
+}
+
 .containerPlaceholder {
     color: wheat;
     font-size: 1rem;
     padding: 10px;
+    justify-self: flex-start;
 }
 
 .item {

@@ -123,6 +123,7 @@ function fillItemList(listName, itemList, itemContainer) {
             console.log('hey');
         });
     } else {
+        itemContainer.classList.add('has-placeholder');
         itemContainer.innerHTML += '<span class="containerPlaceholder">None!</span>';
     }
 } 
