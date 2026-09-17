@@ -125,11 +125,22 @@ div:focus, div:active, button:focus, button:active {
 
 /* Nav Styles */
 
+#navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+#navigation .fancyButton {
+    width: 120px;
+    min-width: 120px;
+}
+
 #functionNav {
     display: flex;
     justify-content: center;
     gap: 0px;
-    padding: 20px;
 }
 
 #functionNav .fancyButton {

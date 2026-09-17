@@ -1,8 +1,8 @@
 # SaveTheSpire
 
 # TODO
-- Implement Form -> Download JSON (Page 1)
-- Upload Form -> Display nicely (Page 2)
+- Add checkboxes for relics with charges...
+- Add save manager with home-server API
 
 # General
 - Clean stylesheets

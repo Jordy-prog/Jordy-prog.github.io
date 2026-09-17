@@ -11,17 +11,27 @@
         <div id="logoContainer">
             <img id="logo" src="/static/images/SaveTheLogo.png">
         </div>
-        <nav id="functionNav">
-            <button class="fancyButton" onclick="window.location.href='index.html'">
-                <img src="/static/images/endTurnButtonGlow.png">
-                <span>Writer</span>
-            </button>
-            <button class="fancyButton" 
-                    onclick="window.location.href='reader.html'"
-                    onmouseover="toggleFancyGlowButton(this, '/static/images/endTurnButtonGlow.png')"
-                    onmouseout="toggleFancyGlowButton(this, '/static/images/endTurnButton.png')">
+        <nav id="navigation">
+            <div id="functionNav">
+                <button class="fancyButton" onclick="window.location.href='index.html'">
+                    <img src="/static/images/endTurnButtonGlow.png">
+                    <span>Writer</span>
+                </button>
+                <button class="fancyButton" 
+                        onclick="window.location.href='reader.html'"
+                        onmouseover="toggleFancyGlowButton(this, '/static/images/endTurnButtonGlow.png')"
+                        onmouseout="toggleFancyGlowButton(this, '/static/images/endTurnButton.png')">
+                    <img src="/static/images/endTurnButton.png">
+                    <span>Reader</span>
+                </button>
+            </div>
+            <button id="loadButton" class="fancyButton"
+                onmouseover="toggleFancyGlowButton(this, '/static/images/endTurnButtonGlow.png')"
+                onmouseout="toggleFancyGlowButton(this, '/static/images/endTurnButton.png')"
+            >
                 <img src="/static/images/endTurnButton.png">
-                <span>Reader</span>
+                <input type="file" id="jsonInput" hidden>
+                <span>Load</span>
             </button>
         </nav>
         <nav id="formNav">
@@ -55,10 +65,10 @@
                     <input id="campaignName" name="campaignName" placeholder="Campaign name" type="text">
                 </div>
                 <div id="actButtonContainer">
-                    <button id="actOne" value="1" class="active" onclick="toggleActiveAct(this)">Act 1</button>
-                    <button id="actTwo" value="2" onclick="toggleActiveAct(this)">Act 2</button>
-                    <button id="actThree" value="3" onclick="toggleActiveAct(this)">Act 3</button>
-                    <button id="actFour" value="4" onclick="toggleActiveAct(this)">Act 4</button>
+                    <button id="act1" value="1" class="active" onclick="toggleActiveAct(this)">Act 1</button>
+                    <button id="act2" value="2" onclick="toggleActiveAct(this)">Act 2</button>
+                    <button id="act3" value="3" onclick="toggleActiveAct(this)">Act 3</button>
+                    <button id="act4" value="4" onclick="toggleActiveAct(this)">Act 4</button>
                 </div>
                 <div id="keyContainer">
                     <div id="keyGreenContainerWrapper">
@@ -195,43 +205,43 @@
                 <!-- Health -->
                 <div id="healthContainerIronclad" class="healthContainer">
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">1</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">2</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">3</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">4</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">5</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">6</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">7</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">8</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">9</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">10</label>
                     </div>
                 </div>
@@ -239,7 +249,7 @@
                 <!-- Gold -->
                 <div id="goldContainerIronclad" class="goldContainer">
                     <div class="goldCoinContainer">
-                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <img src="/static/images/goldCoinOrb.png" class="goldCoin">
                         <label class="goldCounter">0</label>
                     </div>
                     <div class="goldChangeContainer">
@@ -386,39 +396,39 @@
                 <!-- Health -->
                 <div id="healthContainerSilent" class="healthContainer">
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">1</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">2</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">3</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">4</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">5</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">6</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">7</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">8</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">9</label>
                     </div>
                 </div>
@@ -426,7 +436,7 @@
                 <!-- Gold -->
                 <div id="goldContainerSilent" class="goldContainer">
                     <div class="goldCoinContainer">
-                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <img src="/static/images/goldCoinOrb.png" class="goldCoin">
                         <label class="goldCounter">0</label>
                     </div>
                     <div class="goldChangeContainer">
@@ -573,39 +583,39 @@
                 <!-- Health -->
                 <div id="healthContainerDefect" class="healthContainer">
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">1</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">2</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">3</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">4</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">5</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">6</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">7</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">8</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">9</label>
                     </div>
                 </div>
@@ -613,7 +623,7 @@
                 <!-- Gold -->
                 <div id="goldContainerDefect" class="goldContainer">
                     <div class="goldCoinContainer">
-                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <img src="/static/images/goldCoinOrb.png" class="goldCoin">
                         <label class="goldCounter">0</label>
                     </div>
                     <div class="goldChangeContainer">
@@ -759,39 +769,39 @@
                 <!-- Health -->
                 <div id="healthContainerWatcher" class="healthContainer">
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">1</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">2</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">3</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">4</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">5</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">6</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">7</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">8</label>
                     </div>
                     <div class="heartContainer">
-                        <img src="static/images/heartBroken.png" class="healthHeart">
+                        <img src="/static/images/heartBroken.png" class="healthHeart">
                         <label class="heartLabel">9</label>
                     </div>
                 </div>
@@ -799,7 +809,7 @@
                 <!-- Gold -->
                 <div id="goldContainerWatcher" class="goldContainer">
                     <div class="goldCoinContainer">
-                        <img src="static/images/goldCoinOrb.png" class="goldCoin">
+                        <img src="/static/images/goldCoinOrb.png" class="goldCoin">
                         <label class="goldCounter">0</label>
                     </div>
                     <div class="goldChangeContainer">
@@ -957,6 +967,7 @@
         <script src="/static/scripts/gold.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/scripts/modals.js" type="text/javascript" charset="utf-8"></script>
         <script src="/static/scripts/save.js" type="text/javascript" charset="utf-8"></script>
+        <script src="/static/scripts/loadSave.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="/static/scripts/merchantHand.js" type="text/javascript" charset="utf-8"></script> -->
     </body>
 </html>
