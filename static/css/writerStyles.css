@@ -284,25 +284,25 @@ div:focus, div:active, button:focus, button:active {
     filter: brightness(1.2);
 }
 
-#actOne {
+#act1 {
     background-image: url('/static/images/actOne.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#actTwo {
+#act2 {
     background-image: url('/static/images/actTwo.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#actThree {
+#act3 {
     background-image: url('/static/images/actThree.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-#actFour {
+#act4 {
     background-image: url('/static/images/actFour.jpg');
     background-size: cover;
     background-repeat: no-repeat;
